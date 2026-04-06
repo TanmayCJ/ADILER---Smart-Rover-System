@@ -37,17 +37,21 @@ This project combines web-based terrain visualization, a Python backend API, and
 
 ```
 rover/
-├── backend/                       # ✅ FastAPI service (Sprint 1 Complete)
+├── backend/                       # FastAPI service (Sprint 1 Complete)
 │   ├── main.py                    # Application entry point
 │   ├── requirements.txt
 │   ├── models/
-│   │   └── terrain_model.py       # DTM and elevation models
+│   │   ├── terrain_model.py       # DTM and elevation models
+│   │   └── wind_model.py          # Wind query and dataset models
 │   ├── routes/
 │   │   ├── terrain.py             # Terrain endpoints
+│   │   ├── wind.py                # Wind endpoints
 │   │   ├── rover.py               # Rover endpoints (placeholder)
 │   │   └── simulation.py          # Simulation endpoints (placeholder)
 │   ├── services/
-│   │   └── dataset_loader.py      # Dataset management
+│   │   ├── dataset_loader.py      # Terrain dataset management
+│   │   ├── wind_loader.py         # Wind dataset source metadata
+│   │   └── wind_service.py        # Wind query business logic
 │   ├── README.md                  # Backend setup & API docs
 │   └── .env.example               # Configuration template
 ├── frontend/                      # Next.js web UI (Planned)
@@ -69,15 +73,19 @@ rover/
 
 ## Modules
 
-### 1. **backend** (✅ Sprint 1 Complete)
+### 1. **backend** ( Sprint 1 Complete)
 FastAPI service providing terrain and simulation APIs.
 - **Terrain Endpoints** - Query Mars elevation data and terrain tiles
   - `GET /api/v1/terrain/datasets` - List available DTM datasets
   - `POST /api/v1/terrain/elevation` - Query elevation at coordinates
   - `POST /api/v1/terrain/tiles` - Get terrain tiles for region
+- **Wind Endpoints** - Query Mars wind datasets and wind conditions
+  - `GET /api/v1/wind/datasets` - List available wind data sources
+  - `POST /api/v1/wind/query` - Query wind speed/direction for location + sol/timestamp
   - See [backend/README.md](backend/README.md) for full endpoint documentation
 - REST API with Swagger UI at `http://localhost:8000/docs`
 - Real-time elevation queries using HiRISE DTM data
+- Wind query layer prepared for MEDA / InSight and future MCD adapters
 - Terrain tile serving for visualization
 
 ### 2. **frontend** (Planned)

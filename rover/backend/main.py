@@ -14,7 +14,7 @@ import os
 # Add backend directory to path for imports
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
-from routes import terrain
+from routes import terrain, wind
 
 # Create FastAPI application
 app = FastAPI(
@@ -37,6 +37,7 @@ app.add_middleware(
 
 # Include terrain routes
 app.include_router(terrain.router)
+app.include_router(wind.router)
 
 
 @app.get("/", tags=["Root"])
@@ -50,6 +51,7 @@ def read_root():
         "documentation": "/docs",
         "endpoints": {
             "terrain": "/api/v1/terrain",
+            "wind": "/api/v1/wind",
             "health": "/health"
         }
     }
@@ -79,6 +81,7 @@ def api_health():
         "timestamp": datetime.utcnow().isoformat(),
         "modules": {
             "terrain": "available",
+            "wind": "available",
             "rover": "planned",
             "simulation": "planned",
             "ai_brain": "planned"
