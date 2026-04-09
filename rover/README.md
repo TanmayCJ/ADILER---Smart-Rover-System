@@ -37,38 +37,60 @@ This project combines web-based terrain visualization, a Python backend API, and
 
 ```
 rover/
-├── backend/                       # FastAPI service (Sprint 1 Complete)
-│   ├── main.py                    # Application entry point
+├── backend/
+│   ├── main.py
 │   ├── requirements.txt
 │   ├── models/
-│   │   ├── terrain_model.py       # DTM and elevation models
-│   │   └── wind_model.py          # Wind query and dataset models
+│   │   ├── rover_model.py
+│   │   ├── terrain_model.py
+│   │   └── wind_model.py
 │   ├── routes/
-│   │   ├── terrain.py             # Terrain endpoints
-│   │   ├── wind.py                # Wind endpoints
-│   │   ├── rover.py               # Rover endpoints (placeholder)
-│   │   └── simulation.py          # Simulation endpoints (placeholder)
-│   ├── services/
-│   │   ├── dataset_loader.py      # Terrain dataset management
-│   │   ├── wind_loader.py         # Wind dataset source metadata
-│   │   └── wind_service.py        # Wind query business logic
-│   ├── README.md                  # Backend setup & API docs
-│   └── .env.example               # Configuration template
-├── frontend/                      # Next.js web UI (Planned)
-│   ├── pages/
-│   ├── components/
-│   ├── utils/
-│   └── styles/
-├── ai_brain/                      # Autonomous agent system (Planned)
-├── terrain_engine/                # Terrain processing (Planned)
-├── simulation/                    # Rover simulation (Planned)
-├── datasets/                      # Download & preprocessing tools (Planned)
-├── config/                        # Configuration files
-├── docs/                          # Documentation
-│   ├── ARCHITECTURE.md
-│   ├── DATASETS.md
-│   └── API.md
-└── tests/                         # Test suite (Planned)
+│   │   ├── rover.py
+│   │   ├── simulation.py
+│   │   ├── terrain.py
+│   │   └── wind.py
+│   └── services/
+│       ├── dataset_loader.py
+│       ├── tile_server.py
+│       ├── wind_loader.py
+│       └── wind_service.py
+├── brain/
+│   ├── graph/
+│   │   ├── edges.py
+│   │   ├── fanout.py
+│   │   └── rover_graph.py
+│   ├── llm/
+│   │   └── llm.py
+│   ├── memory/
+│   │   ├── embeddings.py
+│   │   ├── retriever.py
+│   │   └── vector_store.py
+│   ├── nodes/
+│   │   ├── actuation_agent_node.py
+│   │   ├── elevation_agent_node.py
+│   │   ├── hazard_risk_agent_node.py
+│   │   ├── maneuverability_agent_node.py
+│   │   ├── terrain_agent_node.py
+│   │   └── wind_agent_node.py
+│   ├── state/
+│   │   └── rover_state.py
+│   └── tools/
+│       ├── hazard/
+│       │   ├── obstacle_tool.py
+│       │   └── risk_tool.py
+│       ├── terrain/
+│       │   ├── roughness_tool.py
+│       │   └── slope_tool.py
+│       └── wind/
+│           ├── crosswind_tool.py
+│           └── gust_tool.py
+├── config/
+├── datasets/
+├── docs/
+├── frontend/
+├── simulation/
+├── terrain_engine/
+└── tests/
 ```
 
 ## Modules
@@ -94,7 +116,7 @@ Web-based Mars terrain visualization and rover control interface.
 - Live rover position tracking
 - Simulation playback controls
 
-### 3. **ai_brain** (Planned)
+### 3. **brain** (Planned)
 Autonomous rover intelligence system.
 - Agent architecture for decision-making
 - Path planning and navigation
