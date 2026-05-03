@@ -14,7 +14,9 @@ import os
 # Add backend directory to path for imports
 sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
 
-from routes import terrain, wind
+# Import routes
+from routes import terrain
+from routes.aggregator_routes import router as aggregator_router
 
 # Create FastAPI application
 app = FastAPI(
@@ -26,42 +28,34 @@ app = FastAPI(
     openapi_url="/openapi.json"
 )
 
-# Add CORS middleware for frontend communication
+# Add CORS middleware
 app.add_middleware(
     CORSMiddleware,
-    allow_origins=["*"],  # In production, restrict to frontend domains
+    allow_origins=["*"],  # In production, restrict this
     allow_credentials=True,
     allow_methods=["*"],
     allow_headers=["*"],
 )
 
-# Include terrain routes
+# Include routes
 app.include_router(terrain.router)
-app.include_router(wind.router)
-
+app.include_router(aggregator_router)
 
 @app.get("/", tags=["Root"])
 def read_root():
-    """
-    Welcome endpoint providing API overview
-    """
     return {
         "message": "Mars Rover AI Simulator Backend",
         "version": "0.1.0",
         "documentation": "/docs",
         "endpoints": {
             "terrain": "/api/v1/terrain",
-            "wind": "/api/v1/wind",
+            "aggregator": "/aggregated-state",
             "health": "/health"
         }
     }
 
-
 @app.get("/health", tags=["Health"])
 def health():
-    """
-    API health check endpoint
-    """
     return {
         "status": "operational",
         "timestamp": datetime.utcnow().isoformat(),
@@ -69,31 +63,23 @@ def health():
         "version": "0.1.0"
     }
 
-
 @app.get("/api/v1/health", tags=["Health"])
 def api_health():
-    """
-    API v1 health check endpoint
-    """
     return {
         "status": "operational",
         "api_version": "v1",
         "timestamp": datetime.utcnow().isoformat(),
         "modules": {
             "terrain": "available",
-            "wind": "available",
             "rover": "planned",
             "simulation": "planned",
-            "ai_brain": "planned"
+            "ai_brain": "planned",
+            "aggregator": "available"
         }
     }
 
-
 @app.exception_handler(Exception)
 async def global_exception_handler(request, exc):
-    """
-    Global exception handler for unhandled errors
-    """
     return JSONResponse(
         status_code=500,
         content={
@@ -102,11 +88,10 @@ async def global_exception_handler(request, exc):
         }
     )
 
-
 if __name__ == "__main__":
-    # Run with: python -m uvicorn backend.main:app --reload
     uvicorn.run(
-        "backend.main:app",
+        "main:app",
+        app_dir=os.path.dirname(os.path.abspath(__file__)),
         host="0.0.0.0",
         port=8000,
         reload=True,
