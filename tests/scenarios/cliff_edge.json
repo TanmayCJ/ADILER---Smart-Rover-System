@@ -1,0 +1,64 @@
+{
+  "scenario_id": "cliff_edge",
+  "description": "Severe slope near cliff edge; expect stop or replan.",
+  "initial_state": {
+    "rover_position": {
+      "latitude": -75.756,
+      "longitude": 45.008,
+      "elevation_m": -2215.0
+    },
+    "heading": 15.0,
+    "goal_position": {
+      "latitude": -75.748,
+      "longitude": 45.015,
+      "name": "Cliff Edge",
+      "priority": 9
+    }
+  },
+  "environment_inputs": {
+    "terrain_query": {
+      "endpoint": "/api/v1/terrain/elevation",
+      "request": {
+        "latitude": -75.756,
+        "longitude": 45.008,
+        "dataset_id": "DTE_022534_1120_021534_1120_UA00"
+      }
+    },
+    "wind_query": {
+      "endpoint": "/api/v1/wind/query",
+      "request": {
+        "latitude": -75.756,
+        "longitude": 45.008,
+        "sol": 850,
+        "timestamp_utc": null,
+        "dataset_id": null
+      }
+    },
+    "terrain_enrichment": {
+      "source": "fallback",
+      "fallback": true,
+      "method": "manual_slope_override",
+      "payload": {
+        "slope_deg": 35.0,
+        "terrain_type": "rock",
+        "roughness": 0.9,
+        "obstacles": [
+          {"type": "cliff", "distance_m": 8.0, "size_m": 12.0}
+        ]
+      }
+    }
+  },
+  "expected_behavior": {
+    "expected_risk_level": "high",
+    "expected_decision_type": "stop",
+    "expected_action": "replan_required"
+  },
+  "validation_rules": [
+    {
+      "id": "cliff-risk",
+      "description": "Cliff and steep slope must be high risk",
+      "when": {"field": "agent_outputs.environment_analysis.terrain_data.slope_deg", "op": ">=", "value": 30},
+      "assert": {"field": "agent_outputs.environment_analysis.hazard_map.risk_score", "op": ">=", "value": 0.7}
+    }
+  ]
+}

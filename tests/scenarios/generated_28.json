@@ -1,0 +1,70 @@
+{
+  "scenario_id": "generated_28",
+  "description": "Generated scenario 28 with variant 3.",
+  "initial_state": {
+    "rover_position": {
+      "latitude": -75.747,
+      "longitude": 44.993,
+      "elevation_m": -2230.0
+    },
+    "heading": 116,
+    "goal_position": {
+      "latitude": -75.741,
+      "longitude": 45.001,
+      "name": "Goal 28",
+      "priority": 5
+    }
+  },
+  "environment_inputs": {
+    "terrain_query": {
+      "endpoint": "/api/v1/terrain/elevation",
+      "request": {
+        "latitude": -75.747,
+        "longitude": 44.993,
+        "dataset_id": "DTE_022534_1120_021534_1120_UA00"
+      }
+    },
+    "wind_query": {
+      "endpoint": "/api/v1/wind/query",
+      "request": {
+        "latitude": -75.747,
+        "longitude": 44.993,
+        "sol": 850,
+        "timestamp_utc": null,
+        "dataset_id": null
+      }
+    },
+    "terrain_enrichment": {
+      "source": "fallback",
+      "fallback": true,
+      "method": "generated_profile",
+      "payload": {
+        "slope_deg": 16.0,
+        "terrain_type": "sand",
+        "roughness": 0.7,
+        "obstacles": []
+      }
+    }
+  },
+  "expected_behavior": {
+    "expected_risk_level": "medium",
+    "expected_decision_type": "detour",
+    "expected_action": "moving"
+  },
+  "validation_rules": [
+    {
+      "id": "rough-risk-28",
+      "description": "High roughness should increase risk",
+      "when": {
+        "field": "agent_outputs.environment_analysis.terrain_data.roughness",
+        "op": ">=",
+        "value": 0.6
+      },
+      "assert": {
+        "field": "agent_outputs.environment_analysis.hazard_map.risk_score",
+        "op": ">=",
+        "value": 0.4
+      }
+    }
+  ]
+}

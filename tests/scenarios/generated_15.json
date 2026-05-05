@@ -1,0 +1,76 @@
+{
+  "scenario_id": "generated_15",
+  "description": "Generated scenario 15 with variant 0.",
+  "initial_state": {
+    "rover_position": {
+      "latitude": -75.75,
+      "longitude": 44.999,
+      "elevation_m": -2230.0
+    },
+    "heading": 255,
+    "goal_position": {
+      "latitude": -75.744,
+      "longitude": 45.007,
+      "name": "Goal 15",
+      "priority": 8
+    }
+  },
+  "environment_inputs": {
+    "terrain_query": {
+      "endpoint": "/api/v1/terrain/elevation",
+      "request": {
+        "latitude": -75.75,
+        "longitude": 44.999,
+        "dataset_id": "DTE_022534_1120_021534_1120_UA00"
+      }
+    },
+    "wind_query": {
+      "endpoint": "/api/v1/wind/query",
+      "request": {
+        "latitude": -75.75,
+        "longitude": 44.999,
+        "sol": 850,
+        "timestamp_utc": null,
+        "dataset_id": null
+      }
+    },
+    "terrain_enrichment": {
+      "source": "fallback",
+      "fallback": true,
+      "method": "generated_profile",
+      "payload": {
+        "slope_deg": 34.0,
+        "terrain_type": "clay",
+        "roughness": 0.85,
+        "obstacles": [
+          {
+            "type": "cliff",
+            "distance_m": 7.0,
+            "size_m": 10.0
+          }
+        ]
+      }
+    }
+  },
+  "expected_behavior": {
+    "expected_risk_level": "high",
+    "expected_decision_type": "stop",
+    "expected_action": "replan_required"
+  },
+  "validation_rules": [
+    {
+      "id": "high-slope-15",
+      "description": "Steep slope should push risk high",
+      "when": {
+        "field": "agent_outputs.environment_analysis.terrain_data.slope_deg",
+        "op": ">=",
+        "value": 30
+      },
+      "assert": {
+        "field": "agent_outputs.environment_analysis.hazard_map.risk_score",
+        "op": ">=",
+        "value": 0.7
+      }
+    }
+  ]
+}

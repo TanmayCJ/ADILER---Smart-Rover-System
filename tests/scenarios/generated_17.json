@@ -1,0 +1,76 @@
+{
+  "scenario_id": "generated_17",
+  "description": "Generated scenario 17 with variant 2.",
+  "initial_state": {
+    "rover_position": {
+      "latitude": -75.748,
+      "longitude": 44.987,
+      "elevation_m": -2230.0
+    },
+    "heading": 289,
+    "goal_position": {
+      "latitude": -75.742,
+      "longitude": 44.995,
+      "name": "Goal 17",
+      "priority": 6
+    }
+  },
+  "environment_inputs": {
+    "terrain_query": {
+      "endpoint": "/api/v1/terrain/elevation",
+      "request": {
+        "latitude": -75.748,
+        "longitude": 44.987,
+        "dataset_id": "DTE_022534_1120_021534_1120_UA00"
+      }
+    },
+    "wind_query": {
+      "endpoint": "/api/v1/wind/query",
+      "request": {
+        "latitude": -75.748,
+        "longitude": 44.987,
+        "sol": 850,
+        "timestamp_utc": null,
+        "dataset_id": null
+      }
+    },
+    "terrain_enrichment": {
+      "source": "fallback",
+      "fallback": true,
+      "method": "generated_profile",
+      "payload": {
+        "slope_deg": 10.0,
+        "terrain_type": "rock",
+        "roughness": 0.45,
+        "obstacles": [
+          {
+            "type": "boulder",
+            "distance_m": 11.0,
+            "size_m": 3.0
+          }
+        ]
+      }
+    }
+  },
+  "expected_behavior": {
+    "expected_risk_level": "medium",
+    "expected_decision_type": "detour",
+    "expected_action": "moving"
+  },
+  "validation_rules": [
+    {
+      "id": "obstacle-risk-17",
+      "description": "Obstacle should increase risk",
+      "when": {
+        "field": "agent_outputs.environment_analysis.terrain_data.obstacles.0.type",
+        "op": "!=",
+        "value": null
+      },
+      "assert": {
+        "field": "agent_outputs.environment_analysis.hazard_map.risk_score",
+        "op": ">=",
+        "value": 0.4
+      }
+    }
+  ]
+}

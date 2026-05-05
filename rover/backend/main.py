@@ -11,10 +11,16 @@ import uvicorn
 import sys
 import os
 
-# Add backend directory to path for imports
-sys.path.insert(0, os.path.dirname(os.path.abspath(__file__)))
+BACKEND_DIR = os.path.dirname(os.path.abspath(__file__))
+ROVER_ROOT = os.path.abspath(os.path.join(BACKEND_DIR, os.pardir, os.pardir))
 
-from routes import terrain, wind
+# Add both the backend directory and repository root to the import path.
+if BACKEND_DIR not in sys.path:
+    sys.path.insert(0, BACKEND_DIR)
+if ROVER_ROOT not in sys.path:
+    sys.path.insert(0, ROVER_ROOT)
+
+from routes import rover, simulation, terrain, wind
 
 # Create FastAPI application
 app = FastAPI(
@@ -38,6 +44,8 @@ app.add_middleware(
 # Include terrain routes
 app.include_router(terrain.router)
 app.include_router(wind.router)
+app.include_router(rover.router)
+app.include_router(simulation.router)
 
 
 @app.get("/", tags=["Root"])
@@ -52,6 +60,8 @@ def read_root():
         "endpoints": {
             "terrain": "/api/v1/terrain",
             "wind": "/api/v1/wind",
+            "rover": "/api/v1/rover",
+            "simulation": "/api/v1/simulation",
             "health": "/health"
         }
     }
@@ -82,9 +92,9 @@ def api_health():
         "modules": {
             "terrain": "available",
             "wind": "available",
-            "rover": "planned",
-            "simulation": "planned",
-            "ai_brain": "planned"
+            "rover": "available",
+            "simulation": "available",
+            "ai_brain": "available"
         }
     }
 
@@ -106,9 +116,9 @@ async def global_exception_handler(request, exc):
 if __name__ == "__main__":
     # Run with: python -m uvicorn backend.main:app --reload
     uvicorn.run(
-        "backend.main:app",
+        "main:app",
         host="0.0.0.0",
         port=8000,
-        reload=True,
+        reload=False,
         log_level="info"
     )

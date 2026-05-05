@@ -1,0 +1,62 @@
+{
+  "scenario_id": "rough_terrain",
+  "description": "Rough mixed terrain; expect cautious route and medium risk.",
+  "initial_state": {
+    "rover_position": {
+      "latitude": -75.754,
+      "longitude": 45.003,
+      "elevation_m": -2224.0
+    },
+    "heading": 130.0,
+    "goal_position": {
+      "latitude": -75.748,
+      "longitude": 45.01,
+      "name": "Rough Basin",
+      "priority": 6
+    }
+  },
+  "environment_inputs": {
+    "terrain_query": {
+      "endpoint": "/api/v1/terrain/elevation",
+      "request": {
+        "latitude": -75.754,
+        "longitude": 45.003,
+        "dataset_id": "DTE_022534_1120_021534_1120_UA00"
+      }
+    },
+    "wind_query": {
+      "endpoint": "/api/v1/wind/query",
+      "request": {
+        "latitude": -75.754,
+        "longitude": 45.003,
+        "sol": 850,
+        "timestamp_utc": null,
+        "dataset_id": null
+      }
+    },
+    "terrain_enrichment": {
+      "source": "fallback",
+      "fallback": true,
+      "method": "manual_roughness_override",
+      "payload": {
+        "slope_deg": 18.0,
+        "terrain_type": "mixed",
+        "roughness": 0.75,
+        "obstacles": []
+      }
+    }
+  },
+  "expected_behavior": {
+    "expected_risk_level": "medium",
+    "expected_decision_type": "detour",
+    "expected_action": "moving"
+  },
+  "validation_rules": [
+    {
+      "id": "rough-risk",
+      "description": "High roughness should raise risk score",
+      "when": {"field": "agent_outputs.environment_analysis.terrain_data.roughness", "op": ">=", "value": 0.7},
+      "assert": {"field": "agent_outputs.environment_analysis.hazard_map.risk_score", "op": ">=", "value": 0.4}
+    }
+  ]
+}

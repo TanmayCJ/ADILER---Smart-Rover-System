@@ -1,0 +1,76 @@
+{
+  "scenario_id": "generated_34",
+  "description": "Generated scenario 34 with variant 4.",
+  "initial_state": {
+    "rover_position": {
+      "latitude": -75.751,
+      "longitude": 44.989,
+      "elevation_m": -2230.0
+    },
+    "heading": 218,
+    "goal_position": {
+      "latitude": -75.745,
+      "longitude": 44.997,
+      "name": "Goal 34",
+      "priority": 7
+    }
+  },
+  "environment_inputs": {
+    "terrain_query": {
+      "endpoint": "/api/v1/terrain/elevation",
+      "request": {
+        "latitude": -75.751,
+        "longitude": 44.989,
+        "dataset_id": "DTE_022534_1120_021534_1120_UA00"
+      }
+    },
+    "wind_query": {
+      "endpoint": "/api/v1/wind/query",
+      "request": {
+        "latitude": -75.751,
+        "longitude": 44.989,
+        "sol": 850,
+        "timestamp_utc": null,
+        "dataset_id": null
+      }
+    },
+    "terrain_enrichment": {
+      "source": "fallback",
+      "fallback": true,
+      "method": "generated_profile",
+      "payload": {
+        "slope_deg": 22.0,
+        "terrain_type": "mixed",
+        "roughness": 0.55,
+        "obstacles": [
+          {
+            "type": "ridge",
+            "distance_m": 18.0,
+            "size_m": 4.0
+          }
+        ]
+      }
+    }
+  },
+  "expected_behavior": {
+    "expected_risk_level": "medium",
+    "expected_decision_type": "detour",
+    "expected_action": "moving"
+  },
+  "validation_rules": [
+    {
+      "id": "mid-slope-34",
+      "description": "Moderate slope should keep risk in mid band",
+      "when": {
+        "field": "agent_outputs.environment_analysis.terrain_data.slope_deg",
+        "op": ">=",
+        "value": 15
+      },
+      "assert": {
+        "field": "agent_outputs.environment_analysis.hazard_map.risk_score",
+        "op": ">=",
+        "value": 0.4
+      }
+    }
+  ]
+}

@@ -1,0 +1,65 @@
+{
+  "scenario_id": "boulder_field",
+  "description": "Dense boulder field with high roughness; expect detour or cautious movement.",
+  "initial_state": {
+    "rover_position": {
+      "latitude": -75.753,
+      "longitude": 45.006,
+      "elevation_m": -2226.0
+    },
+    "heading": 70.0,
+    "goal_position": {
+      "latitude": -75.747,
+      "longitude": 45.014,
+      "name": "Boulder Traverse",
+      "priority": 8
+    }
+  },
+  "environment_inputs": {
+    "terrain_query": {
+      "endpoint": "/api/v1/terrain/elevation",
+      "request": {
+        "latitude": -75.753,
+        "longitude": 45.006,
+        "dataset_id": "DTE_022534_1120_021534_1120_UA00"
+      }
+    },
+    "wind_query": {
+      "endpoint": "/api/v1/wind/query",
+      "request": {
+        "latitude": -75.753,
+        "longitude": 45.006,
+        "sol": 850,
+        "timestamp_utc": null,
+        "dataset_id": null
+      }
+    },
+    "terrain_enrichment": {
+      "source": "fallback",
+      "fallback": true,
+      "method": "manual_boulder_override",
+      "payload": {
+        "slope_deg": 12.0,
+        "terrain_type": "rock",
+        "roughness": 0.85,
+        "obstacles": [
+          {"type": "boulder", "distance_m": 6.0, "size_m": 6.0},
+          {"type": "boulder", "distance_m": 9.0, "size_m": 4.0}
+        ]
+      }
+    }
+  },
+  "expected_behavior": {
+    "expected_risk_level": "medium",
+    "expected_decision_type": "detour",
+    "expected_action": "moving"
+  },
+  "validation_rules": [
+    {
+      "id": "boulder-risk",
+      "description": "Dense obstacles should raise risk score",
+      "when": {"field": "agent_outputs.environment_analysis.terrain_data.roughness", "op": ">=", "value": 0.7},
+      "assert": {"field": "agent_outputs.environment_analysis.hazard_map.risk_score", "op": ">=", "value": 0.4}
+    }
+  ]
+}

@@ -1,0 +1,62 @@
+{
+  "scenario_id": "steep_slope",
+  "description": "Slope above threshold; expect reroute or caution.",
+  "initial_state": {
+    "rover_position": {
+      "latitude": -75.752,
+      "longitude": 45.005,
+      "elevation_m": -2228.0
+    },
+    "heading": 45.0,
+    "goal_position": {
+      "latitude": -75.747,
+      "longitude": 45.012,
+      "name": "Steep Ridge",
+      "priority": 8
+    }
+  },
+  "environment_inputs": {
+    "terrain_query": {
+      "endpoint": "/api/v1/terrain/elevation",
+      "request": {
+        "latitude": -75.752,
+        "longitude": 45.005,
+        "dataset_id": "DTE_022534_1120_021534_1120_UA00"
+      }
+    },
+    "wind_query": {
+      "endpoint": "/api/v1/wind/query",
+      "request": {
+        "latitude": -75.752,
+        "longitude": 45.005,
+        "sol": 850,
+        "timestamp_utc": null,
+        "dataset_id": null
+      }
+    },
+    "terrain_enrichment": {
+      "source": "fallback",
+      "fallback": true,
+      "method": "manual_slope_override",
+      "payload": {
+        "slope_deg": 28.0,
+        "terrain_type": "clay",
+        "roughness": 0.4,
+        "obstacles": []
+      }
+    }
+  },
+  "expected_behavior": {
+    "expected_risk_level": "high",
+    "expected_decision_type": "reroute",
+    "expected_action": "replan_required"
+  },
+  "validation_rules": [
+    {
+      "id": "slope-risk",
+      "description": "High slope should raise risk",
+      "when": {"field": "agent_outputs.environment_analysis.terrain_data.slope_deg", "op": ">=", "value": 25},
+      "assert": {"field": "agent_outputs.environment_analysis.hazard_map.risk_score", "op": ">=", "value": 0.7}
+    }
+  ]
+}

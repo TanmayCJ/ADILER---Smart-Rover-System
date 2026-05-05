@@ -1,0 +1,62 @@
+{
+  "scenario_id": "flat_terrain",
+  "description": "Flat terrain with low wind; expect straight traversal.",
+  "initial_state": {
+    "rover_position": {
+      "latitude": -75.75,
+      "longitude": 45.0,
+      "elevation_m": -2234.5
+    },
+    "heading": 90.0,
+    "goal_position": {
+      "latitude": -75.745,
+      "longitude": 45.01,
+      "name": "Flat Ridge",
+      "priority": 6
+    }
+  },
+  "environment_inputs": {
+    "terrain_query": {
+      "endpoint": "/api/v1/terrain/elevation",
+      "request": {
+        "latitude": -75.75,
+        "longitude": 45.0,
+        "dataset_id": "DTE_022534_1120_021534_1120_UA00"
+      }
+    },
+    "wind_query": {
+      "endpoint": "/api/v1/wind/query",
+      "request": {
+        "latitude": -75.75,
+        "longitude": 45.0,
+        "sol": 850,
+        "timestamp_utc": null,
+        "dataset_id": null
+      }
+    },
+    "terrain_enrichment": {
+      "source": "fallback",
+      "fallback": true,
+      "method": "backend_elevation_only",
+      "payload": {
+        "slope_deg": 2.0,
+        "terrain_type": "sand",
+        "roughness": 0.1,
+        "obstacles": []
+      }
+    }
+  },
+  "expected_behavior": {
+    "expected_risk_level": "low",
+    "expected_decision_type": "straight",
+    "expected_action": "moving"
+  },
+  "validation_rules": [
+    {
+      "id": "risk-low",
+      "description": "Flat terrain should keep risk low",
+      "when": {"field": "agent_outputs.environment_analysis.terrain_data.slope_deg", "op": "<=", "value": 5},
+      "assert": {"field": "agent_outputs.environment_analysis.hazard_map.risk_score", "op": "<", "value": 0.4}
+    }
+  ]
+}

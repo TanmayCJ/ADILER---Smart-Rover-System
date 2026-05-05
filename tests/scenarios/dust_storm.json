@@ -1,0 +1,62 @@
+{
+  "scenario_id": "dust_storm",
+  "description": "Regional dust storm with strong wind gusts; expect cautious movement or pause.",
+  "initial_state": {
+    "rover_position": {
+      "latitude": -75.752,
+      "longitude": 45.007,
+      "elevation_m": -2222.0
+    },
+    "heading": 210.0,
+    "goal_position": {
+      "latitude": -75.746,
+      "longitude": 45.014,
+      "name": "Dust Line",
+      "priority": 7
+    }
+  },
+  "environment_inputs": {
+    "terrain_query": {
+      "endpoint": "/api/v1/terrain/elevation",
+      "request": {
+        "latitude": -75.752,
+        "longitude": 45.007,
+        "dataset_id": "DTE_022534_1120_021534_1120_UA00"
+      }
+    },
+    "wind_query": {
+      "endpoint": "/api/v1/wind/query",
+      "request": {
+        "latitude": -75.752,
+        "longitude": 45.007,
+        "sol": 850,
+        "timestamp_utc": null,
+        "dataset_id": null
+      }
+    },
+    "terrain_enrichment": {
+      "source": "fallback",
+      "fallback": true,
+      "method": "dust_storm_context",
+      "payload": {
+        "slope_deg": 6.0,
+        "terrain_type": "sand",
+        "roughness": 0.25,
+        "obstacles": []
+      }
+    }
+  },
+  "expected_behavior": {
+    "expected_risk_level": "medium",
+    "expected_decision_type": "slow",
+    "expected_action": "moving"
+  },
+  "validation_rules": [
+    {
+      "id": "dust-wind",
+      "description": "Dust storm conditions should keep risk elevated",
+      "when": {"field": "agent_outputs.environment_analysis.wind_data.speed_mps", "op": ">=", "value": 8.0},
+      "assert": {"field": "agent_outputs.environment_analysis.hazard_map.risk_score", "op": ">=", "value": 0.4}
+    }
+  ]
+}
