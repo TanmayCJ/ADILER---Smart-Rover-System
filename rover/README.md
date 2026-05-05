@@ -161,9 +161,9 @@ Test suite with unit and integration tests.
 
 ## Open-Source Datasets
 
-- **HiRISE DEM** - High-resolution orbital imagery and elevation data
-- **CTX DEM** - Context camera digital elevation models
-- **AI4Mars** - Rover-detected terrain features and classifications
+- **HiRISE DEM** - High-resolution orbital imagery and elevation data.
+- **CTX DEM** - Context camera digital elevation models.
+- **AI4Mars** - Rover-detected terrain features and classifications.
 
 ## Getting Started
 
