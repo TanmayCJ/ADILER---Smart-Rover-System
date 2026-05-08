@@ -1,0 +1,23 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"title": "RoverState",
+	"type": "object",
+	"required": ["position"],
+	"properties": {
+		"position": {
+			"type": "object",
+			"required": ["x", "y", "z"],
+			"properties": {
+				"x": {"type": "number"},
+				"y": {"type": "number"},
+				"z": {"type": "number"}
+			}
+		},
+		"heading": {"type": "number"},
+		"velocity": {"type": "number"},
+		"acceleration": {"type": "number"},
+		"battery": {"type": "object"},
+		"motors": {"type": "object"},
+		"wheels": {"type": "object"}
+	}
+}

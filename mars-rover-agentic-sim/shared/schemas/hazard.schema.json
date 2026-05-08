@@ -1,0 +1,28 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "HazardData",
+  "type": "object",
+  "required": ["tile_id", "obstacles"],
+  "properties": {
+    "tile_id": {"type": "string"},
+    "obstacles": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["type", "position", "risk_level"],
+        "properties": {
+          "type": {"type": "string"},
+          "position": {
+            "type": "object",
+            "required": ["x", "y"],
+            "properties": {
+              "x": {"type": "number"},
+              "y": {"type": "number"}
+            }
+          },
+          "risk_level": {"type": "string"}
+        }
+      }
+    }
+  }
+}

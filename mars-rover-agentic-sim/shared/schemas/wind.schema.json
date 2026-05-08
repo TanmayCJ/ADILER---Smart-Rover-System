@@ -1,0 +1,39 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "WindSeries",
+  "type": "object",
+  "required": ["tile_id", "series"],
+  "properties": {
+    "tile_id": {"type": "string"},
+    "series": {
+      "type": "array",
+      "items": {
+        "type": "object",
+        "required": ["timestamp", "location", "wind"],
+        "properties": {
+          "timestamp": {"type": "number"},
+          "location": {
+            "type": "object",
+            "required": ["latitude", "longitude"],
+            "properties": {
+              "latitude": {"type": "number"},
+              "longitude": {"type": "number"}
+            }
+          },
+          "wind": {
+            "type": "object",
+            "required": ["speed", "direction", "dust_density", "visibility"],
+            "properties": {
+              "speed": {"type": "number"},
+              "direction": {"type": "number"},
+              "gust_probability": {"type": "number"},
+              "turbulence": {"type": "number"},
+              "dust_density": {"type": "number"},
+              "visibility": {"type": "number"}
+            }
+          }
+        }
+      }
+    }
+  }
+}

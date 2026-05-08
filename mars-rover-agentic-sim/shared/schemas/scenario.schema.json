@@ -1,0 +1,23 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "ScenarioMetadata",
+  "type": "object",
+  "required": ["scenario_id", "tile_id", "mission_id", "parameters"],
+  "properties": {
+    "scenario_id": {"type": "string"},
+    "description": {"type": "string"},
+    "tile_id": {"type": "string"},
+    "mission_id": {"type": "string"},
+    "parameters": {
+      "type": "object",
+      "required": ["hazard_density", "wind_intensity", "duration_sec", "dt_sec"],
+      "properties": {
+        "hazard_density": {"type": "number"},
+        "wind_intensity": {"type": "number"},
+        "duration_sec": {"type": "number"},
+        "dt_sec": {"type": "number"}
+      }
+    },
+    "preload": {"type": "object"}
+  }
+}

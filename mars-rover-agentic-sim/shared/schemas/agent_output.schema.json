@@ -1,0 +1,30 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"title": "WorkflowResult",
+	"type": "object",
+	"required": ["environment_state", "plan", "rover_state", "memory"],
+	"properties": {
+		"environment_state": {
+			"type": "object",
+			"required": ["risk_score"],
+			"properties": {
+				"risk_score": {"type": "number"}
+			}
+		},
+		"plan": {
+			"type": "object",
+			"required": ["action"],
+			"properties": {
+				"action": {"type": "string"}
+			}
+		},
+		"rover_state": {"type": "object"},
+		"memory": {
+			"type": "object",
+			"required": ["events"],
+			"properties": {
+				"events": {"type": "array"}
+			}
+		}
+	}
+}

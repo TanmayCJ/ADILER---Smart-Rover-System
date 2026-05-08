@@ -1,0 +1,219 @@
+{
+  "scenarios": [
+    {
+      "scenario_id": "easy_navigation",
+      "status": "passed",
+      "scenario_loaded": {
+        "mission_id": "mission_001",
+        "start": "(26.40, 25.00)",
+        "goal": "(28.80, 28.80)",
+        "terrain_tile": "mars_tile_r00_c00"
+      },
+      "environment": {
+        "risk_score": 0.309,
+        "slope": 31.32,
+        "roughness": 0.165,
+        "wind_speed": 3.11,
+        "dust_level": 0.156,
+        "obstacle_count": 2,
+        "risk_level": "low"
+      },
+      "planner": {
+        "action": "proceed",
+        "rationale": "low risk, proceed"
+      },
+      "navigation": {
+        "initial_position": "(26.93, 25.85)",
+        "final_position": "(27.47, 26.69)",
+        "movement_step": "1.0 meters",
+        "status": "moved"
+      },
+      "memory": {
+        "events_written": 1,
+        "latest_event": {
+          "risk_score": 0.309,
+          "action": "proceed",
+          "position": {
+            "x": 27.47,
+            "y": 26.69,
+            "z": 1561.84
+          }
+        }
+      },
+      "final_verdict": "Proceed toward the goal.",
+      "distance_to_goal": 2.49
+    },
+    {
+      "scenario_id": "high_wind_navigation",
+      "status": "passed",
+      "scenario_loaded": {
+        "mission_id": "mission_001",
+        "start": "(26.40, 25.00)",
+        "goal": "(28.80, 28.80)",
+        "terrain_tile": "mars_tile_r00_c00"
+      },
+      "environment": {
+        "risk_score": 0.419,
+        "slope": 31.32,
+        "roughness": 0.165,
+        "wind_speed": 9.33,
+        "dust_level": 0.468,
+        "obstacle_count": 4,
+        "risk_level": "low"
+      },
+      "planner": {
+        "action": "proceed",
+        "rationale": "low risk, proceed"
+      },
+      "navigation": {
+        "initial_position": "(26.93, 25.85)",
+        "final_position": "(27.47, 26.69)",
+        "movement_step": "1.0 meters",
+        "status": "moved"
+      },
+      "memory": {
+        "events_written": 1,
+        "latest_event": {
+          "risk_score": 0.419,
+          "action": "proceed",
+          "position": {
+            "x": 27.47,
+            "y": 26.69,
+            "z": 1561.84
+          }
+        }
+      },
+      "final_verdict": "Proceed toward the goal.",
+      "distance_to_goal": 2.49
+    },
+    {
+      "scenario_id": "dust_storm_escape",
+      "status": "passed",
+      "scenario_loaded": {
+        "mission_id": "mission_003",
+        "start": "(22.93, 3.35)",
+        "goal": "(28.80, 3.31)",
+        "terrain_tile": "mars_tile_r01_c00"
+      },
+      "environment": {
+        "risk_score": 0.585,
+        "slope": 41.04,
+        "roughness": 0.283,
+        "wind_speed": 10.73,
+        "dust_level": 0.526,
+        "obstacle_count": 10,
+        "risk_level": "moderate"
+      },
+      "planner": {
+        "action": "proceed_cautious",
+        "rationale": "moderate risk, proceed cautiously"
+      },
+      "navigation": {
+        "initial_position": "(23.93, 3.34)",
+        "final_position": "(24.33, 3.34)",
+        "movement_step": "0.4 meters",
+        "status": "moved"
+      },
+      "memory": {
+        "events_written": 1,
+        "latest_event": {
+          "risk_score": 0.585,
+          "action": "proceed_cautious",
+          "position": {
+            "x": 24.33,
+            "y": 3.34,
+            "z": 1590.63
+          }
+        }
+      },
+      "final_verdict": "Proceed cautiously toward the goal.",
+      "distance_to_goal": 4.47
+    },
+    {
+      "scenario_id": "rocky_terrain",
+      "status": "passed",
+      "scenario_loaded": {
+        "mission_id": "mission_001",
+        "start": "(26.40, 25.00)",
+        "goal": "(28.80, 28.80)",
+        "terrain_tile": "mars_tile_r00_c00"
+      },
+      "environment": {
+        "risk_score": 0.375,
+        "slope": 31.32,
+        "roughness": 0.165,
+        "wind_speed": 5.18,
+        "dust_level": 0.26,
+        "obstacle_count": 7,
+        "risk_level": "low"
+      },
+      "planner": {
+        "action": "proceed",
+        "rationale": "low risk, proceed"
+      },
+      "navigation": {
+        "initial_position": "(26.93, 25.85)",
+        "final_position": "(27.47, 26.69)",
+        "movement_step": "1.0 meters",
+        "status": "moved"
+      },
+      "memory": {
+        "events_written": 1,
+        "latest_event": {
+          "risk_score": 0.375,
+          "action": "proceed",
+          "position": {
+            "x": 27.47,
+            "y": 26.69,
+            "z": 1561.84
+          }
+        }
+      },
+      "final_verdict": "Proceed toward the goal.",
+      "distance_to_goal": 2.49
+    },
+    {
+      "scenario_id": "energy_critical_route",
+      "status": "passed",
+      "scenario_loaded": {
+        "mission_id": "mission_001",
+        "start": "(26.40, 25.00)",
+        "goal": "(28.80, 28.80)",
+        "terrain_tile": "mars_tile_r00_c00"
+      },
+      "environment": {
+        "risk_score": 0.378,
+        "slope": 31.32,
+        "roughness": 0.165,
+        "wind_speed": 6.22,
+        "dust_level": 0.312,
+        "obstacle_count": 5,
+        "risk_level": "low"
+      },
+      "planner": {
+        "action": "proceed",
+        "rationale": "low risk, proceed"
+      },
+      "navigation": {
+        "initial_position": "(26.93, 25.85)",
+        "final_position": "(27.47, 26.69)",
+        "movement_step": "1.0 meters",
+        "status": "moved"
+      },
+      "memory": {
+        "events_written": 1,
+        "latest_event": {
+          "risk_score": 0.378,
+          "action": "proceed",
+          "position": {
+            "x": 27.47,
+            "y": 26.69,
+            "z": 1561.84
+          }
+        }
+      },
+      "final_verdict": "Proceed toward the goal.",
+      "distance_to_goal": 2.49
+    }
+  ]
+}

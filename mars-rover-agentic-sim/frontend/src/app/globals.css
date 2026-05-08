@@ -1,0 +1,62 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+	color-scheme: dark;
+	--bg-0: #07090b;
+	--bg-1: #0b0f14;
+	--bg-2: #121a24;
+	--panel: #121820;
+	--panel-2: #0c1118;
+	--ink: #e8edf4;
+	--muted: #93a4b6;
+	--accent: #ff8a3d;
+	--accent-2: #58a6ff;
+	--alert: #ff4d4f;
+	--grid: rgba(88, 166, 255, 0.1);
+}
+
+* {
+	box-sizing: border-box;
+}
+
+body {
+	margin: 0;
+	min-height: 100vh;
+	color: var(--ink);
+	background:
+		radial-gradient(1200px 800px at 20% -10%, rgba(255, 138, 61, 0.12), transparent 60%),
+		radial-gradient(1000px 700px at 80% 0%, rgba(88, 166, 255, 0.12), transparent 55%),
+		linear-gradient(180deg, var(--bg-0), var(--bg-2));
+	background-attachment: fixed;
+}
+
+body::before {
+	content: "";
+	position: fixed;
+	inset: 0;
+	background-image:
+		linear-gradient(transparent 96%, var(--grid) 97%),
+		linear-gradient(90deg, transparent 96%, var(--grid) 97%);
+	background-size: 48px 48px;
+	pointer-events: none;
+	opacity: 0.35;
+}
+
+.panel {
+	background: linear-gradient(160deg, rgba(18, 24, 32, 0.9), rgba(9, 12, 16, 0.9));
+	border: 1px solid rgba(148, 163, 184, 0.12);
+	box-shadow: 0 14px 40px rgba(0, 0, 0, 0.35);
+	border-radius: 16px;
+}
+
+.badge {
+	border: 1px solid rgba(88, 166, 255, 0.4);
+	color: var(--accent-2);
+	padding: 4px 10px;
+	border-radius: 999px;
+	font-size: 12px;
+	letter-spacing: 0.08em;
+	text-transform: uppercase;
+}

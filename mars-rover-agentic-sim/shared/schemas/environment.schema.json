@@ -1,0 +1,48 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"title": "EnvironmentState",
+	"type": "object",
+	"required": ["terrain", "wind", "hazards"],
+	"properties": {
+		"terrain": {
+			"type": "object",
+			"required": ["tile_id", "terrain_type", "slope_avg", "roughness", "traversability_score"],
+			"properties": {
+				"tile_id": {"type": "string"},
+				"terrain_type": {"type": "string"},
+				"slope_avg": {"type": "number"},
+				"roughness": {"type": "number"},
+				"traversability_score": {"type": "number"}
+			}
+		},
+		"wind": {
+			"type": "object",
+			"required": ["speed", "direction", "dust_density", "visibility"],
+			"properties": {
+				"speed": {"type": "number"},
+				"direction": {"type": "number"},
+				"gust_probability": {"type": "number"},
+				"turbulence": {"type": "number"},
+				"dust_density": {"type": "number"},
+				"visibility": {"type": "number"}
+			}
+		},
+		"hazards": {
+			"type": "object",
+			"required": ["rock_count", "sand_trap_count", "slope_count", "risk_level"],
+			"properties": {
+				"rock_count": {"type": "integer"},
+				"sand_trap_count": {"type": "integer"},
+				"slope_count": {"type": "integer"},
+				"risk_level": {"type": "string"}
+			}
+		},
+		"atmosphere": {
+			"type": "object",
+			"properties": {
+				"pressure": {"type": "number"},
+				"temperature": {"type": "number"}
+			}
+		}
+	}
+}

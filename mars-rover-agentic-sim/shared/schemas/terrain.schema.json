@@ -1,0 +1,36 @@
+{
+  "$schema": "https://json-schema.org/draft/2020-12/schema",
+  "title": "TerrainTile",
+  "type": "object",
+  "required": ["tile_id", "coordinates", "terrain"],
+  "properties": {
+    "tile_id": {"type": "string"},
+    "coordinates": {
+      "type": "object",
+      "required": ["latitude", "longitude"],
+      "properties": {
+        "latitude": {"type": "number"},
+        "longitude": {"type": "number"}
+      }
+    },
+    "terrain": {
+      "type": "object",
+      "required": ["terrain_type", "slope", "roughness", "traversability_score"],
+      "properties": {
+        "terrain_type": {"type": "string"},
+        "slope": {
+          "type": "object",
+          "required": ["average", "max"],
+          "properties": {
+            "average": {"type": "number"},
+            "max": {"type": "number"}
+          }
+        },
+        "roughness": {"type": "number"},
+        "traversability_score": {"type": "number"},
+        "rock_density": {"type": "number"},
+        "sand_density": {"type": "number"}
+      }
+    }
+  }
+}

@@ -1,0 +1,44 @@
+easy_navigation:
+  risk_min: 0.0
+  risk_max: 0.6
+  allowed_actions:
+    - proceed
+    - proceed_cautious
+  movement_expected: true
+  memory_required: true
+
+rocky_terrain:
+  risk_min: 0.4
+  risk_max: 0.95
+  allowed_actions:
+    - proceed_cautious
+    - hold
+  movement_expected: true
+  memory_required: true
+
+high_wind_navigation:
+  risk_min: 0.4
+  risk_max: 0.95
+  allowed_actions:
+    - proceed_cautious
+    - hold
+  movement_expected: true
+  memory_required: true
+
+dust_storm_escape:
+  risk_min: 0.5
+  risk_max: 1.0
+  allowed_actions:
+    - proceed_cautious
+    - hold
+  movement_expected: true
+  memory_required: true
+
+energy_critical_route:
+  risk_min: 0.3
+  risk_max: 0.9
+  allowed_actions:
+    - proceed_cautious
+    - hold
+  movement_expected: true
+  memory_required: true

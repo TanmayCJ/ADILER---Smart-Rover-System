@@ -1,0 +1,30 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"title": "Mission",
+	"type": "object",
+	"required": ["mission", "tile_id"],
+	"properties": {
+		"tile_id": {"type": "string"},
+		"mission": {
+			"type": "object",
+			"required": ["mission_id", "start_position", "goal_position", "priority", "difficulty"],
+			"properties": {
+				"mission_id": {"type": "string"},
+				"start_position": {
+					"type": "array",
+					"items": {"type": "number"},
+					"minItems": 2,
+					"maxItems": 2
+				},
+				"goal_position": {
+					"type": "array",
+					"items": {"type": "number"},
+					"minItems": 2,
+					"maxItems": 2
+				},
+				"priority": {"type": "string"},
+				"difficulty": {"type": "string"}
+			}
+		}
+	}
+}

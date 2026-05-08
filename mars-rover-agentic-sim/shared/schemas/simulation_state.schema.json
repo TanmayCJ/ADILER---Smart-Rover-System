@@ -1,0 +1,22 @@
+{
+	"$schema": "https://json-schema.org/draft/2020-12/schema",
+	"title": "SimulationState",
+	"type": "object",
+	"required": ["scenario_id", "states"],
+	"properties": {
+		"scenario_id": {"type": "string"},
+		"states": {
+			"type": "array",
+			"items": {
+				"type": "object",
+				"required": ["timestamp", "rover_state", "environment_state", "mission_state"],
+				"properties": {
+					"timestamp": {"type": "number"},
+					"rover_state": {"type": "object"},
+					"environment_state": {"type": "object"},
+					"mission_state": {"type": "object"}
+				}
+			}
+		}
+	}
+}
