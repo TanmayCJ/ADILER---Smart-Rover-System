@@ -1,0 +1,29 @@
+{
+  "tile_id": "mars_tile_r00_c00",
+  "coordinates": {
+    "latitude": -4.5,
+    "longitude": 137.4
+  },
+  "terrain": {
+    "terrain_type": "plains",
+    "elevation": {
+      "mean": 1543.84,
+      "variance": 10.89
+    },
+    "slope": {
+      "average": 14.36,
+      "max": 31.25
+    },
+    "roughness": 0.165,
+    "surface_friction": 0.647,
+    "traversability_score": 0.762,
+    "soil_type": "fine_regolith",
+    "rock_density": 0.161,
+    "sand_density": 0.106
+  },
+  "tile_size_m": 80.0,
+  "heightmap_size": 16,
+  "meters_per_pixel": 5.0,
+  "heightmap_file": "terrain\\heightmaps\\mars_tile_r00_c00.json",
+  "traversability_file": "terrain\\traversability_maps\\mars_tile_r00_c00.json"
+}

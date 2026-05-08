@@ -1,0 +1,150 @@
+{
+  "region_id": "mars_tile_r00_c01_region",
+  "tile_id": "mars_tile_r00_c01",
+  "obstacles": [
+    {
+      "type": "rock",
+      "position": {
+        "x": 6.43,
+        "y": 6.26
+      },
+      "size": 2.33,
+      "risk_level": "high"
+    },
+    {
+      "type": "rock",
+      "position": {
+        "x": 27.14,
+        "y": 4.55
+      },
+      "size": 1.0,
+      "risk_level": "medium"
+    },
+    {
+      "type": "rock",
+      "position": {
+        "x": 14.06,
+        "y": 12.08
+      },
+      "size": 1.3,
+      "risk_level": "medium"
+    },
+    {
+      "type": "rock",
+      "position": {
+        "x": 7.67,
+        "y": 21.19
+      },
+      "size": 2.34,
+      "risk_level": "high"
+    },
+    {
+      "type": "rock",
+      "position": {
+        "x": 8.74,
+        "y": 27.21
+      },
+      "size": 1.52,
+      "risk_level": "high"
+    },
+    {
+      "type": "rock",
+      "position": {
+        "x": 8.65,
+        "y": 29.9
+      },
+      "size": 1.76,
+      "risk_level": "high"
+    },
+    {
+      "type": "rock",
+      "position": {
+        "x": 14.75,
+        "y": 5.73
+      },
+      "size": 0.93,
+      "risk_level": "medium"
+    },
+    {
+      "type": "rock",
+      "position": {
+        "x": 12.63,
+        "y": 23.16
+      },
+      "size": 1.81,
+      "risk_level": "high"
+    },
+    {
+      "type": "rock",
+      "position": {
+        "x": 2.31,
+        "y": 16.83
+      },
+      "size": 2.19,
+      "risk_level": "high"
+    },
+    {
+      "type": "sand_trap",
+      "position": {
+        "x": 3.97,
+        "y": 3.13
+      },
+      "radius": 4.42,
+      "risk_level": "high"
+    },
+    {
+      "type": "sand_trap",
+      "position": {
+        "x": 18.82,
+        "y": 28.05
+      },
+      "radius": 4.22,
+      "risk_level": "high"
+    },
+    {
+      "type": "sand_trap",
+      "position": {
+        "x": 22.01,
+        "y": 8.15
+      },
+      "radius": 4.4,
+      "risk_level": "high"
+    },
+    {
+      "type": "sand_trap",
+      "position": {
+        "x": 4.3,
+        "y": 15.11
+      },
+      "radius": 3.91,
+      "risk_level": "high"
+    },
+    {
+      "type": "slope",
+      "position": {
+        "x": 6.47,
+        "y": 23.56
+      },
+      "radius": 11.71,
+      "risk_level": "high"
+    },
+    {
+      "type": "slope",
+      "position": {
+        "x": 0.27,
+        "y": 2.71
+      },
+      "radius": 10.93,
+      "risk_level": "high"
+    },
+    {
+      "type": "slope",
+      "position": {
+        "x": 14.49,
+        "y": 24.35
+      },
+      "radius": 12.43,
+      "risk_level": "high"
+    }
+  ]
+}

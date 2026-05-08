@@ -1,0 +1,1145 @@
+{
+  "tile_id": "mars_tile_r01_c00",
+  "series": [
+    {
+      "timestamp": 0,
+      "location": {
+        "latitude": -4.48,
+        "longitude": 137.4
+      },
+      "wind": {
+        "speed": 10.73,
+        "direction": 138.5,
+        "gust_probability": 0.474,
+        "turbulence": 0.478,
+        "dust_density": 0.526,
+        "visibility": 0.365
+      },
+      "atmosphere": {
+        "pressure": 615.6,
+        "temperature": -65.0
+      }
+    },
+    {
+      "timestamp": 5,
+      "location": {
+        "latitude": -4.48,
+        "longitude": 137.4
+      },
+      "wind": {
+        "speed": 11.01,
+        "direction": 137.1,
+        "gust_probability": 0.478,
+        "turbulence": 0.468,
+        "dust_density": 0.527,
+        "visibility": 0.358
+      },
+      "atmosphere": {
+        "pressure": 615.6,
+        "temperature": -65.0
+      }
+    },
+    {
+      "timestamp": 10,
+      "location": {
+        "latitude": -4.48,
+        "longitude": 137.4
+      },
+      "wind": {
+        "speed": 11.48,
+        "direction": 134.0,
+        "gust_probability": 0.479,
+        "turbulence": 0.432,
+        "dust_density": 0.522,
+        "visibility": 0.353
+      },
+      "atmosphere": {
+        "pressure": 615.7,
+        "temperature": -65.0
+      }
+    },
+    {
+      "timestamp": 15,
+      "location": {
+        "latitude": -4.48,
+        "longitude": 137.4
+      },
+      "wind": {
+        "speed": 11.8,
+        "direction": 131.8,
+        "gust_probability": 0.489,
+        "turbulence": 0.433,
+        "dust_density": 0.529,
+        "visibility": 0.341
+      },
+      "atmosphere": {
+        "pressure": 615.7,
+        "temperature": -65.0
+      }
+    },
+    {
+      "timestamp": 20,
+      "location": {
+        "latitude": -4.48,
+        "longitude": 137.4
+      },
+      "wind": {
+        "speed": 11.23,
+        "direction": 131.5,
+        "gust_probability": 0.485,
+        "turbulence": 0.47,
+        "dust_density": 0.533,
+        "visibility": 0.349
+      },
+      "atmosphere": {
+        "pressure": 615.7,
+        "temperature": -65.0
+      }
+    },
+    {
+      "timestamp": 25,
+      "location": {
+        "latitude": -4.48,
+        "longitude": 137.4
+      },
+      "wind": {
+        "speed": 11.65,
+        "direction": 132.7,
+        "gust_probability": 0.509,
+        "turbulence": 0.504,
+        "dust_density": 0.555,
+        "visibility": 0.323
+      },
+      "atmosphere": {
+        "pressure": 615.7,
+        "temperature": -65.0
+      }
+    },
+    {
+      "timestamp": 30,
+      "location": {
+        "latitude": -4.48,
+        "longitude": 137.4
+      },
+      "wind": {
+        "speed": 12.07,
+        "direction": 130.4,
+        "gust_probability": 0.515,
+        "turbulence": 0.487,
+        "dust_density": 0.556,
+        "visibility": 0.314
+      },
+      "atmosphere": {
+        "pressure": 615.7,
+        "temperature": -65.0
+      }
+    },
+    {
+      "timestamp": 35,
+      "location": {
+        "latitude": -4.48,
+        "longitude": 137.4
+      },
+      "wind": {
+        "speed": 12.04,
+        "direction": 128.6,
+        "gust_probability": 0.505,
+        "turbulence": 0.459,
+        "dust_density": 0.545,
+        "visibility": 0.324
+      },
+      "atmosphere": {
+        "pressure": 615.7,
+        "temperature": -65.0
+      }
+    },
+    {
+      "timestamp": 40,
+      "location": {
+        "latitude": -4.48,
+        "longitude": 137.4
+      },
+      "wind": {
+        "speed": 11.81,
+        "direction": 128.5,
+        "gust_probability": 0.494,
+        "turbulence": 0.446,
+        "dust_density": 0.535,
+        "visibility": 0.336
+      },
+      "atmosphere": {
+        "pressure": 615.7,
+        "temperature": -65.0
+      }
+    },
+    {
+      "timestamp": 45,
+      "location": {
+        "latitude": -4.48,
+        "longitude": 137.4
+      },
+      "wind": {
+        "speed": 11.19,
+        "direction": 131.5,
+        "gust_probability": 0.478,
+        "turbulence": 0.453,
+        "dust_density": 0.525,
+        "visibility": 0.356
+      },
+      "atmosphere": {
+        "pressure": 615.7,
+        "temperature": -65.0
+      }
+    },
+    {
+      "timestamp": 50,
+      "location": {
+        "latitude": -4.48,
+        "longitude": 137.4
+      },
+      "wind": {
+        "speed": 11.17,
+        "direction": 128.8,
+        "gust_probability": 0.477,
+        "turbulence": 0.452,
+        "dust_density": 0.524,
+        "visibility": 0.357
+      },
+      "atmosphere": {
+        "pressure": 615.7,
+        "temperature": -64.9
+      }
+    },
+    {
+      "timestamp": 55,
+      "location": {
+        "latitude": -4.48,
+        "longitude": 137.4
+      },
+      "wind": {
+        "speed": 11.37,
+        "direction": 130.7,
+        "gust_probability": 0.479,
+        "turbulence": 0.44,
+        "dust_density": 0.523,
+        "visibility": 0.354
+      },
+      "atmosphere": {
+        "pressure": 615.7,
+        "temperature": -64.9
+      }
+    },
+    {
+      "timestamp": 60,
+      "location": {
+        "latitude": -4.48,
+        "longitude": 137.4
+      },
+      "wind": {
+        "speed": 11.01,
+        "direction": 128.8,
+        "gust_probability": 0.481,
+        "turbulence": 0.476,
+        "dust_density": 0.531,
+        "visibility": 0.355
+      },
+      "atmosphere": {
+        "pressure": 615.7,
+        "temperature": -64.9
+      }
+    },
+    {
+      "timestamp": 65,
+      "location": {
+        "latitude": -4.48,
+        "longitude": 137.4
+      },
+      "wind": {
+        "speed": 11.11,
+        "direction": 131.7,
+        "gust_probability": 0.471,
+        "turbulence": 0.44,
+        "dust_density": 0.518,
+        "visibility": 0.363
+      },
+      "atmosphere": {
+        "pressure": 615.7,
+        "temperature": -64.9
+      }
+    },
+    {
+      "timestamp": 70,
+      "location": {
+        "latitude": -4.48,
+        "longitude": 137.4
+      },
+      "wind": {
+        "speed": 11.43,
+        "direction": 130.0,
+        "gust_probability": 0.48,
+        "turbulence": 0.438,
+        "dust_density": 0.524,
+        "visibility": 0.352
+      },
+      "atmosphere": {
+        "pressure": 615.7,
+        "temperature": -64.9
+      }
+    },
+    {
+      "timestamp": 75,
+      "location": {
+        "latitude": -4.48,
+        "longitude": 137.4
+      },
+      "wind": {
+        "speed": 11.61,
+        "direction": 131.3,
+        "gust_probability": 0.479,
+        "turbulence": 0.422,
+        "dust_density": 0.521,
+        "visibility": 0.351
+      },
+      "atmosphere": {
+        "pressure": 615.7,
+        "temperature": -64.9
+      }
+    },
+    {
+      "timestamp": 80,
+      "location": {
+        "latitude": -4.48,
+        "longitude": 137.4
+      },
+      "wind": {
+        "speed": 12.04,
+        "direction": 133.0,
+        "gust_probability": 0.483,
+        "turbulence": 0.397,
+        "dust_density": 0.52,
+        "visibility": 0.343
+      },
+      "atmosphere": {
+        "pressure": 615.7,
+        "temperature": -64.9
+      }
+    },
+    {
+      "timestamp": 85,
+      "location": {
+        "latitude": -4.48,
+        "longitude": 137.4
+      },
+      "wind": {
+        "speed": 11.52,
+        "direction": 132.9,
+        "gust_probability": 0.465,
+        "turbulence": 0.388,
+        "dust_density": 0.506,
+        "visibility": 0.365
+      },
+      "atmosphere": {
+        "pressure": 615.7,
+        "temperature": -64.9
+      }
+    },
+    {
+      "timestamp": 90,
+      "location": {
+        "latitude": -4.48,
+        "longitude": 137.4
+      },
+      "wind": {
+        "speed": 11.94,
+        "direction": 134.8,
+        "gust_probability": 0.486,
+        "turbulence": 0.414,
+        "dust_density": 0.524,
+        "visibility": 0.342
+      },
+      "atmosphere": {
+        "pressure": 615.7,
+        "temperature": -64.9
+      }
+    },
+    {
+      "timestamp": 95,
+      "location": {
+        "latitude": -4.48,
+        "longitude": 137.4
+      },
+      "wind": {
+        "speed": 11.95,
+        "direction": 135.7,
+        "gust_probability": 0.48,
+        "turbulence": 0.395,
+        "dust_density": 0.517,
+        "visibility": 0.348
+      },
+      "atmosphere": {
+        "pressure": 615.7,
+        "temperature": -64.9
+      }
+    },
+    {
+      "timestamp": 100,
+      "location": {
+        "latitude": -4.48,
+        "longitude": 137.4
+      },
+      "wind": {
+        "speed": 11.32,
+        "direction": 137.7,
+        "gust_probability": 0.469,
+        "turbulence": 0.417,
+        "dust_density": 0.513,
+        "visibility": 0.363
+      },
+      "atmosphere": {
+        "pressure": 615.7,
+        "temperature": -64.9
+      }
+    },
+    {
+      "timestamp": 105,
+      "location": {
+        "latitude": -4.48,
+        "longitude": 137.4
+      },
+      "wind": {
+        "speed": 11.01,
+        "direction": 138.0,
+        "gust_probability": 0.471,
+        "turbulence": 0.448,
+        "dust_density": 0.519,
+        "visibility": 0.364
+      },
+      "atmosphere": {
+        "pressure": 615.7,
+        "temperature": -64.9
+      }
+    },
+    {
+      "timestamp": 110,
+      "location": {
+        "latitude": -4.48,
+        "longitude": 137.4
+      },
+      "wind": {
+        "speed": 10.51,
+        "direction": 139.9,
+        "gust_probability": 0.447,
+        "turbulence": 0.42,
+        "dust_density": 0.498,
+        "visibility": 0.391
+      },
+      "atmosphere": {
+        "pressure": 615.7,
+        "temperature": -64.9
+      }
+    },
+    {
+      "timestamp": 115,
+      "location": {
+        "latitude": -4.48,
+        "longitude": 137.4
+      },
+      "wind": {
+        "speed": 10.13,
+        "direction": 137.8,
+        "gust_probability": 0.446,
+        "turbulence": 0.449,
+        "dust_density": 0.502,
+        "visibility": 0.396
+      },
+      "atmosphere": {
+        "pressure": 615.7,
+        "temperature": -64.9
+      }
+    },
+    {
+      "timestamp": 120,
+      "location": {
+        "latitude": -4.48,
+        "longitude": 137.4
+      },
+      "wind": {
+        "speed": 10.36,
+        "direction": 138.0,
+        "gust_probability": 0.457,
+        "turbulence": 0.462,
+        "dust_density": 0.512,
+        "visibility": 0.383
+      },
+      "atmosphere": {
+        "pressure": 615.7,
+        "temperature": -64.9
+      }
+    },
+    {
+      "timestamp": 125,
+      "location": {
+        "latitude": -4.48,
+        "longitude": 137.4
+      },
+      "wind": {
+        "speed": 10.85,
+        "direction": 141.0,
+        "gust_probability": 0.483,
+        "turbulence": 0.493,
+        "dust_density": 0.534,
+        "visibility": 0.356
+      },
+      "atmosphere": {
+        "pressure": 615.7,
+        "temperature": -64.9
+      }
+    },
+    {
+      "timestamp": 130,
+      "location": {
+        "latitude": -4.48,
+        "longitude": 137.4
+      },
+      "wind": {
+        "speed": 10.47,
+        "direction": 143.2,
+        "gust_probability": 0.472,
+        "turbulence": 0.496,
+        "dust_density": 0.528,
+        "visibility": 0.369
+      },
+      "atmosphere": {
+        "pressure": 615.7,
+        "temperature": -64.9
+      }
+    },
+    {
+      "timestamp": 135,
+      "location": {
+        "latitude": -4.48,
+        "longitude": 137.4
+      },
+      "wind": {
+        "speed": 10.29,
+        "direction": 142.4,
+        "gust_probability": 0.472,
+        "turbulence": 0.509,
+        "dust_density": 0.529,
+        "visibility": 0.371
+      },
+      "atmosphere": {
+        "pressure": 615.7,
+        "temperature": -64.9
+      }
+    },
+    {
+      "timestamp": 140,
+      "location": {
+        "latitude": -4.48,
+        "longitude": 137.4
+      },
+      "wind": {
+        "speed": 10.76,
+        "direction": 139.0,
+        "gust_probability": 0.473,
+        "turbulence": 0.472,
+        "dust_density": 0.524,
+        "visibility": 0.365
+      },
+      "atmosphere": {
+        "pressure": 615.7,
+        "temperature": -64.9
+      }
+    },
+    {
+      "timestamp": 145,
+      "location": {
+        "latitude": -4.48,
+        "longitude": 137.4
+      },
+      "wind": {
+        "speed": 10.95,
+        "direction": 140.5,
+        "gust_probability": 0.481,
+        "turbulence": 0.482,
+        "dust_density": 0.532,
+        "visibility": 0.356
+      },
+      "atmosphere": {
+        "pressure": 615.7,
+        "temperature": -64.8
+      }
+    },
+    {
+      "timestamp": 150,
+      "location": {
+        "latitude": -4.48,
+        "longitude": 137.4
+      },
+      "wind": {
+        "speed": 10.66,
+        "direction": 139.4,
+        "gust_probability": 0.464,
+        "turbulence": 0.456,
+        "dust_density": 0.516,
+        "visibility": 0.374
+      },
+      "atmosphere": {
+        "pressure": 615.7,
+        "temperature": -64.8
+      }
+    },
+    {
+      "timestamp": 155,
+      "location": {
+        "latitude": -4.48,
+        "longitude": 137.4
+      },
+      "wind": {
+        "speed": 10.64,
+        "direction": 139.0,
+        "gust_probability": 0.472,
+        "turbulence": 0.48,
+        "dust_density": 0.525,
+        "visibility": 0.368
+      },
+      "atmosphere": {
+        "pressure": 615.7,
+        "temperature": -64.8
+      }
+    },
+    {
+      "timestamp": 160,
+      "location": {
+        "latitude": -4.48,
+        "longitude": 137.4
+      },
+      "wind": {
+        "speed": 10.74,
+        "direction": 136.2,
+        "gust_probability": 0.485,
+        "turbulence": 0.509,
+        "dust_density": 0.538,
+        "visibility": 0.355
+      },
+      "atmosphere": {
+        "pressure": 615.7,
+        "temperature": -64.8
+      }
+    },
+    {
+      "timestamp": 165,
+      "location": {
+        "latitude": -4.48,
+        "longitude": 137.4
+      },
+      "wind": {
+        "speed": 10.7,
+        "direction": 137.8,
+        "gust_probability": 0.471,
+        "turbulence": 0.473,
+        "dust_density": 0.523,
+        "visibility": 0.368
+      },
+      "atmosphere": {
+        "pressure": 615.7,
+        "temperature": -64.8
+      }
+    },
+    {
+      "timestamp": 170,
+      "location": {
+        "latitude": -4.48,
+        "longitude": 137.4
+      },
+      "wind": {
+        "speed": 10.79,
+        "direction": 138.8,
+        "gust_probability": 0.48,
+        "turbulence": 0.49,
+        "dust_density": 0.532,
+        "visibility": 0.359
+      },
+      "atmosphere": {
+        "pressure": 615.7,
+        "temperature": -64.8
+      }
+    },
+    {
+      "timestamp": 175,
+      "location": {
+        "latitude": -4.48,
+        "longitude": 137.4
+      },
+      "wind": {
+        "speed": 10.42,
+        "direction": 136.0,
+        "gust_probability": 0.465,
+        "turbulence": 0.478,
+        "dust_density": 0.519,
+        "visibility": 0.376
+      },
+      "atmosphere": {
+        "pressure": 615.7,
+        "temperature": -64.8
+      }
+    },
+    {
+      "timestamp": 180,
+      "location": {
+        "latitude": -4.48,
+        "longitude": 137.4
+      },
+      "wind": {
+        "speed": 10.86,
+        "direction": 137.4,
+        "gust_probability": 0.485,
+        "turbulence": 0.499,
+        "dust_density": 0.537,
+        "visibility": 0.353
+      },
+      "atmosphere": {
+        "pressure": 615.8,
+        "temperature": -64.8
+      }
+    },
+    {
+      "timestamp": 185,
+      "location": {
+        "latitude": -4.48,
+        "longitude": 137.4
+      },
+      "wind": {
+        "speed": 10.68,
+        "direction": 140.1,
+        "gust_probability": 0.477,
+        "turbulence": 0.492,
+        "dust_density": 0.53,
+        "visibility": 0.362
+      },
+      "atmosphere": {
+        "pressure": 615.8,
+        "temperature": -64.8
+      }
+    },
+    {
+      "timestamp": 190,
+      "location": {
+        "latitude": -4.48,
+        "longitude": 137.4
+      },
+      "wind": {
+        "speed": 10.23,
+        "direction": 137.9,
+        "gust_probability": 0.454,
+        "turbulence": 0.462,
+        "dust_density": 0.509,
+        "visibility": 0.388
+      },
+      "atmosphere": {
+        "pressure": 615.8,
+        "temperature": -64.8
+      }
+    },
+    {
+      "timestamp": 195,
+      "location": {
+        "latitude": -4.48,
+        "longitude": 137.4
+      },
+      "wind": {
+        "speed": 9.85,
+        "direction": 138.9,
+        "gust_probability": 0.447,
+        "turbulence": 0.473,
+        "dust_density": 0.506,
+        "visibility": 0.398
+      },
+      "atmosphere": {
+        "pressure": 615.8,
+        "temperature": -64.8
+      }
+    },
+    {
+      "timestamp": 200,
+      "location": {
+        "latitude": -4.48,
+        "longitude": 137.4
+      },
+      "wind": {
+        "speed": 10.27,
+        "direction": 137.6,
+        "gust_probability": 0.465,
+        "turbulence": 0.489,
+        "dust_density": 0.521,
+        "visibility": 0.378
+      },
+      "atmosphere": {
+        "pressure": 615.8,
+        "temperature": -64.8
+      }
+    },
+    {
+      "timestamp": 205,
+      "location": {
+        "latitude": -4.48,
+        "longitude": 137.4
+      },
+      "wind": {
+        "speed": 9.94,
+        "direction": 137.6,
+        "gust_probability": 0.442,
+        "turbulence": 0.452,
+        "dust_density": 0.5,
+        "visibility": 0.402
+      },
+      "atmosphere": {
+        "pressure": 615.8,
+        "temperature": -64.8
+      }
+    },
+    {
+      "timestamp": 210,
+      "location": {
+        "latitude": -4.48,
+        "longitude": 137.4
+      },
+      "wind": {
+        "speed": 10.29,
+        "direction": 136.0,
+        "gust_probability": 0.452,
+        "turbulence": 0.451,
+        "dust_density": 0.506,
+        "visibility": 0.389
+      },
+      "atmosphere": {
+        "pressure": 615.8,
+        "temperature": -64.8
+      }
+    },
+    {
+      "timestamp": 215,
+      "location": {
+        "latitude": -4.48,
+        "longitude": 137.4
+      },
+      "wind": {
+        "speed": 9.96,
+        "direction": 139.2,
+        "gust_probability": 0.438,
+        "turbulence": 0.439,
+        "dust_density": 0.495,
+        "visibility": 0.405
+      },
+      "atmosphere": {
+        "pressure": 615.8,
+        "temperature": -64.8
+      }
+    },
+    {
+      "timestamp": 220,
+      "location": {
+        "latitude": -4.48,
+        "longitude": 137.4
+      },
+      "wind": {
+        "speed": 10.54,
+        "direction": 140.2,
+        "gust_probability": 0.468,
+        "turbulence": 0.477,
+        "dust_density": 0.522,
+        "visibility": 0.372
+      },
+      "atmosphere": {
+        "pressure": 615.8,
+        "temperature": -64.8
+      }
+    },
+    {
+      "timestamp": 225,
+      "location": {
+        "latitude": -4.48,
+        "longitude": 137.4
+      },
+      "wind": {
+        "speed": 10.89,
+        "direction": 141.9,
+        "gust_probability": 0.472,
+        "turbulence": 0.461,
+        "dust_density": 0.522,
+        "visibility": 0.364
+      },
+      "atmosphere": {
+        "pressure": 615.8,
+        "temperature": -64.8
+      }
+    },
+    {
+      "timestamp": 230,
+      "location": {
+        "latitude": -4.48,
+        "longitude": 137.4
+      },
+      "wind": {
+        "speed": 11.31,
+        "direction": 143.2,
+        "gust_probability": 0.493,
+        "turbulence": 0.485,
+        "dust_density": 0.54,
+        "visibility": 0.342
+      },
+      "atmosphere": {
+        "pressure": 615.8,
+        "temperature": -64.8
+      }
+    },
+    {
+      "timestamp": 235,
+      "location": {
+        "latitude": -4.48,
+        "longitude": 137.4
+      },
+      "wind": {
+        "speed": 11.23,
+        "direction": 141.3,
+        "gust_probability": 0.499,
+        "turbulence": 0.508,
+        "dust_density": 0.548,
+        "visibility": 0.337
+      },
+      "atmosphere": {
+        "pressure": 615.8,
+        "temperature": -64.8
+      }
+    },
+    {
+      "timestamp": 240,
+      "location": {
+        "latitude": -4.48,
+        "longitude": 137.4
+      },
+      "wind": {
+        "speed": 11.61,
+        "direction": 140.9,
+        "gust_probability": 0.507,
+        "turbulence": 0.502,
+        "dust_density": 0.553,
+        "visibility": 0.326
+      },
+      "atmosphere": {
+        "pressure": 615.8,
+        "temperature": -64.7
+      }
+    },
+    {
+      "timestamp": 245,
+      "location": {
+        "latitude": -4.48,
+        "longitude": 137.4
+      },
+      "wind": {
+        "speed": 11.34,
+        "direction": 139.2,
+        "gust_probability": 0.5,
+        "turbulence": 0.503,
+        "dust_density": 0.548,
+        "visibility": 0.335
+      },
+      "atmosphere": {
+        "pressure": 615.8,
+        "temperature": -64.7
+      }
+    },
+    {
+      "timestamp": 250,
+      "location": {
+        "latitude": -4.48,
+        "longitude": 137.4
+      },
+      "wind": {
+        "speed": 11.81,
+        "direction": 141.9,
+        "gust_probability": 0.521,
+        "turbulence": 0.525,
+        "dust_density": 0.566,
+        "visibility": 0.311
+      },
+      "atmosphere": {
+        "pressure": 615.8,
+        "temperature": -64.7
+      }
+    },
+    {
+      "timestamp": 255,
+      "location": {
+        "latitude": -4.48,
+        "longitude": 137.4
+      },
+      "wind": {
+        "speed": 11.31,
+        "direction": 140.0,
+        "gust_probability": 0.514,
+        "turbulence": 0.546,
+        "dust_density": 0.565,
+        "visibility": 0.322
+      },
+      "atmosphere": {
+        "pressure": 615.8,
+        "temperature": -64.7
+      }
+    },
+    {
+      "timestamp": 260,
+      "location": {
+        "latitude": -4.48,
+        "longitude": 137.4
+      },
+      "wind": {
+        "speed": 10.81,
+        "direction": 138.4,
+        "gust_probability": 0.502,
+        "turbulence": 0.551,
+        "dust_density": 0.557,
+        "visibility": 0.339
+      },
+      "atmosphere": {
+        "pressure": 615.8,
+        "temperature": -64.7
+      }
+    },
+    {
+      "timestamp": 265,
+      "location": {
+        "latitude": -4.48,
+        "longitude": 137.4
+      },
+      "wind": {
+        "speed": 10.56,
+        "direction": 138.4,
+        "gust_probability": 0.496,
+        "turbulence": 0.555,
+        "dust_density": 0.553,
+        "visibility": 0.346
+      },
+      "atmosphere": {
+        "pressure": 615.8,
+        "temperature": -64.7
+      }
+    },
+    {
+      "timestamp": 270,
+      "location": {
+        "latitude": -4.48,
+        "longitude": 137.4
+      },
+      "wind": {
+        "speed": 11.12,
+        "direction": 138.2,
+        "gust_probability": 0.5,
+        "turbulence": 0.521,
+        "dust_density": 0.551,
+        "visibility": 0.337
+      },
+      "atmosphere": {
+        "pressure": 615.8,
+        "temperature": -64.7
+      }
+    },
+    {
+      "timestamp": 275,
+      "location": {
+        "latitude": -4.48,
+        "longitude": 137.4
+      },
+      "wind": {
+        "speed": 10.91,
+        "direction": 137.5,
+        "gust_probability": 0.482,
+        "turbulence": 0.488,
+        "dust_density": 0.533,
+        "visibility": 0.355
+      },
+      "atmosphere": {
+        "pressure": 615.8,
+        "temperature": -64.7
+      }
+    },
+    {
+      "timestamp": 280,
+      "location": {
+        "latitude": -4.48,
+        "longitude": 137.4
+      },
+      "wind": {
+        "speed": 10.92,
+        "direction": 136.0,
+        "gust_probability": 0.491,
+        "turbulence": 0.51,
+        "dust_density": 0.543,
+        "visibility": 0.347
+      },
+      "atmosphere": {
+        "pressure": 615.8,
+        "temperature": -64.7
+      }
+    },
+    {
+      "timestamp": 285,
+      "location": {
+        "latitude": -4.48,
+        "longitude": 137.4
+      },
+      "wind": {
+        "speed": 10.58,
+        "direction": 135.4,
+        "gust_probability": 0.475,
+        "turbulence": 0.493,
+        "dust_density": 0.529,
+        "visibility": 0.365
+      },
+      "atmosphere": {
+        "pressure": 615.8,
+        "temperature": -64.7
+      }
+    },
+    {
+      "timestamp": 290,
+      "location": {
+        "latitude": -4.48,
+        "longitude": 137.4
+      },
+      "wind": {
+        "speed": 10.9,
+        "direction": 133.1,
+        "gust_probability": 0.488,
+        "turbulence": 0.506,
+        "dust_density": 0.54,
+        "visibility": 0.35
+      },
+      "atmosphere": {
+        "pressure": 615.8,
+        "temperature": -64.7
+      }
+    },
+    {
+      "timestamp": 295,
+      "location": {
+        "latitude": -4.48,
+        "longitude": 137.4
+      },
+      "wind": {
+        "speed": 10.56,
+        "direction": 131.3,
+        "gust_probability": 0.485,
+        "turbulence": 0.524,
+        "dust_density": 0.541,
+        "visibility": 0.356
+      },
+      "atmosphere": {
+        "pressure": 615.8,
+        "temperature": -64.7
+      }
+    }
+  ]
+}

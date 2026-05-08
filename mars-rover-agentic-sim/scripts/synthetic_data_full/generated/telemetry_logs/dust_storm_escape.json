@@ -1,0 +1,485 @@
+{
+  "scenario_id": "dust_storm_escape",
+  "telemetry": [
+    {
+      "timestamp": 0,
+      "battery": 72.6,
+      "velocity": 0.2,
+      "traction": 0.2,
+      "slippage": 0.9,
+      "wind_speed": 10.73
+    },
+    {
+      "timestamp": 5,
+      "battery": 71.42,
+      "velocity": 0.2,
+      "traction": 0.2,
+      "slippage": 0.9,
+      "wind_speed": 11.01
+    },
+    {
+      "timestamp": 10,
+      "battery": 70.24,
+      "velocity": 0.2,
+      "traction": 0.2,
+      "slippage": 0.9,
+      "wind_speed": 11.48
+    },
+    {
+      "timestamp": 15,
+      "battery": 69.06,
+      "velocity": 0.2,
+      "traction": 0.2,
+      "slippage": 0.9,
+      "wind_speed": 11.8
+    },
+    {
+      "timestamp": 20,
+      "battery": 67.88,
+      "velocity": 0.2,
+      "traction": 0.2,
+      "slippage": 0.9,
+      "wind_speed": 11.23
+    },
+    {
+      "timestamp": 25,
+      "battery": 66.7,
+      "velocity": 0.2,
+      "traction": 0.2,
+      "slippage": 0.9,
+      "wind_speed": 11.65
+    },
+    {
+      "timestamp": 30,
+      "battery": 65.52,
+      "velocity": 0.2,
+      "traction": 0.2,
+      "slippage": 0.9,
+      "wind_speed": 12.07
+    },
+    {
+      "timestamp": 35,
+      "battery": 64.34,
+      "velocity": 0.2,
+      "traction": 0.2,
+      "slippage": 0.9,
+      "wind_speed": 12.04
+    },
+    {
+      "timestamp": 40,
+      "battery": 63.16,
+      "velocity": 0.2,
+      "traction": 0.2,
+      "slippage": 0.9,
+      "wind_speed": 11.81
+    },
+    {
+      "timestamp": 45,
+      "battery": 61.98,
+      "velocity": 0.2,
+      "traction": 0.2,
+      "slippage": 0.9,
+      "wind_speed": 11.19
+    },
+    {
+      "timestamp": 50,
+      "battery": 60.8,
+      "velocity": 0.2,
+      "traction": 0.2,
+      "slippage": 0.9,
+      "wind_speed": 11.17
+    },
+    {
+      "timestamp": 55,
+      "battery": 59.62,
+      "velocity": 0.2,
+      "traction": 0.2,
+      "slippage": 0.9,
+      "wind_speed": 11.37
+    },
+    {
+      "timestamp": 60,
+      "battery": 58.44,
+      "velocity": 0.2,
+      "traction": 0.2,
+      "slippage": 0.9,
+      "wind_speed": 11.01
+    },
+    {
+      "timestamp": 65,
+      "battery": 57.26,
+      "velocity": 0.2,
+      "traction": 0.2,
+      "slippage": 0.9,
+      "wind_speed": 11.11
+    },
+    {
+      "timestamp": 70,
+      "battery": 56.08,
+      "velocity": 0.2,
+      "traction": 0.2,
+      "slippage": 0.9,
+      "wind_speed": 11.43
+    },
+    {
+      "timestamp": 75,
+      "battery": 54.9,
+      "velocity": 0.2,
+      "traction": 0.2,
+      "slippage": 0.9,
+      "wind_speed": 11.61
+    },
+    {
+      "timestamp": 80,
+      "battery": 53.72,
+      "velocity": 0.2,
+      "traction": 0.2,
+      "slippage": 0.9,
+      "wind_speed": 12.04
+    },
+    {
+      "timestamp": 85,
+      "battery": 52.54,
+      "velocity": 0.2,
+      "traction": 0.2,
+      "slippage": 0.9,
+      "wind_speed": 11.52
+    },
+    {
+      "timestamp": 90,
+      "battery": 51.36,
+      "velocity": 0.2,
+      "traction": 0.2,
+      "slippage": 0.9,
+      "wind_speed": 11.94
+    },
+    {
+      "timestamp": 95,
+      "battery": 50.18,
+      "velocity": 0.2,
+      "traction": 0.2,
+      "slippage": 0.9,
+      "wind_speed": 11.95
+    },
+    {
+      "timestamp": 100,
+      "battery": 49.0,
+      "velocity": 0.2,
+      "traction": 0.2,
+      "slippage": 0.9,
+      "wind_speed": 11.32
+    },
+    {
+      "timestamp": 105,
+      "battery": 47.82,
+      "velocity": 0.2,
+      "traction": 0.2,
+      "slippage": 0.9,
+      "wind_speed": 11.01
+    },
+    {
+      "timestamp": 110,
+      "battery": 46.64,
+      "velocity": 0.2,
+      "traction": 0.2,
+      "slippage": 0.9,
+      "wind_speed": 10.51
+    },
+    {
+      "timestamp": 115,
+      "battery": 45.46,
+      "velocity": 0.2,
+      "traction": 0.2,
+      "slippage": 0.9,
+      "wind_speed": 10.13
+    },
+    {
+      "timestamp": 120,
+      "battery": 44.28,
+      "velocity": 0.2,
+      "traction": 0.2,
+      "slippage": 0.9,
+      "wind_speed": 10.36
+    },
+    {
+      "timestamp": 125,
+      "battery": 43.1,
+      "velocity": 0.2,
+      "traction": 0.2,
+      "slippage": 0.9,
+      "wind_speed": 10.85
+    },
+    {
+      "timestamp": 130,
+      "battery": 41.92,
+      "velocity": 0.2,
+      "traction": 0.2,
+      "slippage": 0.9,
+      "wind_speed": 10.47
+    },
+    {
+      "timestamp": 135,
+      "battery": 40.74,
+      "velocity": 0.2,
+      "traction": 0.2,
+      "slippage": 0.9,
+      "wind_speed": 10.29
+    },
+    {
+      "timestamp": 140,
+      "battery": 39.56,
+      "velocity": 0.2,
+      "traction": 0.2,
+      "slippage": 0.9,
+      "wind_speed": 10.76
+    },
+    {
+      "timestamp": 145,
+      "battery": 38.38,
+      "velocity": 0.2,
+      "traction": 0.2,
+      "slippage": 0.9,
+      "wind_speed": 10.95
+    },
+    {
+      "timestamp": 150,
+      "battery": 37.2,
+      "velocity": 0.2,
+      "traction": 0.2,
+      "slippage": 0.9,
+      "wind_speed": 10.66
+    },
+    {
+      "timestamp": 155,
+      "battery": 36.02,
+      "velocity": 0.2,
+      "traction": 0.2,
+      "slippage": 0.9,
+      "wind_speed": 10.64
+    },
+    {
+      "timestamp": 160,
+      "battery": 34.84,
+      "velocity": 0.2,
+      "traction": 0.2,
+      "slippage": 0.9,
+      "wind_speed": 10.74
+    },
+    {
+      "timestamp": 165,
+      "battery": 33.66,
+      "velocity": 0.2,
+      "traction": 0.2,
+      "slippage": 0.9,
+      "wind_speed": 10.7
+    },
+    {
+      "timestamp": 170,
+      "battery": 32.48,
+      "velocity": 0.2,
+      "traction": 0.2,
+      "slippage": 0.9,
+      "wind_speed": 10.79
+    },
+    {
+      "timestamp": 175,
+      "battery": 31.3,
+      "velocity": 0.2,
+      "traction": 0.2,
+      "slippage": 0.9,
+      "wind_speed": 10.42
+    },
+    {
+      "timestamp": 180,
+      "battery": 30.12,
+      "velocity": 0.2,
+      "traction": 0.2,
+      "slippage": 0.9,
+      "wind_speed": 10.86
+    },
+    {
+      "timestamp": 185,
+      "battery": 28.94,
+      "velocity": 0.2,
+      "traction": 0.2,
+      "slippage": 0.9,
+      "wind_speed": 10.68
+    },
+    {
+      "timestamp": 190,
+      "battery": 27.76,
+      "velocity": 0.2,
+      "traction": 0.2,
+      "slippage": 0.9,
+      "wind_speed": 10.23
+    },
+    {
+      "timestamp": 195,
+      "battery": 26.58,
+      "velocity": 0.2,
+      "traction": 0.2,
+      "slippage": 0.9,
+      "wind_speed": 9.85
+    },
+    {
+      "timestamp": 200,
+      "battery": 25.4,
+      "velocity": 0.2,
+      "traction": 0.2,
+      "slippage": 0.9,
+      "wind_speed": 10.27
+    },
+    {
+      "timestamp": 205,
+      "battery": 24.22,
+      "velocity": 0.2,
+      "traction": 0.2,
+      "slippage": 0.9,
+      "wind_speed": 9.94
+    },
+    {
+      "timestamp": 210,
+      "battery": 23.04,
+      "velocity": 0.2,
+      "traction": 0.2,
+      "slippage": 0.9,
+      "wind_speed": 10.29
+    },
+    {
+      "timestamp": 215,
+      "battery": 21.86,
+      "velocity": 0.2,
+      "traction": 0.2,
+      "slippage": 0.9,
+      "wind_speed": 9.96
+    },
+    {
+      "timestamp": 220,
+      "battery": 20.68,
+      "velocity": 0.2,
+      "traction": 0.2,
+      "slippage": 0.9,
+      "wind_speed": 10.54
+    },
+    {
+      "timestamp": 225,
+      "battery": 19.5,
+      "velocity": 0.2,
+      "traction": 0.2,
+      "slippage": 0.9,
+      "wind_speed": 10.89
+    },
+    {
+      "timestamp": 230,
+      "battery": 18.32,
+      "velocity": 0.2,
+      "traction": 0.2,
+      "slippage": 0.9,
+      "wind_speed": 11.31
+    },
+    {
+      "timestamp": 235,
+      "battery": 17.14,
+      "velocity": 0.2,
+      "traction": 0.2,
+      "slippage": 0.9,
+      "wind_speed": 11.23
+    },
+    {
+      "timestamp": 240,
+      "battery": 15.96,
+      "velocity": 0.2,
+      "traction": 0.2,
+      "slippage": 0.9,
+      "wind_speed": 11.61
+    },
+    {
+      "timestamp": 245,
+      "battery": 14.78,
+      "velocity": 0.2,
+      "traction": 0.2,
+      "slippage": 0.9,
+      "wind_speed": 11.34
+    },
+    {
+      "timestamp": 250,
+      "battery": 13.6,
+      "velocity": 0.2,
+      "traction": 0.2,
+      "slippage": 0.9,
+      "wind_speed": 11.81
+    },
+    {
+      "timestamp": 255,
+      "battery": 12.42,
+      "velocity": 0.2,
+      "traction": 0.2,
+      "slippage": 0.9,
+      "wind_speed": 11.31
+    },
+    {
+      "timestamp": 260,
+      "battery": 11.24,
+      "velocity": 0.2,
+      "traction": 0.2,
+      "slippage": 0.9,
+      "wind_speed": 10.81
+    },
+    {
+      "timestamp": 265,
+      "battery": 10.06,
+      "velocity": 0.2,
+      "traction": 0.2,
+      "slippage": 0.9,
+      "wind_speed": 10.56
+    },
+    {
+      "timestamp": 270,
+      "battery": 8.88,
+      "velocity": 0.2,
+      "traction": 0.2,
+      "slippage": 0.9,
+      "wind_speed": 11.12
+    },
+    {
+      "timestamp": 275,
+      "battery": 7.7,
+      "velocity": 0.2,
+      "traction": 0.2,
+      "slippage": 0.9,
+      "wind_speed": 10.91
+    },
+    {
+      "timestamp": 280,
+      "battery": 6.52,
+      "velocity": 0.2,
+      "traction": 0.2,
+      "slippage": 0.9,
+      "wind_speed": 10.92
+    },
+    {
+      "timestamp": 285,
+      "battery": 5.34,
+      "velocity": 0.2,
+      "traction": 0.2,
+      "slippage": 0.9,
+      "wind_speed": 10.58
+    },
+    {
+      "timestamp": 290,
+      "battery": 5.0,
+      "velocity": 0.2,
+      "traction": 0.2,
+      "slippage": 0.9,
+      "wind_speed": 10.9
+    },
+    {
+      "timestamp": 295,
+      "battery": 5.0,
+      "velocity": 0.2,
+      "traction": 0.2,
+      "slippage": 0.9,
+      "wind_speed": 10.56
+    }
+  ]
+}

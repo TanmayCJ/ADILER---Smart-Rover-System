@@ -1,0 +1,16 @@
+{
+  "mission": {
+    "mission_id": "mission_004",
+    "start_position": [
+      23.36,
+      22.8
+    ],
+    "goal_position": [
+      14.85,
+      3.92
+    ],
+    "priority": "navigation",
+    "difficulty": "hard"
+  },
+  "tile_id": "mars_tile_r01_c01"
+}

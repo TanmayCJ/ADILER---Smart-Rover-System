@@ -1,0 +1,3785 @@
+{
+  "scenario_id": "dust_storm_escape",
+  "states": [
+    {
+      "timestamp": 0,
+      "rover_state": {
+        "position": {
+          "x": 23.93,
+          "y": 3.34,
+          "z": 1590.63
+        },
+        "heading": 359.6,
+        "velocity": 0.2,
+        "acceleration": -0.0,
+        "battery": {
+          "percentage": 72.6,
+          "consumption_rate": 0.236,
+          "temperature": 39.8
+        },
+        "motors": {
+          "left_motor_load": 0.934,
+          "right_motor_load": 0.922,
+          "motor_temperature": 53.0
+        },
+        "wheels": {
+          "traction": 0.2,
+          "slippage": 0.9,
+          "wheel_health": 0.98
+        }
+      },
+      "environment_state": {
+        "terrain": {
+          "tile_id": "mars_tile_r01_c00",
+          "terrain_type": "sand",
+          "slope_avg": 41.04,
+          "roughness": 0.283,
+          "traversability_score": 0.308
+        },
+        "wind": {
+          "speed": 10.73,
+          "direction": 138.5,
+          "gust_probability": 0.474,
+          "turbulence": 0.478,
+          "dust_density": 0.526,
+          "visibility": 0.365
+        },
+        "hazards": {
+          "rock_count": 6,
+          "sand_trap_count": 10,
+          "slope_count": 3,
+          "risk_level": "high"
+        },
+        "atmosphere": {
+          "pressure": 615.6,
+          "temperature": -65.0
+        }
+      },
+      "mission_state": {
+        "mission_id": "mission_003",
+        "goal_position": [
+          28.8,
+          3.31
+        ],
+        "progress": 0.0
+      }
+    },
+    {
+      "timestamp": 5,
+      "rover_state": {
+        "position": {
+          "x": 24.93,
+          "y": 3.34,
+          "z": 1590.63
+        },
+        "heading": 359.6,
+        "velocity": 0.2,
+        "acceleration": 0.0,
+        "battery": {
+          "percentage": 71.42,
+          "consumption_rate": 0.236,
+          "temperature": 39.8
+        },
+        "motors": {
+          "left_motor_load": 0.975,
+          "right_motor_load": 0.945,
+          "motor_temperature": 53.0
+        },
+        "wheels": {
+          "traction": 0.2,
+          "slippage": 0.9,
+          "wheel_health": 0.979
+        }
+      },
+      "environment_state": {
+        "terrain": {
+          "tile_id": "mars_tile_r01_c00",
+          "terrain_type": "sand",
+          "slope_avg": 41.04,
+          "roughness": 0.283,
+          "traversability_score": 0.308
+        },
+        "wind": {
+          "speed": 11.01,
+          "direction": 137.1,
+          "gust_probability": 0.478,
+          "turbulence": 0.468,
+          "dust_density": 0.527,
+          "visibility": 0.358
+        },
+        "hazards": {
+          "rock_count": 6,
+          "sand_trap_count": 10,
+          "slope_count": 3,
+          "risk_level": "high"
+        },
+        "atmosphere": {
+          "pressure": 615.6,
+          "temperature": -65.0
+        }
+      },
+      "mission_state": {
+        "mission_id": "mission_003",
+        "goal_position": [
+          28.8,
+          3.31
+        ],
+        "progress": 0.017
+      }
+    },
+    {
+      "timestamp": 10,
+      "rover_state": {
+        "position": {
+          "x": 25.93,
+          "y": 3.33,
+          "z": 1590.63
+        },
+        "heading": 359.6,
+        "velocity": 0.2,
+        "acceleration": 0.0,
+        "battery": {
+          "percentage": 70.24,
+          "consumption_rate": 0.236,
+          "temperature": 39.8
+        },
+        "motors": {
+          "left_motor_load": 0.928,
+          "right_motor_load": 0.93,
+          "motor_temperature": 53.0
+        },
+        "wheels": {
+          "traction": 0.2,
+          "slippage": 0.9,
+          "wheel_health": 0.979
+        }
+      },
+      "environment_state": {
+        "terrain": {
+          "tile_id": "mars_tile_r01_c00",
+          "terrain_type": "sand",
+          "slope_avg": 41.04,
+          "roughness": 0.283,
+          "traversability_score": 0.308
+        },
+        "wind": {
+          "speed": 11.48,
+          "direction": 134.0,
+          "gust_probability": 0.479,
+          "turbulence": 0.432,
+          "dust_density": 0.522,
+          "visibility": 0.353
+        },
+        "hazards": {
+          "rock_count": 6,
+          "sand_trap_count": 10,
+          "slope_count": 3,
+          "risk_level": "high"
+        },
+        "atmosphere": {
+          "pressure": 615.7,
+          "temperature": -65.0
+        }
+      },
+      "mission_state": {
+        "mission_id": "mission_003",
+        "goal_position": [
+          28.8,
+          3.31
+        ],
+        "progress": 0.034
+      }
+    },
+    {
+      "timestamp": 15,
+      "rover_state": {
+        "position": {
+          "x": 26.93,
+          "y": 3.32,
+          "z": 1590.63
+        },
+        "heading": 359.6,
+        "velocity": 0.2,
+        "acceleration": 0.0,
+        "battery": {
+          "percentage": 69.06,
+          "consumption_rate": 0.236,
+          "temperature": 39.8
+        },
+        "motors": {
+          "left_motor_load": 0.926,
+          "right_motor_load": 0.923,
+          "motor_temperature": 53.0
+        },
+        "wheels": {
+          "traction": 0.2,
+          "slippage": 0.9,
+          "wheel_health": 0.979
+        }
+      },
+      "environment_state": {
+        "terrain": {
+          "tile_id": "mars_tile_r01_c00",
+          "terrain_type": "sand",
+          "slope_avg": 41.04,
+          "roughness": 0.283,
+          "traversability_score": 0.308
+        },
+        "wind": {
+          "speed": 11.8,
+          "direction": 131.8,
+          "gust_probability": 0.489,
+          "turbulence": 0.433,
+          "dust_density": 0.529,
+          "visibility": 0.341
+        },
+        "hazards": {
+          "rock_count": 6,
+          "sand_trap_count": 10,
+          "slope_count": 3,
+          "risk_level": "high"
+        },
+        "atmosphere": {
+          "pressure": 615.7,
+          "temperature": -65.0
+        }
+      },
+      "mission_state": {
+        "mission_id": "mission_003",
+        "goal_position": [
+          28.8,
+          3.31
+        ],
+        "progress": 0.051
+      }
+    },
+    {
+      "timestamp": 20,
+      "rover_state": {
+        "position": {
+          "x": 27.93,
+          "y": 3.32,
+          "z": 1590.63
+        },
+        "heading": 359.6,
+        "velocity": 0.2,
+        "acceleration": 0.0,
+        "battery": {
+          "percentage": 67.88,
+          "consumption_rate": 0.236,
+          "temperature": 39.8
+        },
+        "motors": {
+          "left_motor_load": 0.942,
+          "right_motor_load": 0.931,
+          "motor_temperature": 53.0
+        },
+        "wheels": {
+          "traction": 0.2,
+          "slippage": 0.9,
+          "wheel_health": 0.978
+        }
+      },
+      "environment_state": {
+        "terrain": {
+          "tile_id": "mars_tile_r01_c00",
+          "terrain_type": "sand",
+          "slope_avg": 41.04,
+          "roughness": 0.283,
+          "traversability_score": 0.308
+        },
+        "wind": {
+          "speed": 11.23,
+          "direction": 131.5,
+          "gust_probability": 0.485,
+          "turbulence": 0.47,
+          "dust_density": 0.533,
+          "visibility": 0.349
+        },
+        "hazards": {
+          "rock_count": 6,
+          "sand_trap_count": 10,
+          "slope_count": 3,
+          "risk_level": "high"
+        },
+        "atmosphere": {
+          "pressure": 615.7,
+          "temperature": -65.0
+        }
+      },
+      "mission_state": {
+        "mission_id": "mission_003",
+        "goal_position": [
+          28.8,
+          3.31
+        ],
+        "progress": 0.068
+      }
+    },
+    {
+      "timestamp": 25,
+      "rover_state": {
+        "position": {
+          "x": 28.8,
+          "y": 3.31,
+          "z": 1590.63
+        },
+        "heading": 359.6,
+        "velocity": 0.2,
+        "acceleration": 0.0,
+        "battery": {
+          "percentage": 66.7,
+          "consumption_rate": 0.236,
+          "temperature": 39.8
+        },
+        "motors": {
+          "left_motor_load": 0.944,
+          "right_motor_load": 0.93,
+          "motor_temperature": 53.0
+        },
+        "wheels": {
+          "traction": 0.2,
+          "slippage": 0.9,
+          "wheel_health": 0.978
+        }
+      },
+      "environment_state": {
+        "terrain": {
+          "tile_id": "mars_tile_r01_c00",
+          "terrain_type": "sand",
+          "slope_avg": 41.04,
+          "roughness": 0.283,
+          "traversability_score": 0.308
+        },
+        "wind": {
+          "speed": 11.65,
+          "direction": 132.7,
+          "gust_probability": 0.509,
+          "turbulence": 0.504,
+          "dust_density": 0.555,
+          "visibility": 0.323
+        },
+        "hazards": {
+          "rock_count": 6,
+          "sand_trap_count": 10,
+          "slope_count": 3,
+          "risk_level": "high"
+        },
+        "atmosphere": {
+          "pressure": 615.7,
+          "temperature": -65.0
+        }
+      },
+      "mission_state": {
+        "mission_id": "mission_003",
+        "goal_position": [
+          28.8,
+          3.31
+        ],
+        "progress": 0.085
+      }
+    },
+    {
+      "timestamp": 30,
+      "rover_state": {
+        "position": {
+          "x": 34.67,
+          "y": 3.27,
+          "z": 1590.63
+        },
+        "heading": 359.6,
+        "velocity": 0.2,
+        "acceleration": 0.0,
+        "battery": {
+          "percentage": 65.52,
+          "consumption_rate": 0.236,
+          "temperature": 39.8
+        },
+        "motors": {
+          "left_motor_load": 0.979,
+          "right_motor_load": 0.926,
+          "motor_temperature": 53.0
+        },
+        "wheels": {
+          "traction": 0.2,
+          "slippage": 0.9,
+          "wheel_health": 0.977
+        }
+      },
+      "environment_state": {
+        "terrain": {
+          "tile_id": "mars_tile_r01_c00",
+          "terrain_type": "sand",
+          "slope_avg": 41.04,
+          "roughness": 0.283,
+          "traversability_score": 0.308
+        },
+        "wind": {
+          "speed": 12.07,
+          "direction": 130.4,
+          "gust_probability": 0.515,
+          "turbulence": 0.487,
+          "dust_density": 0.556,
+          "visibility": 0.314
+        },
+        "hazards": {
+          "rock_count": 6,
+          "sand_trap_count": 10,
+          "slope_count": 3,
+          "risk_level": "high"
+        },
+        "atmosphere": {
+          "pressure": 615.7,
+          "temperature": -65.0
+        }
+      },
+      "mission_state": {
+        "mission_id": "mission_003",
+        "goal_position": [
+          28.8,
+          3.31
+        ],
+        "progress": 0.102
+      }
+    },
+    {
+      "timestamp": 35,
+      "rover_state": {
+        "position": {
+          "x": 40.54,
+          "y": 3.23,
+          "z": 1590.63
+        },
+        "heading": 359.6,
+        "velocity": 0.2,
+        "acceleration": 0.0,
+        "battery": {
+          "percentage": 64.34,
+          "consumption_rate": 0.236,
+          "temperature": 39.8
+        },
+        "motors": {
+          "left_motor_load": 0.972,
+          "right_motor_load": 0.958,
+          "motor_temperature": 53.0
+        },
+        "wheels": {
+          "traction": 0.2,
+          "slippage": 0.9,
+          "wheel_health": 0.977
+        }
+      },
+      "environment_state": {
+        "terrain": {
+          "tile_id": "mars_tile_r01_c00",
+          "terrain_type": "sand",
+          "slope_avg": 41.04,
+          "roughness": 0.283,
+          "traversability_score": 0.308
+        },
+        "wind": {
+          "speed": 12.04,
+          "direction": 128.6,
+          "gust_probability": 0.505,
+          "turbulence": 0.459,
+          "dust_density": 0.545,
+          "visibility": 0.324
+        },
+        "hazards": {
+          "rock_count": 6,
+          "sand_trap_count": 10,
+          "slope_count": 3,
+          "risk_level": "high"
+        },
+        "atmosphere": {
+          "pressure": 615.7,
+          "temperature": -65.0
+        }
+      },
+      "mission_state": {
+        "mission_id": "mission_003",
+        "goal_position": [
+          28.8,
+          3.31
+        ],
+        "progress": 0.119
+      }
+    },
+    {
+      "timestamp": 40,
+      "rover_state": {
+        "position": {
+          "x": 46.41,
+          "y": 3.19,
+          "z": 1590.63
+        },
+        "heading": 359.6,
+        "velocity": 0.2,
+        "acceleration": 0.0,
+        "battery": {
+          "percentage": 63.16,
+          "consumption_rate": 0.236,
+          "temperature": 39.8
+        },
+        "motors": {
+          "left_motor_load": 0.937,
+          "right_motor_load": 0.946,
+          "motor_temperature": 53.0
+        },
+        "wheels": {
+          "traction": 0.2,
+          "slippage": 0.9,
+          "wheel_health": 0.977
+        }
+      },
+      "environment_state": {
+        "terrain": {
+          "tile_id": "mars_tile_r01_c00",
+          "terrain_type": "sand",
+          "slope_avg": 41.04,
+          "roughness": 0.283,
+          "traversability_score": 0.308
+        },
+        "wind": {
+          "speed": 11.81,
+          "direction": 128.5,
+          "gust_probability": 0.494,
+          "turbulence": 0.446,
+          "dust_density": 0.535,
+          "visibility": 0.336
+        },
+        "hazards": {
+          "rock_count": 6,
+          "sand_trap_count": 10,
+          "slope_count": 3,
+          "risk_level": "high"
+        },
+        "atmosphere": {
+          "pressure": 615.7,
+          "temperature": -65.0
+        }
+      },
+      "mission_state": {
+        "mission_id": "mission_003",
+        "goal_position": [
+          28.8,
+          3.31
+        ],
+        "progress": 0.136
+      }
+    },
+    {
+      "timestamp": 45,
+      "rover_state": {
+        "position": {
+          "x": 52.28,
+          "y": 3.15,
+          "z": 1590.63
+        },
+        "heading": 359.6,
+        "velocity": 0.2,
+        "acceleration": 0.0,
+        "battery": {
+          "percentage": 61.98,
+          "consumption_rate": 0.236,
+          "temperature": 39.8
+        },
+        "motors": {
+          "left_motor_load": 0.975,
+          "right_motor_load": 0.923,
+          "motor_temperature": 53.0
+        },
+        "wheels": {
+          "traction": 0.2,
+          "slippage": 0.9,
+          "wheel_health": 0.976
+        }
+      },
+      "environment_state": {
+        "terrain": {
+          "tile_id": "mars_tile_r01_c00",
+          "terrain_type": "sand",
+          "slope_avg": 41.04,
+          "roughness": 0.283,
+          "traversability_score": 0.308
+        },
+        "wind": {
+          "speed": 11.19,
+          "direction": 131.5,
+          "gust_probability": 0.478,
+          "turbulence": 0.453,
+          "dust_density": 0.525,
+          "visibility": 0.356
+        },
+        "hazards": {
+          "rock_count": 6,
+          "sand_trap_count": 10,
+          "slope_count": 3,
+          "risk_level": "high"
+        },
+        "atmosphere": {
+          "pressure": 615.7,
+          "temperature": -65.0
+        }
+      },
+      "mission_state": {
+        "mission_id": "mission_003",
+        "goal_position": [
+          28.8,
+          3.31
+        ],
+        "progress": 0.153
+      }
+    },
+    {
+      "timestamp": 50,
+      "rover_state": {
+        "position": {
+          "x": 58.15,
+          "y": 3.11,
+          "z": 1590.63
+        },
+        "heading": 359.6,
+        "velocity": 0.2,
+        "acceleration": 0.0,
+        "battery": {
+          "percentage": 60.8,
+          "consumption_rate": 0.236,
+          "temperature": 39.8
+        },
+        "motors": {
+          "left_motor_load": 0.924,
+          "right_motor_load": 0.956,
+          "motor_temperature": 53.0
+        },
+        "wheels": {
+          "traction": 0.2,
+          "slippage": 0.9,
+          "wheel_health": 0.976
+        }
+      },
+      "environment_state": {
+        "terrain": {
+          "tile_id": "mars_tile_r01_c00",
+          "terrain_type": "sand",
+          "slope_avg": 41.04,
+          "roughness": 0.283,
+          "traversability_score": 0.308
+        },
+        "wind": {
+          "speed": 11.17,
+          "direction": 128.8,
+          "gust_probability": 0.477,
+          "turbulence": 0.452,
+          "dust_density": 0.524,
+          "visibility": 0.357
+        },
+        "hazards": {
+          "rock_count": 6,
+          "sand_trap_count": 10,
+          "slope_count": 3,
+          "risk_level": "high"
+        },
+        "atmosphere": {
+          "pressure": 615.7,
+          "temperature": -64.9
+        }
+      },
+      "mission_state": {
+        "mission_id": "mission_003",
+        "goal_position": [
+          28.8,
+          3.31
+        ],
+        "progress": 0.169
+      }
+    },
+    {
+      "timestamp": 55,
+      "rover_state": {
+        "position": {
+          "x": 64.02,
+          "y": 3.07,
+          "z": 1590.63
+        },
+        "heading": 359.6,
+        "velocity": 0.2,
+        "acceleration": 0.0,
+        "battery": {
+          "percentage": 59.62,
+          "consumption_rate": 0.236,
+          "temperature": 39.8
+        },
+        "motors": {
+          "left_motor_load": 0.953,
+          "right_motor_load": 0.94,
+          "motor_temperature": 53.0
+        },
+        "wheels": {
+          "traction": 0.2,
+          "slippage": 0.9,
+          "wheel_health": 0.976
+        }
+      },
+      "environment_state": {
+        "terrain": {
+          "tile_id": "mars_tile_r01_c00",
+          "terrain_type": "sand",
+          "slope_avg": 41.04,
+          "roughness": 0.283,
+          "traversability_score": 0.308
+        },
+        "wind": {
+          "speed": 11.37,
+          "direction": 130.7,
+          "gust_probability": 0.479,
+          "turbulence": 0.44,
+          "dust_density": 0.523,
+          "visibility": 0.354
+        },
+        "hazards": {
+          "rock_count": 6,
+          "sand_trap_count": 10,
+          "slope_count": 3,
+          "risk_level": "high"
+        },
+        "atmosphere": {
+          "pressure": 615.7,
+          "temperature": -64.9
+        }
+      },
+      "mission_state": {
+        "mission_id": "mission_003",
+        "goal_position": [
+          28.8,
+          3.31
+        ],
+        "progress": 0.186
+      }
+    },
+    {
+      "timestamp": 60,
+      "rover_state": {
+        "position": {
+          "x": 69.89,
+          "y": 3.03,
+          "z": 1590.63
+        },
+        "heading": 359.6,
+        "velocity": 0.2,
+        "acceleration": 0.0,
+        "battery": {
+          "percentage": 58.44,
+          "consumption_rate": 0.236,
+          "temperature": 39.8
+        },
+        "motors": {
+          "left_motor_load": 0.973,
+          "right_motor_load": 0.974,
+          "motor_temperature": 53.0
+        },
+        "wheels": {
+          "traction": 0.2,
+          "slippage": 0.9,
+          "wheel_health": 0.975
+        }
+      },
+      "environment_state": {
+        "terrain": {
+          "tile_id": "mars_tile_r01_c00",
+          "terrain_type": "sand",
+          "slope_avg": 41.04,
+          "roughness": 0.283,
+          "traversability_score": 0.308
+        },
+        "wind": {
+          "speed": 11.01,
+          "direction": 128.8,
+          "gust_probability": 0.481,
+          "turbulence": 0.476,
+          "dust_density": 0.531,
+          "visibility": 0.355
+        },
+        "hazards": {
+          "rock_count": 6,
+          "sand_trap_count": 10,
+          "slope_count": 3,
+          "risk_level": "high"
+        },
+        "atmosphere": {
+          "pressure": 615.7,
+          "temperature": -64.9
+        }
+      },
+      "mission_state": {
+        "mission_id": "mission_003",
+        "goal_position": [
+          28.8,
+          3.31
+        ],
+        "progress": 0.203
+      }
+    },
+    {
+      "timestamp": 65,
+      "rover_state": {
+        "position": {
+          "x": 75.76,
+          "y": 2.99,
+          "z": 1590.63
+        },
+        "heading": 359.6,
+        "velocity": 0.2,
+        "acceleration": 0.0,
+        "battery": {
+          "percentage": 57.26,
+          "consumption_rate": 0.236,
+          "temperature": 39.8
+        },
+        "motors": {
+          "left_motor_load": 0.964,
+          "right_motor_load": 0.926,
+          "motor_temperature": 53.0
+        },
+        "wheels": {
+          "traction": 0.2,
+          "slippage": 0.9,
+          "wheel_health": 0.975
+        }
+      },
+      "environment_state": {
+        "terrain": {
+          "tile_id": "mars_tile_r01_c00",
+          "terrain_type": "sand",
+          "slope_avg": 41.04,
+          "roughness": 0.283,
+          "traversability_score": 0.308
+        },
+        "wind": {
+          "speed": 11.11,
+          "direction": 131.7,
+          "gust_probability": 0.471,
+          "turbulence": 0.44,
+          "dust_density": 0.518,
+          "visibility": 0.363
+        },
+        "hazards": {
+          "rock_count": 6,
+          "sand_trap_count": 10,
+          "slope_count": 3,
+          "risk_level": "high"
+        },
+        "atmosphere": {
+          "pressure": 615.7,
+          "temperature": -64.9
+        }
+      },
+      "mission_state": {
+        "mission_id": "mission_003",
+        "goal_position": [
+          28.8,
+          3.31
+        ],
+        "progress": 0.22
+      }
+    },
+    {
+      "timestamp": 70,
+      "rover_state": {
+        "position": {
+          "x": 81.63,
+          "y": 2.95,
+          "z": 1590.63
+        },
+        "heading": 359.6,
+        "velocity": 0.2,
+        "acceleration": 0.0,
+        "battery": {
+          "percentage": 56.08,
+          "consumption_rate": 0.236,
+          "temperature": 39.8
+        },
+        "motors": {
+          "left_motor_load": 0.953,
+          "right_motor_load": 0.924,
+          "motor_temperature": 53.0
+        },
+        "wheels": {
+          "traction": 0.2,
+          "slippage": 0.9,
+          "wheel_health": 0.975
+        }
+      },
+      "environment_state": {
+        "terrain": {
+          "tile_id": "mars_tile_r01_c00",
+          "terrain_type": "sand",
+          "slope_avg": 41.04,
+          "roughness": 0.283,
+          "traversability_score": 0.308
+        },
+        "wind": {
+          "speed": 11.43,
+          "direction": 130.0,
+          "gust_probability": 0.48,
+          "turbulence": 0.438,
+          "dust_density": 0.524,
+          "visibility": 0.352
+        },
+        "hazards": {
+          "rock_count": 6,
+          "sand_trap_count": 10,
+          "slope_count": 3,
+          "risk_level": "high"
+        },
+        "atmosphere": {
+          "pressure": 615.7,
+          "temperature": -64.9
+        }
+      },
+      "mission_state": {
+        "mission_id": "mission_003",
+        "goal_position": [
+          28.8,
+          3.31
+        ],
+        "progress": 0.237
+      }
+    },
+    {
+      "timestamp": 75,
+      "rover_state": {
+        "position": {
+          "x": 87.5,
+          "y": 2.91,
+          "z": 1590.63
+        },
+        "heading": 359.6,
+        "velocity": 0.2,
+        "acceleration": 0.0,
+        "battery": {
+          "percentage": 54.9,
+          "consumption_rate": 0.236,
+          "temperature": 39.8
+        },
+        "motors": {
+          "left_motor_load": 0.977,
+          "right_motor_load": 0.962,
+          "motor_temperature": 53.0
+        },
+        "wheels": {
+          "traction": 0.2,
+          "slippage": 0.9,
+          "wheel_health": 0.974
+        }
+      },
+      "environment_state": {
+        "terrain": {
+          "tile_id": "mars_tile_r01_c00",
+          "terrain_type": "sand",
+          "slope_avg": 41.04,
+          "roughness": 0.283,
+          "traversability_score": 0.308
+        },
+        "wind": {
+          "speed": 11.61,
+          "direction": 131.3,
+          "gust_probability": 0.479,
+          "turbulence": 0.422,
+          "dust_density": 0.521,
+          "visibility": 0.351
+        },
+        "hazards": {
+          "rock_count": 6,
+          "sand_trap_count": 10,
+          "slope_count": 3,
+          "risk_level": "high"
+        },
+        "atmosphere": {
+          "pressure": 615.7,
+          "temperature": -64.9
+        }
+      },
+      "mission_state": {
+        "mission_id": "mission_003",
+        "goal_position": [
+          28.8,
+          3.31
+        ],
+        "progress": 0.254
+      }
+    },
+    {
+      "timestamp": 80,
+      "rover_state": {
+        "position": {
+          "x": 93.37,
+          "y": 2.87,
+          "z": 1590.63
+        },
+        "heading": 359.6,
+        "velocity": 0.2,
+        "acceleration": 0.0,
+        "battery": {
+          "percentage": 53.72,
+          "consumption_rate": 0.236,
+          "temperature": 39.8
+        },
+        "motors": {
+          "left_motor_load": 0.979,
+          "right_motor_load": 0.94,
+          "motor_temperature": 53.0
+        },
+        "wheels": {
+          "traction": 0.2,
+          "slippage": 0.9,
+          "wheel_health": 0.974
+        }
+      },
+      "environment_state": {
+        "terrain": {
+          "tile_id": "mars_tile_r01_c00",
+          "terrain_type": "sand",
+          "slope_avg": 41.04,
+          "roughness": 0.283,
+          "traversability_score": 0.308
+        },
+        "wind": {
+          "speed": 12.04,
+          "direction": 133.0,
+          "gust_probability": 0.483,
+          "turbulence": 0.397,
+          "dust_density": 0.52,
+          "visibility": 0.343
+        },
+        "hazards": {
+          "rock_count": 6,
+          "sand_trap_count": 10,
+          "slope_count": 3,
+          "risk_level": "high"
+        },
+        "atmosphere": {
+          "pressure": 615.7,
+          "temperature": -64.9
+        }
+      },
+      "mission_state": {
+        "mission_id": "mission_003",
+        "goal_position": [
+          28.8,
+          3.31
+        ],
+        "progress": 0.271
+      }
+    },
+    {
+      "timestamp": 85,
+      "rover_state": {
+        "position": {
+          "x": 99.24,
+          "y": 2.83,
+          "z": 1590.63
+        },
+        "heading": 359.6,
+        "velocity": 0.2,
+        "acceleration": 0.0,
+        "battery": {
+          "percentage": 52.54,
+          "consumption_rate": 0.236,
+          "temperature": 39.8
+        },
+        "motors": {
+          "left_motor_load": 0.924,
+          "right_motor_load": 0.935,
+          "motor_temperature": 53.0
+        },
+        "wheels": {
+          "traction": 0.2,
+          "slippage": 0.9,
+          "wheel_health": 0.974
+        }
+      },
+      "environment_state": {
+        "terrain": {
+          "tile_id": "mars_tile_r01_c00",
+          "terrain_type": "sand",
+          "slope_avg": 41.04,
+          "roughness": 0.283,
+          "traversability_score": 0.308
+        },
+        "wind": {
+          "speed": 11.52,
+          "direction": 132.9,
+          "gust_probability": 0.465,
+          "turbulence": 0.388,
+          "dust_density": 0.506,
+          "visibility": 0.365
+        },
+        "hazards": {
+          "rock_count": 6,
+          "sand_trap_count": 10,
+          "slope_count": 3,
+          "risk_level": "high"
+        },
+        "atmosphere": {
+          "pressure": 615.7,
+          "temperature": -64.9
+        }
+      },
+      "mission_state": {
+        "mission_id": "mission_003",
+        "goal_position": [
+          28.8,
+          3.31
+        ],
+        "progress": 0.288
+      }
+    },
+    {
+      "timestamp": 90,
+      "rover_state": {
+        "position": {
+          "x": 105.11,
+          "y": 2.79,
+          "z": 1590.63
+        },
+        "heading": 359.6,
+        "velocity": 0.2,
+        "acceleration": 0.0,
+        "battery": {
+          "percentage": 51.36,
+          "consumption_rate": 0.236,
+          "temperature": 39.8
+        },
+        "motors": {
+          "left_motor_load": 0.934,
+          "right_motor_load": 0.941,
+          "motor_temperature": 53.0
+        },
+        "wheels": {
+          "traction": 0.2,
+          "slippage": 0.9,
+          "wheel_health": 0.973
+        }
+      },
+      "environment_state": {
+        "terrain": {
+          "tile_id": "mars_tile_r01_c00",
+          "terrain_type": "sand",
+          "slope_avg": 41.04,
+          "roughness": 0.283,
+          "traversability_score": 0.308
+        },
+        "wind": {
+          "speed": 11.94,
+          "direction": 134.8,
+          "gust_probability": 0.486,
+          "turbulence": 0.414,
+          "dust_density": 0.524,
+          "visibility": 0.342
+        },
+        "hazards": {
+          "rock_count": 6,
+          "sand_trap_count": 10,
+          "slope_count": 3,
+          "risk_level": "high"
+        },
+        "atmosphere": {
+          "pressure": 615.7,
+          "temperature": -64.9
+        }
+      },
+      "mission_state": {
+        "mission_id": "mission_003",
+        "goal_position": [
+          28.8,
+          3.31
+        ],
+        "progress": 0.305
+      }
+    },
+    {
+      "timestamp": 95,
+      "rover_state": {
+        "position": {
+          "x": 110.98,
+          "y": 2.75,
+          "z": 1590.63
+        },
+        "heading": 359.6,
+        "velocity": 0.2,
+        "acceleration": 0.0,
+        "battery": {
+          "percentage": 50.18,
+          "consumption_rate": 0.236,
+          "temperature": 39.8
+        },
+        "motors": {
+          "left_motor_load": 0.922,
+          "right_motor_load": 0.956,
+          "motor_temperature": 53.0
+        },
+        "wheels": {
+          "traction": 0.2,
+          "slippage": 0.9,
+          "wheel_health": 0.973
+        }
+      },
+      "environment_state": {
+        "terrain": {
+          "tile_id": "mars_tile_r01_c00",
+          "terrain_type": "sand",
+          "slope_avg": 41.04,
+          "roughness": 0.283,
+          "traversability_score": 0.308
+        },
+        "wind": {
+          "speed": 11.95,
+          "direction": 135.7,
+          "gust_probability": 0.48,
+          "turbulence": 0.395,
+          "dust_density": 0.517,
+          "visibility": 0.348
+        },
+        "hazards": {
+          "rock_count": 6,
+          "sand_trap_count": 10,
+          "slope_count": 3,
+          "risk_level": "high"
+        },
+        "atmosphere": {
+          "pressure": 615.7,
+          "temperature": -64.9
+        }
+      },
+      "mission_state": {
+        "mission_id": "mission_003",
+        "goal_position": [
+          28.8,
+          3.31
+        ],
+        "progress": 0.322
+      }
+    },
+    {
+      "timestamp": 100,
+      "rover_state": {
+        "position": {
+          "x": 116.85,
+          "y": 2.71,
+          "z": 1590.63
+        },
+        "heading": 359.6,
+        "velocity": 0.2,
+        "acceleration": 0.0,
+        "battery": {
+          "percentage": 49.0,
+          "consumption_rate": 0.236,
+          "temperature": 39.8
+        },
+        "motors": {
+          "left_motor_load": 0.923,
+          "right_motor_load": 0.93,
+          "motor_temperature": 53.0
+        },
+        "wheels": {
+          "traction": 0.2,
+          "slippage": 0.9,
+          "wheel_health": 0.972
+        }
+      },
+      "environment_state": {
+        "terrain": {
+          "tile_id": "mars_tile_r01_c00",
+          "terrain_type": "sand",
+          "slope_avg": 41.04,
+          "roughness": 0.283,
+          "traversability_score": 0.308
+        },
+        "wind": {
+          "speed": 11.32,
+          "direction": 137.7,
+          "gust_probability": 0.469,
+          "turbulence": 0.417,
+          "dust_density": 0.513,
+          "visibility": 0.363
+        },
+        "hazards": {
+          "rock_count": 6,
+          "sand_trap_count": 10,
+          "slope_count": 3,
+          "risk_level": "high"
+        },
+        "atmosphere": {
+          "pressure": 615.7,
+          "temperature": -64.9
+        }
+      },
+      "mission_state": {
+        "mission_id": "mission_003",
+        "goal_position": [
+          28.8,
+          3.31
+        ],
+        "progress": 0.339
+      }
+    },
+    {
+      "timestamp": 105,
+      "rover_state": {
+        "position": {
+          "x": 122.72,
+          "y": 2.67,
+          "z": 1590.63
+        },
+        "heading": 359.6,
+        "velocity": 0.2,
+        "acceleration": 0.0,
+        "battery": {
+          "percentage": 47.82,
+          "consumption_rate": 0.236,
+          "temperature": 39.8
+        },
+        "motors": {
+          "left_motor_load": 0.937,
+          "right_motor_load": 0.961,
+          "motor_temperature": 53.0
+        },
+        "wheels": {
+          "traction": 0.2,
+          "slippage": 0.9,
+          "wheel_health": 0.972
+        }
+      },
+      "environment_state": {
+        "terrain": {
+          "tile_id": "mars_tile_r01_c00",
+          "terrain_type": "sand",
+          "slope_avg": 41.04,
+          "roughness": 0.283,
+          "traversability_score": 0.308
+        },
+        "wind": {
+          "speed": 11.01,
+          "direction": 138.0,
+          "gust_probability": 0.471,
+          "turbulence": 0.448,
+          "dust_density": 0.519,
+          "visibility": 0.364
+        },
+        "hazards": {
+          "rock_count": 6,
+          "sand_trap_count": 10,
+          "slope_count": 3,
+          "risk_level": "high"
+        },
+        "atmosphere": {
+          "pressure": 615.7,
+          "temperature": -64.9
+        }
+      },
+      "mission_state": {
+        "mission_id": "mission_003",
+        "goal_position": [
+          28.8,
+          3.31
+        ],
+        "progress": 0.356
+      }
+    },
+    {
+      "timestamp": 110,
+      "rover_state": {
+        "position": {
+          "x": 128.59,
+          "y": 2.63,
+          "z": 1590.63
+        },
+        "heading": 359.6,
+        "velocity": 0.2,
+        "acceleration": 0.0,
+        "battery": {
+          "percentage": 46.64,
+          "consumption_rate": 0.236,
+          "temperature": 39.8
+        },
+        "motors": {
+          "left_motor_load": 0.96,
+          "right_motor_load": 0.967,
+          "motor_temperature": 53.0
+        },
+        "wheels": {
+          "traction": 0.2,
+          "slippage": 0.9,
+          "wheel_health": 0.972
+        }
+      },
+      "environment_state": {
+        "terrain": {
+          "tile_id": "mars_tile_r01_c00",
+          "terrain_type": "sand",
+          "slope_avg": 41.04,
+          "roughness": 0.283,
+          "traversability_score": 0.308
+        },
+        "wind": {
+          "speed": 10.51,
+          "direction": 139.9,
+          "gust_probability": 0.447,
+          "turbulence": 0.42,
+          "dust_density": 0.498,
+          "visibility": 0.391
+        },
+        "hazards": {
+          "rock_count": 6,
+          "sand_trap_count": 10,
+          "slope_count": 3,
+          "risk_level": "high"
+        },
+        "atmosphere": {
+          "pressure": 615.7,
+          "temperature": -64.9
+        }
+      },
+      "mission_state": {
+        "mission_id": "mission_003",
+        "goal_position": [
+          28.8,
+          3.31
+        ],
+        "progress": 0.373
+      }
+    },
+    {
+      "timestamp": 115,
+      "rover_state": {
+        "position": {
+          "x": 134.46,
+          "y": 2.59,
+          "z": 1590.63
+        },
+        "heading": 359.6,
+        "velocity": 0.2,
+        "acceleration": 0.0,
+        "battery": {
+          "percentage": 45.46,
+          "consumption_rate": 0.236,
+          "temperature": 39.8
+        },
+        "motors": {
+          "left_motor_load": 0.968,
+          "right_motor_load": 0.937,
+          "motor_temperature": 53.0
+        },
+        "wheels": {
+          "traction": 0.2,
+          "slippage": 0.9,
+          "wheel_health": 0.971
+        }
+      },
+      "environment_state": {
+        "terrain": {
+          "tile_id": "mars_tile_r01_c00",
+          "terrain_type": "sand",
+          "slope_avg": 41.04,
+          "roughness": 0.283,
+          "traversability_score": 0.308
+        },
+        "wind": {
+          "speed": 10.13,
+          "direction": 137.8,
+          "gust_probability": 0.446,
+          "turbulence": 0.449,
+          "dust_density": 0.502,
+          "visibility": 0.396
+        },
+        "hazards": {
+          "rock_count": 6,
+          "sand_trap_count": 10,
+          "slope_count": 3,
+          "risk_level": "high"
+        },
+        "atmosphere": {
+          "pressure": 615.7,
+          "temperature": -64.9
+        }
+      },
+      "mission_state": {
+        "mission_id": "mission_003",
+        "goal_position": [
+          28.8,
+          3.31
+        ],
+        "progress": 0.39
+      }
+    },
+    {
+      "timestamp": 120,
+      "rover_state": {
+        "position": {
+          "x": 140.33,
+          "y": 2.55,
+          "z": 1590.63
+        },
+        "heading": 359.6,
+        "velocity": 0.2,
+        "acceleration": 0.0,
+        "battery": {
+          "percentage": 44.28,
+          "consumption_rate": 0.236,
+          "temperature": 39.8
+        },
+        "motors": {
+          "left_motor_load": 0.939,
+          "right_motor_load": 0.946,
+          "motor_temperature": 53.0
+        },
+        "wheels": {
+          "traction": 0.2,
+          "slippage": 0.9,
+          "wheel_health": 0.971
+        }
+      },
+      "environment_state": {
+        "terrain": {
+          "tile_id": "mars_tile_r01_c00",
+          "terrain_type": "sand",
+          "slope_avg": 41.04,
+          "roughness": 0.283,
+          "traversability_score": 0.308
+        },
+        "wind": {
+          "speed": 10.36,
+          "direction": 138.0,
+          "gust_probability": 0.457,
+          "turbulence": 0.462,
+          "dust_density": 0.512,
+          "visibility": 0.383
+        },
+        "hazards": {
+          "rock_count": 6,
+          "sand_trap_count": 10,
+          "slope_count": 3,
+          "risk_level": "high"
+        },
+        "atmosphere": {
+          "pressure": 615.7,
+          "temperature": -64.9
+        }
+      },
+      "mission_state": {
+        "mission_id": "mission_003",
+        "goal_position": [
+          28.8,
+          3.31
+        ],
+        "progress": 0.407
+      }
+    },
+    {
+      "timestamp": 125,
+      "rover_state": {
+        "position": {
+          "x": 146.2,
+          "y": 2.51,
+          "z": 1590.63
+        },
+        "heading": 359.6,
+        "velocity": 0.2,
+        "acceleration": 0.0,
+        "battery": {
+          "percentage": 43.1,
+          "consumption_rate": 0.236,
+          "temperature": 39.8
+        },
+        "motors": {
+          "left_motor_load": 0.967,
+          "right_motor_load": 0.937,
+          "motor_temperature": 53.0
+        },
+        "wheels": {
+          "traction": 0.2,
+          "slippage": 0.9,
+          "wheel_health": 0.971
+        }
+      },
+      "environment_state": {
+        "terrain": {
+          "tile_id": "mars_tile_r01_c00",
+          "terrain_type": "sand",
+          "slope_avg": 41.04,
+          "roughness": 0.283,
+          "traversability_score": 0.308
+        },
+        "wind": {
+          "speed": 10.85,
+          "direction": 141.0,
+          "gust_probability": 0.483,
+          "turbulence": 0.493,
+          "dust_density": 0.534,
+          "visibility": 0.356
+        },
+        "hazards": {
+          "rock_count": 6,
+          "sand_trap_count": 10,
+          "slope_count": 3,
+          "risk_level": "high"
+        },
+        "atmosphere": {
+          "pressure": 615.7,
+          "temperature": -64.9
+        }
+      },
+      "mission_state": {
+        "mission_id": "mission_003",
+        "goal_position": [
+          28.8,
+          3.31
+        ],
+        "progress": 0.424
+      }
+    },
+    {
+      "timestamp": 130,
+      "rover_state": {
+        "position": {
+          "x": 152.07,
+          "y": 2.47,
+          "z": 1590.63
+        },
+        "heading": 359.6,
+        "velocity": 0.2,
+        "acceleration": 0.0,
+        "battery": {
+          "percentage": 41.92,
+          "consumption_rate": 0.236,
+          "temperature": 39.8
+        },
+        "motors": {
+          "left_motor_load": 0.935,
+          "right_motor_load": 0.971,
+          "motor_temperature": 53.0
+        },
+        "wheels": {
+          "traction": 0.2,
+          "slippage": 0.9,
+          "wheel_health": 0.97
+        }
+      },
+      "environment_state": {
+        "terrain": {
+          "tile_id": "mars_tile_r01_c00",
+          "terrain_type": "sand",
+          "slope_avg": 41.04,
+          "roughness": 0.283,
+          "traversability_score": 0.308
+        },
+        "wind": {
+          "speed": 10.47,
+          "direction": 143.2,
+          "gust_probability": 0.472,
+          "turbulence": 0.496,
+          "dust_density": 0.528,
+          "visibility": 0.369
+        },
+        "hazards": {
+          "rock_count": 6,
+          "sand_trap_count": 10,
+          "slope_count": 3,
+          "risk_level": "high"
+        },
+        "atmosphere": {
+          "pressure": 615.7,
+          "temperature": -64.9
+        }
+      },
+      "mission_state": {
+        "mission_id": "mission_003",
+        "goal_position": [
+          28.8,
+          3.31
+        ],
+        "progress": 0.441
+      }
+    },
+    {
+      "timestamp": 135,
+      "rover_state": {
+        "position": {
+          "x": 157.94,
+          "y": 2.43,
+          "z": 1590.63
+        },
+        "heading": 359.6,
+        "velocity": 0.2,
+        "acceleration": 0.0,
+        "battery": {
+          "percentage": 40.74,
+          "consumption_rate": 0.236,
+          "temperature": 39.8
+        },
+        "motors": {
+          "left_motor_load": 0.934,
+          "right_motor_load": 0.934,
+          "motor_temperature": 53.0
+        },
+        "wheels": {
+          "traction": 0.2,
+          "slippage": 0.9,
+          "wheel_health": 0.97
+        }
+      },
+      "environment_state": {
+        "terrain": {
+          "tile_id": "mars_tile_r01_c00",
+          "terrain_type": "sand",
+          "slope_avg": 41.04,
+          "roughness": 0.283,
+          "traversability_score": 0.308
+        },
+        "wind": {
+          "speed": 10.29,
+          "direction": 142.4,
+          "gust_probability": 0.472,
+          "turbulence": 0.509,
+          "dust_density": 0.529,
+          "visibility": 0.371
+        },
+        "hazards": {
+          "rock_count": 6,
+          "sand_trap_count": 10,
+          "slope_count": 3,
+          "risk_level": "high"
+        },
+        "atmosphere": {
+          "pressure": 615.7,
+          "temperature": -64.9
+        }
+      },
+      "mission_state": {
+        "mission_id": "mission_003",
+        "goal_position": [
+          28.8,
+          3.31
+        ],
+        "progress": 0.458
+      }
+    },
+    {
+      "timestamp": 140,
+      "rover_state": {
+        "position": {
+          "x": 163.81,
+          "y": 2.39,
+          "z": 1590.63
+        },
+        "heading": 359.6,
+        "velocity": 0.2,
+        "acceleration": 0.0,
+        "battery": {
+          "percentage": 39.56,
+          "consumption_rate": 0.236,
+          "temperature": 39.8
+        },
+        "motors": {
+          "left_motor_load": 0.946,
+          "right_motor_load": 0.972,
+          "motor_temperature": 53.0
+        },
+        "wheels": {
+          "traction": 0.2,
+          "slippage": 0.9,
+          "wheel_health": 0.97
+        }
+      },
+      "environment_state": {
+        "terrain": {
+          "tile_id": "mars_tile_r01_c00",
+          "terrain_type": "sand",
+          "slope_avg": 41.04,
+          "roughness": 0.283,
+          "traversability_score": 0.308
+        },
+        "wind": {
+          "speed": 10.76,
+          "direction": 139.0,
+          "gust_probability": 0.473,
+          "turbulence": 0.472,
+          "dust_density": 0.524,
+          "visibility": 0.365
+        },
+        "hazards": {
+          "rock_count": 6,
+          "sand_trap_count": 10,
+          "slope_count": 3,
+          "risk_level": "high"
+        },
+        "atmosphere": {
+          "pressure": 615.7,
+          "temperature": -64.9
+        }
+      },
+      "mission_state": {
+        "mission_id": "mission_003",
+        "goal_position": [
+          28.8,
+          3.31
+        ],
+        "progress": 0.475
+      }
+    },
+    {
+      "timestamp": 145,
+      "rover_state": {
+        "position": {
+          "x": 169.68,
+          "y": 2.35,
+          "z": 1590.63
+        },
+        "heading": 359.6,
+        "velocity": 0.2,
+        "acceleration": 0.0,
+        "battery": {
+          "percentage": 38.38,
+          "consumption_rate": 0.236,
+          "temperature": 39.8
+        },
+        "motors": {
+          "left_motor_load": 0.927,
+          "right_motor_load": 0.945,
+          "motor_temperature": 53.0
+        },
+        "wheels": {
+          "traction": 0.2,
+          "slippage": 0.9,
+          "wheel_health": 0.969
+        }
+      },
+      "environment_state": {
+        "terrain": {
+          "tile_id": "mars_tile_r01_c00",
+          "terrain_type": "sand",
+          "slope_avg": 41.04,
+          "roughness": 0.283,
+          "traversability_score": 0.308
+        },
+        "wind": {
+          "speed": 10.95,
+          "direction": 140.5,
+          "gust_probability": 0.481,
+          "turbulence": 0.482,
+          "dust_density": 0.532,
+          "visibility": 0.356
+        },
+        "hazards": {
+          "rock_count": 6,
+          "sand_trap_count": 10,
+          "slope_count": 3,
+          "risk_level": "high"
+        },
+        "atmosphere": {
+          "pressure": 615.7,
+          "temperature": -64.8
+        }
+      },
+      "mission_state": {
+        "mission_id": "mission_003",
+        "goal_position": [
+          28.8,
+          3.31
+        ],
+        "progress": 0.492
+      }
+    },
+    {
+      "timestamp": 150,
+      "rover_state": {
+        "position": {
+          "x": 175.55,
+          "y": 2.31,
+          "z": 1590.63
+        },
+        "heading": 359.6,
+        "velocity": 0.2,
+        "acceleration": 0.0,
+        "battery": {
+          "percentage": 37.2,
+          "consumption_rate": 0.236,
+          "temperature": 39.8
+        },
+        "motors": {
+          "left_motor_load": 0.939,
+          "right_motor_load": 0.941,
+          "motor_temperature": 53.0
+        },
+        "wheels": {
+          "traction": 0.2,
+          "slippage": 0.9,
+          "wheel_health": 0.969
+        }
+      },
+      "environment_state": {
+        "terrain": {
+          "tile_id": "mars_tile_r01_c00",
+          "terrain_type": "sand",
+          "slope_avg": 41.04,
+          "roughness": 0.283,
+          "traversability_score": 0.308
+        },
+        "wind": {
+          "speed": 10.66,
+          "direction": 139.4,
+          "gust_probability": 0.464,
+          "turbulence": 0.456,
+          "dust_density": 0.516,
+          "visibility": 0.374
+        },
+        "hazards": {
+          "rock_count": 6,
+          "sand_trap_count": 10,
+          "slope_count": 3,
+          "risk_level": "high"
+        },
+        "atmosphere": {
+          "pressure": 615.7,
+          "temperature": -64.8
+        }
+      },
+      "mission_state": {
+        "mission_id": "mission_003",
+        "goal_position": [
+          28.8,
+          3.31
+        ],
+        "progress": 0.508
+      }
+    },
+    {
+      "timestamp": 155,
+      "rover_state": {
+        "position": {
+          "x": 181.42,
+          "y": 2.27,
+          "z": 1590.63
+        },
+        "heading": 359.6,
+        "velocity": 0.2,
+        "acceleration": 0.0,
+        "battery": {
+          "percentage": 36.02,
+          "consumption_rate": 0.236,
+          "temperature": 39.8
+        },
+        "motors": {
+          "left_motor_load": 0.975,
+          "right_motor_load": 0.929,
+          "motor_temperature": 53.0
+        },
+        "wheels": {
+          "traction": 0.2,
+          "slippage": 0.9,
+          "wheel_health": 0.968
+        }
+      },
+      "environment_state": {
+        "terrain": {
+          "tile_id": "mars_tile_r01_c00",
+          "terrain_type": "sand",
+          "slope_avg": 41.04,
+          "roughness": 0.283,
+          "traversability_score": 0.308
+        },
+        "wind": {
+          "speed": 10.64,
+          "direction": 139.0,
+          "gust_probability": 0.472,
+          "turbulence": 0.48,
+          "dust_density": 0.525,
+          "visibility": 0.368
+        },
+        "hazards": {
+          "rock_count": 6,
+          "sand_trap_count": 10,
+          "slope_count": 3,
+          "risk_level": "high"
+        },
+        "atmosphere": {
+          "pressure": 615.7,
+          "temperature": -64.8
+        }
+      },
+      "mission_state": {
+        "mission_id": "mission_003",
+        "goal_position": [
+          28.8,
+          3.31
+        ],
+        "progress": 0.525
+      }
+    },
+    {
+      "timestamp": 160,
+      "rover_state": {
+        "position": {
+          "x": 187.29,
+          "y": 2.23,
+          "z": 1590.63
+        },
+        "heading": 359.6,
+        "velocity": 0.2,
+        "acceleration": 0.0,
+        "battery": {
+          "percentage": 34.84,
+          "consumption_rate": 0.236,
+          "temperature": 39.8
+        },
+        "motors": {
+          "left_motor_load": 0.98,
+          "right_motor_load": 0.956,
+          "motor_temperature": 53.0
+        },
+        "wheels": {
+          "traction": 0.2,
+          "slippage": 0.9,
+          "wheel_health": 0.968
+        }
+      },
+      "environment_state": {
+        "terrain": {
+          "tile_id": "mars_tile_r01_c00",
+          "terrain_type": "sand",
+          "slope_avg": 41.04,
+          "roughness": 0.283,
+          "traversability_score": 0.308
+        },
+        "wind": {
+          "speed": 10.74,
+          "direction": 136.2,
+          "gust_probability": 0.485,
+          "turbulence": 0.509,
+          "dust_density": 0.538,
+          "visibility": 0.355
+        },
+        "hazards": {
+          "rock_count": 6,
+          "sand_trap_count": 10,
+          "slope_count": 3,
+          "risk_level": "high"
+        },
+        "atmosphere": {
+          "pressure": 615.7,
+          "temperature": -64.8
+        }
+      },
+      "mission_state": {
+        "mission_id": "mission_003",
+        "goal_position": [
+          28.8,
+          3.31
+        ],
+        "progress": 0.542
+      }
+    },
+    {
+      "timestamp": 165,
+      "rover_state": {
+        "position": {
+          "x": 193.16,
+          "y": 2.19,
+          "z": 1590.63
+        },
+        "heading": 359.6,
+        "velocity": 0.2,
+        "acceleration": 0.0,
+        "battery": {
+          "percentage": 33.66,
+          "consumption_rate": 0.236,
+          "temperature": 39.8
+        },
+        "motors": {
+          "left_motor_load": 0.921,
+          "right_motor_load": 0.933,
+          "motor_temperature": 53.0
+        },
+        "wheels": {
+          "traction": 0.2,
+          "slippage": 0.9,
+          "wheel_health": 0.968
+        }
+      },
+      "environment_state": {
+        "terrain": {
+          "tile_id": "mars_tile_r01_c00",
+          "terrain_type": "sand",
+          "slope_avg": 41.04,
+          "roughness": 0.283,
+          "traversability_score": 0.308
+        },
+        "wind": {
+          "speed": 10.7,
+          "direction": 137.8,
+          "gust_probability": 0.471,
+          "turbulence": 0.473,
+          "dust_density": 0.523,
+          "visibility": 0.368
+        },
+        "hazards": {
+          "rock_count": 6,
+          "sand_trap_count": 10,
+          "slope_count": 3,
+          "risk_level": "high"
+        },
+        "atmosphere": {
+          "pressure": 615.7,
+          "temperature": -64.8
+        }
+      },
+      "mission_state": {
+        "mission_id": "mission_003",
+        "goal_position": [
+          28.8,
+          3.31
+        ],
+        "progress": 0.559
+      }
+    },
+    {
+      "timestamp": 170,
+      "rover_state": {
+        "position": {
+          "x": 199.03,
+          "y": 2.15,
+          "z": 1590.63
+        },
+        "heading": 359.6,
+        "velocity": 0.2,
+        "acceleration": 0.0,
+        "battery": {
+          "percentage": 32.48,
+          "consumption_rate": 0.236,
+          "temperature": 39.8
+        },
+        "motors": {
+          "left_motor_load": 0.928,
+          "right_motor_load": 0.943,
+          "motor_temperature": 53.0
+        },
+        "wheels": {
+          "traction": 0.2,
+          "slippage": 0.9,
+          "wheel_health": 0.967
+        }
+      },
+      "environment_state": {
+        "terrain": {
+          "tile_id": "mars_tile_r01_c00",
+          "terrain_type": "sand",
+          "slope_avg": 41.04,
+          "roughness": 0.283,
+          "traversability_score": 0.308
+        },
+        "wind": {
+          "speed": 10.79,
+          "direction": 138.8,
+          "gust_probability": 0.48,
+          "turbulence": 0.49,
+          "dust_density": 0.532,
+          "visibility": 0.359
+        },
+        "hazards": {
+          "rock_count": 6,
+          "sand_trap_count": 10,
+          "slope_count": 3,
+          "risk_level": "high"
+        },
+        "atmosphere": {
+          "pressure": 615.7,
+          "temperature": -64.8
+        }
+      },
+      "mission_state": {
+        "mission_id": "mission_003",
+        "goal_position": [
+          28.8,
+          3.31
+        ],
+        "progress": 0.576
+      }
+    },
+    {
+      "timestamp": 175,
+      "rover_state": {
+        "position": {
+          "x": 204.9,
+          "y": 2.11,
+          "z": 1590.63
+        },
+        "heading": 359.6,
+        "velocity": 0.2,
+        "acceleration": 0.0,
+        "battery": {
+          "percentage": 31.3,
+          "consumption_rate": 0.236,
+          "temperature": 39.8
+        },
+        "motors": {
+          "left_motor_load": 0.971,
+          "right_motor_load": 0.936,
+          "motor_temperature": 53.0
+        },
+        "wheels": {
+          "traction": 0.2,
+          "slippage": 0.9,
+          "wheel_health": 0.967
+        }
+      },
+      "environment_state": {
+        "terrain": {
+          "tile_id": "mars_tile_r01_c00",
+          "terrain_type": "sand",
+          "slope_avg": 41.04,
+          "roughness": 0.283,
+          "traversability_score": 0.308
+        },
+        "wind": {
+          "speed": 10.42,
+          "direction": 136.0,
+          "gust_probability": 0.465,
+          "turbulence": 0.478,
+          "dust_density": 0.519,
+          "visibility": 0.376
+        },
+        "hazards": {
+          "rock_count": 6,
+          "sand_trap_count": 10,
+          "slope_count": 3,
+          "risk_level": "high"
+        },
+        "atmosphere": {
+          "pressure": 615.7,
+          "temperature": -64.8
+        }
+      },
+      "mission_state": {
+        "mission_id": "mission_003",
+        "goal_position": [
+          28.8,
+          3.31
+        ],
+        "progress": 0.593
+      }
+    },
+    {
+      "timestamp": 180,
+      "rover_state": {
+        "position": {
+          "x": 210.77,
+          "y": 2.07,
+          "z": 1590.63
+        },
+        "heading": 359.6,
+        "velocity": 0.2,
+        "acceleration": 0.0,
+        "battery": {
+          "percentage": 30.12,
+          "consumption_rate": 0.236,
+          "temperature": 39.8
+        },
+        "motors": {
+          "left_motor_load": 0.926,
+          "right_motor_load": 0.957,
+          "motor_temperature": 53.0
+        },
+        "wheels": {
+          "traction": 0.2,
+          "slippage": 0.9,
+          "wheel_health": 0.967
+        }
+      },
+      "environment_state": {
+        "terrain": {
+          "tile_id": "mars_tile_r01_c00",
+          "terrain_type": "sand",
+          "slope_avg": 41.04,
+          "roughness": 0.283,
+          "traversability_score": 0.308
+        },
+        "wind": {
+          "speed": 10.86,
+          "direction": 137.4,
+          "gust_probability": 0.485,
+          "turbulence": 0.499,
+          "dust_density": 0.537,
+          "visibility": 0.353
+        },
+        "hazards": {
+          "rock_count": 6,
+          "sand_trap_count": 10,
+          "slope_count": 3,
+          "risk_level": "high"
+        },
+        "atmosphere": {
+          "pressure": 615.8,
+          "temperature": -64.8
+        }
+      },
+      "mission_state": {
+        "mission_id": "mission_003",
+        "goal_position": [
+          28.8,
+          3.31
+        ],
+        "progress": 0.61
+      }
+    },
+    {
+      "timestamp": 185,
+      "rover_state": {
+        "position": {
+          "x": 216.64,
+          "y": 2.03,
+          "z": 1590.63
+        },
+        "heading": 359.6,
+        "velocity": 0.2,
+        "acceleration": 0.0,
+        "battery": {
+          "percentage": 28.94,
+          "consumption_rate": 0.236,
+          "temperature": 39.8
+        },
+        "motors": {
+          "left_motor_load": 0.945,
+          "right_motor_load": 0.921,
+          "motor_temperature": 53.0
+        },
+        "wheels": {
+          "traction": 0.2,
+          "slippage": 0.9,
+          "wheel_health": 0.966
+        }
+      },
+      "environment_state": {
+        "terrain": {
+          "tile_id": "mars_tile_r01_c00",
+          "terrain_type": "sand",
+          "slope_avg": 41.04,
+          "roughness": 0.283,
+          "traversability_score": 0.308
+        },
+        "wind": {
+          "speed": 10.68,
+          "direction": 140.1,
+          "gust_probability": 0.477,
+          "turbulence": 0.492,
+          "dust_density": 0.53,
+          "visibility": 0.362
+        },
+        "hazards": {
+          "rock_count": 6,
+          "sand_trap_count": 10,
+          "slope_count": 3,
+          "risk_level": "high"
+        },
+        "atmosphere": {
+          "pressure": 615.8,
+          "temperature": -64.8
+        }
+      },
+      "mission_state": {
+        "mission_id": "mission_003",
+        "goal_position": [
+          28.8,
+          3.31
+        ],
+        "progress": 0.627
+      }
+    },
+    {
+      "timestamp": 190,
+      "rover_state": {
+        "position": {
+          "x": 222.51,
+          "y": 1.99,
+          "z": 1590.63
+        },
+        "heading": 359.6,
+        "velocity": 0.2,
+        "acceleration": 0.0,
+        "battery": {
+          "percentage": 27.76,
+          "consumption_rate": 0.236,
+          "temperature": 39.8
+        },
+        "motors": {
+          "left_motor_load": 0.949,
+          "right_motor_load": 0.942,
+          "motor_temperature": 53.0
+        },
+        "wheels": {
+          "traction": 0.2,
+          "slippage": 0.9,
+          "wheel_health": 0.966
+        }
+      },
+      "environment_state": {
+        "terrain": {
+          "tile_id": "mars_tile_r01_c00",
+          "terrain_type": "sand",
+          "slope_avg": 41.04,
+          "roughness": 0.283,
+          "traversability_score": 0.308
+        },
+        "wind": {
+          "speed": 10.23,
+          "direction": 137.9,
+          "gust_probability": 0.454,
+          "turbulence": 0.462,
+          "dust_density": 0.509,
+          "visibility": 0.388
+        },
+        "hazards": {
+          "rock_count": 6,
+          "sand_trap_count": 10,
+          "slope_count": 3,
+          "risk_level": "high"
+        },
+        "atmosphere": {
+          "pressure": 615.8,
+          "temperature": -64.8
+        }
+      },
+      "mission_state": {
+        "mission_id": "mission_003",
+        "goal_position": [
+          28.8,
+          3.31
+        ],
+        "progress": 0.644
+      }
+    },
+    {
+      "timestamp": 195,
+      "rover_state": {
+        "position": {
+          "x": 228.38,
+          "y": 1.95,
+          "z": 1590.63
+        },
+        "heading": 359.6,
+        "velocity": 0.2,
+        "acceleration": 0.0,
+        "battery": {
+          "percentage": 26.58,
+          "consumption_rate": 0.236,
+          "temperature": 39.8
+        },
+        "motors": {
+          "left_motor_load": 0.932,
+          "right_motor_load": 0.933,
+          "motor_temperature": 53.0
+        },
+        "wheels": {
+          "traction": 0.2,
+          "slippage": 0.9,
+          "wheel_health": 0.966
+        }
+      },
+      "environment_state": {
+        "terrain": {
+          "tile_id": "mars_tile_r01_c00",
+          "terrain_type": "sand",
+          "slope_avg": 41.04,
+          "roughness": 0.283,
+          "traversability_score": 0.308
+        },
+        "wind": {
+          "speed": 9.85,
+          "direction": 138.9,
+          "gust_probability": 0.447,
+          "turbulence": 0.473,
+          "dust_density": 0.506,
+          "visibility": 0.398
+        },
+        "hazards": {
+          "rock_count": 6,
+          "sand_trap_count": 10,
+          "slope_count": 3,
+          "risk_level": "high"
+        },
+        "atmosphere": {
+          "pressure": 615.8,
+          "temperature": -64.8
+        }
+      },
+      "mission_state": {
+        "mission_id": "mission_003",
+        "goal_position": [
+          28.8,
+          3.31
+        ],
+        "progress": 0.661
+      }
+    },
+    {
+      "timestamp": 200,
+      "rover_state": {
+        "position": {
+          "x": 234.25,
+          "y": 1.91,
+          "z": 1590.63
+        },
+        "heading": 359.6,
+        "velocity": 0.2,
+        "acceleration": 0.0,
+        "battery": {
+          "percentage": 25.4,
+          "consumption_rate": 0.236,
+          "temperature": 39.8
+        },
+        "motors": {
+          "left_motor_load": 0.925,
+          "right_motor_load": 0.942,
+          "motor_temperature": 53.0
+        },
+        "wheels": {
+          "traction": 0.2,
+          "slippage": 0.9,
+          "wheel_health": 0.965
+        }
+      },
+      "environment_state": {
+        "terrain": {
+          "tile_id": "mars_tile_r01_c00",
+          "terrain_type": "sand",
+          "slope_avg": 41.04,
+          "roughness": 0.283,
+          "traversability_score": 0.308
+        },
+        "wind": {
+          "speed": 10.27,
+          "direction": 137.6,
+          "gust_probability": 0.465,
+          "turbulence": 0.489,
+          "dust_density": 0.521,
+          "visibility": 0.378
+        },
+        "hazards": {
+          "rock_count": 6,
+          "sand_trap_count": 10,
+          "slope_count": 3,
+          "risk_level": "high"
+        },
+        "atmosphere": {
+          "pressure": 615.8,
+          "temperature": -64.8
+        }
+      },
+      "mission_state": {
+        "mission_id": "mission_003",
+        "goal_position": [
+          28.8,
+          3.31
+        ],
+        "progress": 0.678
+      }
+    },
+    {
+      "timestamp": 205,
+      "rover_state": {
+        "position": {
+          "x": 240.12,
+          "y": 1.87,
+          "z": 1590.63
+        },
+        "heading": 359.6,
+        "velocity": 0.2,
+        "acceleration": 0.0,
+        "battery": {
+          "percentage": 24.22,
+          "consumption_rate": 0.236,
+          "temperature": 39.8
+        },
+        "motors": {
+          "left_motor_load": 0.958,
+          "right_motor_load": 0.921,
+          "motor_temperature": 53.0
+        },
+        "wheels": {
+          "traction": 0.2,
+          "slippage": 0.9,
+          "wheel_health": 0.965
+        }
+      },
+      "environment_state": {
+        "terrain": {
+          "tile_id": "mars_tile_r01_c00",
+          "terrain_type": "sand",
+          "slope_avg": 41.04,
+          "roughness": 0.283,
+          "traversability_score": 0.308
+        },
+        "wind": {
+          "speed": 9.94,
+          "direction": 137.6,
+          "gust_probability": 0.442,
+          "turbulence": 0.452,
+          "dust_density": 0.5,
+          "visibility": 0.402
+        },
+        "hazards": {
+          "rock_count": 6,
+          "sand_trap_count": 10,
+          "slope_count": 3,
+          "risk_level": "high"
+        },
+        "atmosphere": {
+          "pressure": 615.8,
+          "temperature": -64.8
+        }
+      },
+      "mission_state": {
+        "mission_id": "mission_003",
+        "goal_position": [
+          28.8,
+          3.31
+        ],
+        "progress": 0.695
+      }
+    },
+    {
+      "timestamp": 210,
+      "rover_state": {
+        "position": {
+          "x": 245.99,
+          "y": 1.83,
+          "z": 1590.63
+        },
+        "heading": 359.6,
+        "velocity": 0.2,
+        "acceleration": 0.0,
+        "battery": {
+          "percentage": 23.04,
+          "consumption_rate": 0.236,
+          "temperature": 39.8
+        },
+        "motors": {
+          "left_motor_load": 0.946,
+          "right_motor_load": 0.979,
+          "motor_temperature": 53.0
+        },
+        "wheels": {
+          "traction": 0.2,
+          "slippage": 0.9,
+          "wheel_health": 0.965
+        }
+      },
+      "environment_state": {
+        "terrain": {
+          "tile_id": "mars_tile_r01_c00",
+          "terrain_type": "sand",
+          "slope_avg": 41.04,
+          "roughness": 0.283,
+          "traversability_score": 0.308
+        },
+        "wind": {
+          "speed": 10.29,
+          "direction": 136.0,
+          "gust_probability": 0.452,
+          "turbulence": 0.451,
+          "dust_density": 0.506,
+          "visibility": 0.389
+        },
+        "hazards": {
+          "rock_count": 6,
+          "sand_trap_count": 10,
+          "slope_count": 3,
+          "risk_level": "high"
+        },
+        "atmosphere": {
+          "pressure": 615.8,
+          "temperature": -64.8
+        }
+      },
+      "mission_state": {
+        "mission_id": "mission_003",
+        "goal_position": [
+          28.8,
+          3.31
+        ],
+        "progress": 0.712
+      }
+    },
+    {
+      "timestamp": 215,
+      "rover_state": {
+        "position": {
+          "x": 251.86,
+          "y": 1.79,
+          "z": 1590.63
+        },
+        "heading": 359.6,
+        "velocity": 0.2,
+        "acceleration": 0.0,
+        "battery": {
+          "percentage": 21.86,
+          "consumption_rate": 0.236,
+          "temperature": 39.8
+        },
+        "motors": {
+          "left_motor_load": 0.937,
+          "right_motor_load": 0.974,
+          "motor_temperature": 53.0
+        },
+        "wheels": {
+          "traction": 0.2,
+          "slippage": 0.9,
+          "wheel_health": 0.964
+        }
+      },
+      "environment_state": {
+        "terrain": {
+          "tile_id": "mars_tile_r01_c00",
+          "terrain_type": "sand",
+          "slope_avg": 41.04,
+          "roughness": 0.283,
+          "traversability_score": 0.308
+        },
+        "wind": {
+          "speed": 9.96,
+          "direction": 139.2,
+          "gust_probability": 0.438,
+          "turbulence": 0.439,
+          "dust_density": 0.495,
+          "visibility": 0.405
+        },
+        "hazards": {
+          "rock_count": 6,
+          "sand_trap_count": 10,
+          "slope_count": 3,
+          "risk_level": "high"
+        },
+        "atmosphere": {
+          "pressure": 615.8,
+          "temperature": -64.8
+        }
+      },
+      "mission_state": {
+        "mission_id": "mission_003",
+        "goal_position": [
+          28.8,
+          3.31
+        ],
+        "progress": 0.729
+      }
+    },
+    {
+      "timestamp": 220,
+      "rover_state": {
+        "position": {
+          "x": 257.73,
+          "y": 1.75,
+          "z": 1590.63
+        },
+        "heading": 359.6,
+        "velocity": 0.2,
+        "acceleration": 0.0,
+        "battery": {
+          "percentage": 20.68,
+          "consumption_rate": 0.236,
+          "temperature": 39.8
+        },
+        "motors": {
+          "left_motor_load": 0.948,
+          "right_motor_load": 0.924,
+          "motor_temperature": 53.0
+        },
+        "wheels": {
+          "traction": 0.2,
+          "slippage": 0.9,
+          "wheel_health": 0.964
+        }
+      },
+      "environment_state": {
+        "terrain": {
+          "tile_id": "mars_tile_r01_c00",
+          "terrain_type": "sand",
+          "slope_avg": 41.04,
+          "roughness": 0.283,
+          "traversability_score": 0.308
+        },
+        "wind": {
+          "speed": 10.54,
+          "direction": 140.2,
+          "gust_probability": 0.468,
+          "turbulence": 0.477,
+          "dust_density": 0.522,
+          "visibility": 0.372
+        },
+        "hazards": {
+          "rock_count": 6,
+          "sand_trap_count": 10,
+          "slope_count": 3,
+          "risk_level": "high"
+        },
+        "atmosphere": {
+          "pressure": 615.8,
+          "temperature": -64.8
+        }
+      },
+      "mission_state": {
+        "mission_id": "mission_003",
+        "goal_position": [
+          28.8,
+          3.31
+        ],
+        "progress": 0.746
+      }
+    },
+    {
+      "timestamp": 225,
+      "rover_state": {
+        "position": {
+          "x": 263.6,
+          "y": 1.71,
+          "z": 1590.63
+        },
+        "heading": 359.6,
+        "velocity": 0.2,
+        "acceleration": 0.0,
+        "battery": {
+          "percentage": 19.5,
+          "consumption_rate": 0.236,
+          "temperature": 39.8
+        },
+        "motors": {
+          "left_motor_load": 0.932,
+          "right_motor_load": 0.931,
+          "motor_temperature": 53.0
+        },
+        "wheels": {
+          "traction": 0.2,
+          "slippage": 0.9,
+          "wheel_health": 0.963
+        }
+      },
+      "environment_state": {
+        "terrain": {
+          "tile_id": "mars_tile_r01_c00",
+          "terrain_type": "sand",
+          "slope_avg": 41.04,
+          "roughness": 0.283,
+          "traversability_score": 0.308
+        },
+        "wind": {
+          "speed": 10.89,
+          "direction": 141.9,
+          "gust_probability": 0.472,
+          "turbulence": 0.461,
+          "dust_density": 0.522,
+          "visibility": 0.364
+        },
+        "hazards": {
+          "rock_count": 6,
+          "sand_trap_count": 10,
+          "slope_count": 3,
+          "risk_level": "high"
+        },
+        "atmosphere": {
+          "pressure": 615.8,
+          "temperature": -64.8
+        }
+      },
+      "mission_state": {
+        "mission_id": "mission_003",
+        "goal_position": [
+          28.8,
+          3.31
+        ],
+        "progress": 0.763
+      }
+    },
+    {
+      "timestamp": 230,
+      "rover_state": {
+        "position": {
+          "x": 269.47,
+          "y": 1.67,
+          "z": 1590.63
+        },
+        "heading": 359.6,
+        "velocity": 0.2,
+        "acceleration": 0.0,
+        "battery": {
+          "percentage": 18.32,
+          "consumption_rate": 0.236,
+          "temperature": 39.8
+        },
+        "motors": {
+          "left_motor_load": 0.972,
+          "right_motor_load": 0.965,
+          "motor_temperature": 53.0
+        },
+        "wheels": {
+          "traction": 0.2,
+          "slippage": 0.9,
+          "wheel_health": 0.963
+        }
+      },
+      "environment_state": {
+        "terrain": {
+          "tile_id": "mars_tile_r01_c00",
+          "terrain_type": "sand",
+          "slope_avg": 41.04,
+          "roughness": 0.283,
+          "traversability_score": 0.308
+        },
+        "wind": {
+          "speed": 11.31,
+          "direction": 143.2,
+          "gust_probability": 0.493,
+          "turbulence": 0.485,
+          "dust_density": 0.54,
+          "visibility": 0.342
+        },
+        "hazards": {
+          "rock_count": 6,
+          "sand_trap_count": 10,
+          "slope_count": 3,
+          "risk_level": "high"
+        },
+        "atmosphere": {
+          "pressure": 615.8,
+          "temperature": -64.8
+        }
+      },
+      "mission_state": {
+        "mission_id": "mission_003",
+        "goal_position": [
+          28.8,
+          3.31
+        ],
+        "progress": 0.78
+      }
+    },
+    {
+      "timestamp": 235,
+      "rover_state": {
+        "position": {
+          "x": 275.34,
+          "y": 1.63,
+          "z": 1590.63
+        },
+        "heading": 359.6,
+        "velocity": 0.2,
+        "acceleration": 0.0,
+        "battery": {
+          "percentage": 17.14,
+          "consumption_rate": 0.236,
+          "temperature": 39.8
+        },
+        "motors": {
+          "left_motor_load": 0.936,
+          "right_motor_load": 0.978,
+          "motor_temperature": 53.0
+        },
+        "wheels": {
+          "traction": 0.2,
+          "slippage": 0.9,
+          "wheel_health": 0.963
+        }
+      },
+      "environment_state": {
+        "terrain": {
+          "tile_id": "mars_tile_r01_c00",
+          "terrain_type": "sand",
+          "slope_avg": 41.04,
+          "roughness": 0.283,
+          "traversability_score": 0.308
+        },
+        "wind": {
+          "speed": 11.23,
+          "direction": 141.3,
+          "gust_probability": 0.499,
+          "turbulence": 0.508,
+          "dust_density": 0.548,
+          "visibility": 0.337
+        },
+        "hazards": {
+          "rock_count": 6,
+          "sand_trap_count": 10,
+          "slope_count": 3,
+          "risk_level": "high"
+        },
+        "atmosphere": {
+          "pressure": 615.8,
+          "temperature": -64.8
+        }
+      },
+      "mission_state": {
+        "mission_id": "mission_003",
+        "goal_position": [
+          28.8,
+          3.31
+        ],
+        "progress": 0.797
+      }
+    },
+    {
+      "timestamp": 240,
+      "rover_state": {
+        "position": {
+          "x": 281.21,
+          "y": 1.59,
+          "z": 1590.63
+        },
+        "heading": 359.6,
+        "velocity": 0.2,
+        "acceleration": 0.0,
+        "battery": {
+          "percentage": 15.96,
+          "consumption_rate": 0.236,
+          "temperature": 39.8
+        },
+        "motors": {
+          "left_motor_load": 0.962,
+          "right_motor_load": 0.929,
+          "motor_temperature": 53.0
+        },
+        "wheels": {
+          "traction": 0.2,
+          "slippage": 0.9,
+          "wheel_health": 0.962
+        }
+      },
+      "environment_state": {
+        "terrain": {
+          "tile_id": "mars_tile_r01_c00",
+          "terrain_type": "sand",
+          "slope_avg": 41.04,
+          "roughness": 0.283,
+          "traversability_score": 0.308
+        },
+        "wind": {
+          "speed": 11.61,
+          "direction": 140.9,
+          "gust_probability": 0.507,
+          "turbulence": 0.502,
+          "dust_density": 0.553,
+          "visibility": 0.326
+        },
+        "hazards": {
+          "rock_count": 6,
+          "sand_trap_count": 10,
+          "slope_count": 3,
+          "risk_level": "high"
+        },
+        "atmosphere": {
+          "pressure": 615.8,
+          "temperature": -64.7
+        }
+      },
+      "mission_state": {
+        "mission_id": "mission_003",
+        "goal_position": [
+          28.8,
+          3.31
+        ],
+        "progress": 0.814
+      }
+    },
+    {
+      "timestamp": 245,
+      "rover_state": {
+        "position": {
+          "x": 287.08,
+          "y": 1.55,
+          "z": 1590.63
+        },
+        "heading": 359.6,
+        "velocity": 0.2,
+        "acceleration": 0.0,
+        "battery": {
+          "percentage": 14.78,
+          "consumption_rate": 0.236,
+          "temperature": 39.8
+        },
+        "motors": {
+          "left_motor_load": 0.954,
+          "right_motor_load": 0.947,
+          "motor_temperature": 53.0
+        },
+        "wheels": {
+          "traction": 0.2,
+          "slippage": 0.9,
+          "wheel_health": 0.962
+        }
+      },
+      "environment_state": {
+        "terrain": {
+          "tile_id": "mars_tile_r01_c00",
+          "terrain_type": "sand",
+          "slope_avg": 41.04,
+          "roughness": 0.283,
+          "traversability_score": 0.308
+        },
+        "wind": {
+          "speed": 11.34,
+          "direction": 139.2,
+          "gust_probability": 0.5,
+          "turbulence": 0.503,
+          "dust_density": 0.548,
+          "visibility": 0.335
+        },
+        "hazards": {
+          "rock_count": 6,
+          "sand_trap_count": 10,
+          "slope_count": 3,
+          "risk_level": "high"
+        },
+        "atmosphere": {
+          "pressure": 615.8,
+          "temperature": -64.7
+        }
+      },
+      "mission_state": {
+        "mission_id": "mission_003",
+        "goal_position": [
+          28.8,
+          3.31
+        ],
+        "progress": 0.831
+      }
+    },
+    {
+      "timestamp": 250,
+      "rover_state": {
+        "position": {
+          "x": 292.95,
+          "y": 1.51,
+          "z": 1590.63
+        },
+        "heading": 359.6,
+        "velocity": 0.2,
+        "acceleration": 0.0,
+        "battery": {
+          "percentage": 13.6,
+          "consumption_rate": 0.236,
+          "temperature": 39.8
+        },
+        "motors": {
+          "left_motor_load": 0.951,
+          "right_motor_load": 0.954,
+          "motor_temperature": 53.0
+        },
+        "wheels": {
+          "traction": 0.2,
+          "slippage": 0.9,
+          "wheel_health": 0.962
+        }
+      },
+      "environment_state": {
+        "terrain": {
+          "tile_id": "mars_tile_r01_c00",
+          "terrain_type": "sand",
+          "slope_avg": 41.04,
+          "roughness": 0.283,
+          "traversability_score": 0.308
+        },
+        "wind": {
+          "speed": 11.81,
+          "direction": 141.9,
+          "gust_probability": 0.521,
+          "turbulence": 0.525,
+          "dust_density": 0.566,
+          "visibility": 0.311
+        },
+        "hazards": {
+          "rock_count": 6,
+          "sand_trap_count": 10,
+          "slope_count": 3,
+          "risk_level": "high"
+        },
+        "atmosphere": {
+          "pressure": 615.8,
+          "temperature": -64.7
+        }
+      },
+      "mission_state": {
+        "mission_id": "mission_003",
+        "goal_position": [
+          28.8,
+          3.31
+        ],
+        "progress": 0.847
+      }
+    },
+    {
+      "timestamp": 255,
+      "rover_state": {
+        "position": {
+          "x": 298.82,
+          "y": 1.47,
+          "z": 1590.63
+        },
+        "heading": 359.6,
+        "velocity": 0.2,
+        "acceleration": 0.0,
+        "battery": {
+          "percentage": 12.42,
+          "consumption_rate": 0.236,
+          "temperature": 39.8
+        },
+        "motors": {
+          "left_motor_load": 0.935,
+          "right_motor_load": 0.965,
+          "motor_temperature": 53.0
+        },
+        "wheels": {
+          "traction": 0.2,
+          "slippage": 0.9,
+          "wheel_health": 0.961
+        }
+      },
+      "environment_state": {
+        "terrain": {
+          "tile_id": "mars_tile_r01_c00",
+          "terrain_type": "sand",
+          "slope_avg": 41.04,
+          "roughness": 0.283,
+          "traversability_score": 0.308
+        },
+        "wind": {
+          "speed": 11.31,
+          "direction": 140.0,
+          "gust_probability": 0.514,
+          "turbulence": 0.546,
+          "dust_density": 0.565,
+          "visibility": 0.322
+        },
+        "hazards": {
+          "rock_count": 6,
+          "sand_trap_count": 10,
+          "slope_count": 3,
+          "risk_level": "high"
+        },
+        "atmosphere": {
+          "pressure": 615.8,
+          "temperature": -64.7
+        }
+      },
+      "mission_state": {
+        "mission_id": "mission_003",
+        "goal_position": [
+          28.8,
+          3.31
+        ],
+        "progress": 0.864
+      }
+    },
+    {
+      "timestamp": 260,
+      "rover_state": {
+        "position": {
+          "x": 304.69,
+          "y": 1.43,
+          "z": 1590.63
+        },
+        "heading": 359.6,
+        "velocity": 0.2,
+        "acceleration": 0.0,
+        "battery": {
+          "percentage": 11.24,
+          "consumption_rate": 0.236,
+          "temperature": 39.8
+        },
+        "motors": {
+          "left_motor_load": 0.972,
+          "right_motor_load": 0.932,
+          "motor_temperature": 53.0
+        },
+        "wheels": {
+          "traction": 0.2,
+          "slippage": 0.9,
+          "wheel_health": 0.961
+        }
+      },
+      "environment_state": {
+        "terrain": {
+          "tile_id": "mars_tile_r01_c00",
+          "terrain_type": "sand",
+          "slope_avg": 41.04,
+          "roughness": 0.283,
+          "traversability_score": 0.308
+        },
+        "wind": {
+          "speed": 10.81,
+          "direction": 138.4,
+          "gust_probability": 0.502,
+          "turbulence": 0.551,
+          "dust_density": 0.557,
+          "visibility": 0.339
+        },
+        "hazards": {
+          "rock_count": 6,
+          "sand_trap_count": 10,
+          "slope_count": 3,
+          "risk_level": "high"
+        },
+        "atmosphere": {
+          "pressure": 615.8,
+          "temperature": -64.7
+        }
+      },
+      "mission_state": {
+        "mission_id": "mission_003",
+        "goal_position": [
+          28.8,
+          3.31
+        ],
+        "progress": 0.881
+      }
+    },
+    {
+      "timestamp": 265,
+      "rover_state": {
+        "position": {
+          "x": 310.56,
+          "y": 1.39,
+          "z": 1590.63
+        },
+        "heading": 359.6,
+        "velocity": 0.2,
+        "acceleration": 0.0,
+        "battery": {
+          "percentage": 10.06,
+          "consumption_rate": 0.236,
+          "temperature": 39.8
+        },
+        "motors": {
+          "left_motor_load": 0.93,
+          "right_motor_load": 0.971,
+          "motor_temperature": 53.0
+        },
+        "wheels": {
+          "traction": 0.2,
+          "slippage": 0.9,
+          "wheel_health": 0.961
+        }
+      },
+      "environment_state": {
+        "terrain": {
+          "tile_id": "mars_tile_r01_c00",
+          "terrain_type": "sand",
+          "slope_avg": 41.04,
+          "roughness": 0.283,
+          "traversability_score": 0.308
+        },
+        "wind": {
+          "speed": 10.56,
+          "direction": 138.4,
+          "gust_probability": 0.496,
+          "turbulence": 0.555,
+          "dust_density": 0.553,
+          "visibility": 0.346
+        },
+        "hazards": {
+          "rock_count": 6,
+          "sand_trap_count": 10,
+          "slope_count": 3,
+          "risk_level": "high"
+        },
+        "atmosphere": {
+          "pressure": 615.8,
+          "temperature": -64.7
+        }
+      },
+      "mission_state": {
+        "mission_id": "mission_003",
+        "goal_position": [
+          28.8,
+          3.31
+        ],
+        "progress": 0.898
+      }
+    },
+    {
+      "timestamp": 270,
+      "rover_state": {
+        "position": {
+          "x": 316.43,
+          "y": 1.35,
+          "z": 1590.63
+        },
+        "heading": 359.6,
+        "velocity": 0.2,
+        "acceleration": 0.0,
+        "battery": {
+          "percentage": 8.88,
+          "consumption_rate": 0.236,
+          "temperature": 39.8
+        },
+        "motors": {
+          "left_motor_load": 0.92,
+          "right_motor_load": 0.935,
+          "motor_temperature": 53.0
+        },
+        "wheels": {
+          "traction": 0.2,
+          "slippage": 0.9,
+          "wheel_health": 0.96
+        }
+      },
+      "environment_state": {
+        "terrain": {
+          "tile_id": "mars_tile_r01_c00",
+          "terrain_type": "sand",
+          "slope_avg": 41.04,
+          "roughness": 0.283,
+          "traversability_score": 0.308
+        },
+        "wind": {
+          "speed": 11.12,
+          "direction": 138.2,
+          "gust_probability": 0.5,
+          "turbulence": 0.521,
+          "dust_density": 0.551,
+          "visibility": 0.337
+        },
+        "hazards": {
+          "rock_count": 6,
+          "sand_trap_count": 10,
+          "slope_count": 3,
+          "risk_level": "high"
+        },
+        "atmosphere": {
+          "pressure": 615.8,
+          "temperature": -64.7
+        }
+      },
+      "mission_state": {
+        "mission_id": "mission_003",
+        "goal_position": [
+          28.8,
+          3.31
+        ],
+        "progress": 0.915
+      }
+    },
+    {
+      "timestamp": 275,
+      "rover_state": {
+        "position": {
+          "x": 322.3,
+          "y": 1.31,
+          "z": 1590.63
+        },
+        "heading": 359.6,
+        "velocity": 0.2,
+        "acceleration": 0.0,
+        "battery": {
+          "percentage": 7.7,
+          "consumption_rate": 0.236,
+          "temperature": 39.8
+        },
+        "motors": {
+          "left_motor_load": 0.957,
+          "right_motor_load": 0.959,
+          "motor_temperature": 53.0
+        },
+        "wheels": {
+          "traction": 0.2,
+          "slippage": 0.9,
+          "wheel_health": 0.96
+        }
+      },
+      "environment_state": {
+        "terrain": {
+          "tile_id": "mars_tile_r01_c00",
+          "terrain_type": "sand",
+          "slope_avg": 41.04,
+          "roughness": 0.283,
+          "traversability_score": 0.308
+        },
+        "wind": {
+          "speed": 10.91,
+          "direction": 137.5,
+          "gust_probability": 0.482,
+          "turbulence": 0.488,
+          "dust_density": 0.533,
+          "visibility": 0.355
+        },
+        "hazards": {
+          "rock_count": 6,
+          "sand_trap_count": 10,
+          "slope_count": 3,
+          "risk_level": "high"
+        },
+        "atmosphere": {
+          "pressure": 615.8,
+          "temperature": -64.7
+        }
+      },
+      "mission_state": {
+        "mission_id": "mission_003",
+        "goal_position": [
+          28.8,
+          3.31
+        ],
+        "progress": 0.932
+      }
+    },
+    {
+      "timestamp": 280,
+      "rover_state": {
+        "position": {
+          "x": 328.17,
+          "y": 1.27,
+          "z": 1590.63
+        },
+        "heading": 359.6,
+        "velocity": 0.2,
+        "acceleration": 0.0,
+        "battery": {
+          "percentage": 6.52,
+          "consumption_rate": 0.236,
+          "temperature": 39.8
+        },
+        "motors": {
+          "left_motor_load": 0.942,
+          "right_motor_load": 0.978,
+          "motor_temperature": 53.0
+        },
+        "wheels": {
+          "traction": 0.2,
+          "slippage": 0.9,
+          "wheel_health": 0.959
+        }
+      },
+      "environment_state": {
+        "terrain": {
+          "tile_id": "mars_tile_r01_c00",
+          "terrain_type": "sand",
+          "slope_avg": 41.04,
+          "roughness": 0.283,
+          "traversability_score": 0.308
+        },
+        "wind": {
+          "speed": 10.92,
+          "direction": 136.0,
+          "gust_probability": 0.491,
+          "turbulence": 0.51,
+          "dust_density": 0.543,
+          "visibility": 0.347
+        },
+        "hazards": {
+          "rock_count": 6,
+          "sand_trap_count": 10,
+          "slope_count": 3,
+          "risk_level": "high"
+        },
+        "atmosphere": {
+          "pressure": 615.8,
+          "temperature": -64.7
+        }
+      },
+      "mission_state": {
+        "mission_id": "mission_003",
+        "goal_position": [
+          28.8,
+          3.31
+        ],
+        "progress": 0.949
+      }
+    },
+    {
+      "timestamp": 285,
+      "rover_state": {
+        "position": {
+          "x": 334.04,
+          "y": 1.23,
+          "z": 1590.63
+        },
+        "heading": 359.6,
+        "velocity": 0.2,
+        "acceleration": 0.0,
+        "battery": {
+          "percentage": 5.34,
+          "consumption_rate": 0.236,
+          "temperature": 39.8
+        },
+        "motors": {
+          "left_motor_load": 0.977,
+          "right_motor_load": 0.931,
+          "motor_temperature": 53.0
+        },
+        "wheels": {
+          "traction": 0.2,
+          "slippage": 0.9,
+          "wheel_health": 0.959
+        }
+      },
+      "environment_state": {
+        "terrain": {
+          "tile_id": "mars_tile_r01_c00",
+          "terrain_type": "sand",
+          "slope_avg": 41.04,
+          "roughness": 0.283,
+          "traversability_score": 0.308
+        },
+        "wind": {
+          "speed": 10.58,
+          "direction": 135.4,
+          "gust_probability": 0.475,
+          "turbulence": 0.493,
+          "dust_density": 0.529,
+          "visibility": 0.365
+        },
+        "hazards": {
+          "rock_count": 6,
+          "sand_trap_count": 10,
+          "slope_count": 3,
+          "risk_level": "high"
+        },
+        "atmosphere": {
+          "pressure": 615.8,
+          "temperature": -64.7
+        }
+      },
+      "mission_state": {
+        "mission_id": "mission_003",
+        "goal_position": [
+          28.8,
+          3.31
+        ],
+        "progress": 0.966
+      }
+    },
+    {
+      "timestamp": 290,
+      "rover_state": {
+        "position": {
+          "x": 339.91,
+          "y": 1.19,
+          "z": 1590.63
+        },
+        "heading": 359.6,
+        "velocity": 0.2,
+        "acceleration": 0.0,
+        "battery": {
+          "percentage": 5.0,
+          "consumption_rate": 0.236,
+          "temperature": 39.8
+        },
+        "motors": {
+          "left_motor_load": 0.945,
+          "right_motor_load": 0.939,
+          "motor_temperature": 53.0
+        },
+        "wheels": {
+          "traction": 0.2,
+          "slippage": 0.9,
+          "wheel_health": 0.959
+        }
+      },
+      "environment_state": {
+        "terrain": {
+          "tile_id": "mars_tile_r01_c00",
+          "terrain_type": "sand",
+          "slope_avg": 41.04,
+          "roughness": 0.283,
+          "traversability_score": 0.308
+        },
+        "wind": {
+          "speed": 10.9,
+          "direction": 133.1,
+          "gust_probability": 0.488,
+          "turbulence": 0.506,
+          "dust_density": 0.54,
+          "visibility": 0.35
+        },
+        "hazards": {
+          "rock_count": 6,
+          "sand_trap_count": 10,
+          "slope_count": 3,
+          "risk_level": "high"
+        },
+        "atmosphere": {
+          "pressure": 615.8,
+          "temperature": -64.7
+        }
+      },
+      "mission_state": {
+        "mission_id": "mission_003",
+        "goal_position": [
+          28.8,
+          3.31
+        ],
+        "progress": 0.983
+      }
+    },
+    {
+      "timestamp": 295,
+      "rover_state": {
+        "position": {
+          "x": 345.78,
+          "y": 1.15,
+          "z": 1590.63
+        },
+        "heading": 359.6,
+        "velocity": 0.2,
+        "acceleration": 0.0,
+        "battery": {
+          "percentage": 5.0,
+          "consumption_rate": 0.236,
+          "temperature": 39.8
+        },
+        "motors": {
+          "left_motor_load": 0.969,
+          "right_motor_load": 0.936,
+          "motor_temperature": 53.0
+        },
+        "wheels": {
+          "traction": 0.2,
+          "slippage": 0.9,
+          "wheel_health": 0.958
+        }
+      },
+      "environment_state": {
+        "terrain": {
+          "tile_id": "mars_tile_r01_c00",
+          "terrain_type": "sand",
+          "slope_avg": 41.04,
+          "roughness": 0.283,
+          "traversability_score": 0.308
+        },
+        "wind": {
+          "speed": 10.56,
+          "direction": 131.3,
+          "gust_probability": 0.485,
+          "turbulence": 0.524,
+          "dust_density": 0.541,
+          "visibility": 0.356
+        },
+        "hazards": {
+          "rock_count": 6,
+          "sand_trap_count": 10,
+          "slope_count": 3,
+          "risk_level": "high"
+        },
+        "atmosphere": {
+          "pressure": 615.8,
+          "temperature": -64.7
+        }
+      },
+      "mission_state": {
+        "mission_id": "mission_003",
+        "goal_position": [
+          28.8,
+          3.31
+        ],
+        "progress": 1.0
+      }
+    }
+  ]
+}

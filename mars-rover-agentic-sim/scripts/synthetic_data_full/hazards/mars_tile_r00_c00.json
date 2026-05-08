@@ -1,0 +1,96 @@
+{
+  "region_id": "mars_tile_r00_c00_region",
+  "tile_id": "mars_tile_r00_c00",
+  "obstacles": [
+    {
+      "type": "rock",
+      "position": {
+        "x": 9.7,
+        "y": 7.46
+      },
+      "size": 0.52,
+      "risk_level": "low"
+    },
+    {
+      "type": "rock",
+      "position": {
+        "x": 0.98,
+        "y": 14.03
+      },
+      "size": 1.11,
+      "risk_level": "medium"
+    },
+    {
+      "type": "rock",
+      "position": {
+        "x": 11.26,
+        "y": 26.76
+      },
+      "size": 2.11,
+      "risk_level": "high"
+    },
+    {
+      "type": "rock",
+      "position": {
+        "x": 21.22,
+        "y": 8.0
+      },
+      "size": 0.89,
+      "risk_level": "medium"
+    },
+    {
+      "type": "rock",
+      "position": {
+        "x": 31.45,
+        "y": 22.49
+      },
+      "size": 1.77,
+      "risk_level": "high"
+    },
+    {
+      "type": "sand_trap",
+      "position": {
+        "x": 19.05,
+        "y": 20.57
+      },
+      "radius": 4.08,
+      "risk_level": "high"
+    },
+    {
+      "type": "sand_trap",
+      "position": {
+        "x": 20.45,
+        "y": 6.52
+      },
+      "radius": 2.54,
+      "risk_level": "medium"
+    },
+    {
+      "type": "slope",
+      "position": {
+        "x": 10.65,
+        "y": 18.81
+      },
+      "radius": 12.69,
+      "risk_level": "high"
+    },
+    {
+      "type": "slope",
+      "position": {
+        "x": 1.55,
+        "y": 14.67
+      },
+      "radius": 11.99,
+      "risk_level": "high"
+    },
+    {
+      "type": "slope",
+      "position": {
+        "x": 13.61,
+        "y": 24.15
+      },
+      "radius": 10.33,
+      "risk_level": "high"
+    }
+  ]
+}

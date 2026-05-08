@@ -1,0 +1,337 @@
+{
+  "scenario_id": "high_wind_navigation",
+  "events": [
+    {
+      "timestamp": 0,
+      "type": "memory_snapshot"
+    },
+    {
+      "timestamp": 0,
+      "type": "traction_drop"
+    },
+    {
+      "timestamp": 5,
+      "type": "traction_drop"
+    },
+    {
+      "timestamp": 10,
+      "type": "traction_drop"
+    },
+    {
+      "timestamp": 15,
+      "type": "traction_drop"
+    },
+    {
+      "timestamp": 20,
+      "type": "traction_drop"
+    },
+    {
+      "timestamp": 25,
+      "type": "traction_drop"
+    },
+    {
+      "timestamp": 30,
+      "type": "traction_drop"
+    },
+    {
+      "timestamp": 35,
+      "type": "traction_drop"
+    },
+    {
+      "timestamp": 40,
+      "type": "traction_drop"
+    },
+    {
+      "timestamp": 45,
+      "type": "traction_drop"
+    },
+    {
+      "timestamp": 50,
+      "type": "traction_drop"
+    },
+    {
+      "timestamp": 55,
+      "type": "traction_drop"
+    },
+    {
+      "timestamp": 60,
+      "type": "memory_snapshot"
+    },
+    {
+      "timestamp": 60,
+      "type": "traction_drop"
+    },
+    {
+      "timestamp": 65,
+      "type": "traction_drop"
+    },
+    {
+      "timestamp": 70,
+      "type": "traction_drop"
+    },
+    {
+      "timestamp": 75,
+      "type": "traction_drop"
+    },
+    {
+      "timestamp": 80,
+      "type": "traction_drop"
+    },
+    {
+      "timestamp": 85,
+      "type": "traction_drop"
+    },
+    {
+      "timestamp": 90,
+      "type": "traction_drop"
+    },
+    {
+      "timestamp": 95,
+      "type": "traction_drop"
+    },
+    {
+      "timestamp": 100,
+      "type": "traction_drop"
+    },
+    {
+      "timestamp": 105,
+      "type": "traction_drop"
+    },
+    {
+      "timestamp": 110,
+      "type": "traction_drop"
+    },
+    {
+      "timestamp": 115,
+      "type": "traction_drop"
+    },
+    {
+      "timestamp": 120,
+      "type": "memory_snapshot"
+    },
+    {
+      "timestamp": 120,
+      "type": "traction_drop"
+    },
+    {
+      "timestamp": 125,
+      "type": "traction_drop"
+    },
+    {
+      "timestamp": 130,
+      "type": "traction_drop"
+    },
+    {
+      "timestamp": 135,
+      "type": "traction_drop"
+    },
+    {
+      "timestamp": 140,
+      "type": "traction_drop"
+    },
+    {
+      "timestamp": 145,
+      "type": "traction_drop"
+    },
+    {
+      "timestamp": 150,
+      "type": "traction_drop"
+    },
+    {
+      "timestamp": 155,
+      "type": "traction_drop"
+    },
+    {
+      "timestamp": 160,
+      "type": "traction_drop"
+    },
+    {
+      "timestamp": 165,
+      "type": "traction_drop"
+    },
+    {
+      "timestamp": 170,
+      "type": "traction_drop"
+    },
+    {
+      "timestamp": 175,
+      "type": "traction_drop"
+    },
+    {
+      "timestamp": 180,
+      "type": "memory_snapshot"
+    },
+    {
+      "timestamp": 180,
+      "type": "traction_drop"
+    },
+    {
+      "timestamp": 185,
+      "type": "traction_drop"
+    },
+    {
+      "timestamp": 190,
+      "type": "traction_drop"
+    },
+    {
+      "timestamp": 195,
+      "type": "traction_drop"
+    },
+    {
+      "timestamp": 200,
+      "type": "traction_drop"
+    },
+    {
+      "timestamp": 205,
+      "type": "traction_drop"
+    },
+    {
+      "timestamp": 210,
+      "type": "traction_drop"
+    },
+    {
+      "timestamp": 210,
+      "type": "battery_warning"
+    },
+    {
+      "timestamp": 215,
+      "type": "traction_drop"
+    },
+    {
+      "timestamp": 215,
+      "type": "battery_warning"
+    },
+    {
+      "timestamp": 220,
+      "type": "traction_drop"
+    },
+    {
+      "timestamp": 220,
+      "type": "battery_warning"
+    },
+    {
+      "timestamp": 225,
+      "type": "traction_drop"
+    },
+    {
+      "timestamp": 225,
+      "type": "battery_warning"
+    },
+    {
+      "timestamp": 230,
+      "type": "traction_drop"
+    },
+    {
+      "timestamp": 230,
+      "type": "battery_warning"
+    },
+    {
+      "timestamp": 235,
+      "type": "traction_drop"
+    },
+    {
+      "timestamp": 235,
+      "type": "battery_warning"
+    },
+    {
+      "timestamp": 240,
+      "type": "memory_snapshot"
+    },
+    {
+      "timestamp": 240,
+      "type": "traction_drop"
+    },
+    {
+      "timestamp": 240,
+      "type": "battery_warning"
+    },
+    {
+      "timestamp": 245,
+      "type": "traction_drop"
+    },
+    {
+      "timestamp": 245,
+      "type": "battery_warning"
+    },
+    {
+      "timestamp": 250,
+      "type": "traction_drop"
+    },
+    {
+      "timestamp": 250,
+      "type": "battery_warning"
+    },
+    {
+      "timestamp": 255,
+      "type": "traction_drop"
+    },
+    {
+      "timestamp": 255,
+      "type": "battery_warning"
+    },
+    {
+      "timestamp": 260,
+      "type": "traction_drop"
+    },
+    {
+      "timestamp": 260,
+      "type": "battery_warning"
+    },
+    {
+      "timestamp": 265,
+      "type": "traction_drop"
+    },
+    {
+      "timestamp": 265,
+      "type": "battery_warning"
+    },
+    {
+      "timestamp": 270,
+      "type": "traction_drop"
+    },
+    {
+      "timestamp": 270,
+      "type": "battery_warning"
+    },
+    {
+      "timestamp": 275,
+      "type": "traction_drop"
+    },
+    {
+      "timestamp": 275,
+      "type": "battery_warning"
+    },
+    {
+      "timestamp": 280,
+      "type": "traction_drop"
+    },
+    {
+      "timestamp": 280,
+      "type": "battery_warning"
+    },
+    {
+      "timestamp": 285,
+      "type": "traction_drop"
+    },
+    {
+      "timestamp": 285,
+      "type": "battery_warning"
+    },
+    {
+      "timestamp": 290,
+      "type": "traction_drop"
+    },
+    {
+      "timestamp": 290,
+      "type": "battery_warning"
+    },
+    {
+      "timestamp": 295,
+      "type": "traction_drop"
+    },
+    {
+      "timestamp": 295,
+      "type": "battery_warning"
+    }
+  ]
+}

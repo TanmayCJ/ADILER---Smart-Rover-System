@@ -1,0 +1,25 @@
+{
+  "scenario_id": "high_wind_navigation",
+  "description": "Scenario high wind navigation",
+  "tile_id": "mars_tile_r00_c00",
+  "mission_id": "mission_001",
+  "parameters": {
+    "hazard_density": 0.4,
+    "wind_intensity": 0.9,
+    "duration_sec": 300,
+    "dt_sec": 5.0
+  },
+  "preload": {
+    "wind": {
+      "avg_speed": 10.85,
+      "avg_dust": 0.518
+    },
+    "hazards": {
+      "rock_count": 5,
+      "sand_trap_count": 2,
+      "slope_count": 3,
+      "hazard_density": 0.4
+    },
+    "terrain_type": "plains"
+  }
+}

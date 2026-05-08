@@ -1,0 +1,177 @@
+{
+  "region_id": "mars_tile_r01_c01_region",
+  "tile_id": "mars_tile_r01_c01",
+  "obstacles": [
+    {
+      "type": "rock",
+      "position": {
+        "x": 16.65,
+        "y": 29.13
+      },
+      "size": 2.07,
+      "risk_level": "high"
+    },
+    {
+      "type": "rock",
+      "position": {
+        "x": 17.29,
+        "y": 28.65
+      },
+      "size": 2.24,
+      "risk_level": "high"
+    },
+    {
+      "type": "rock",
+      "position": {
+        "x": 11.64,
+        "y": 19.52
+      },
+      "size": 1.27,
+      "risk_level": "medium"
+    },
+    {
+      "type": "rock",
+      "position": {
+        "x": 25.15,
+        "y": 29.72
+      },
+      "size": 0.66,
+      "risk_level": "medium"
+    },
+    {
+      "type": "rock",
+      "position": {
+        "x": 0.78,
+        "y": 26.72
+      },
+      "size": 0.91,
+      "risk_level": "medium"
+    },
+    {
+      "type": "rock",
+      "position": {
+        "x": 8.13,
+        "y": 19.55
+      },
+      "size": 1.24,
+      "risk_level": "medium"
+    },
+    {
+      "type": "rock",
+      "position": {
+        "x": 25.95,
+        "y": 8.88
+      },
+      "size": 2.09,
+      "risk_level": "high"
+    },
+    {
+      "type": "rock",
+      "position": {
+        "x": 5.63,
+        "y": 14.73
+      },
+      "size": 2.25,
+      "risk_level": "high"
+    },
+    {
+      "type": "rock",
+      "position": {
+        "x": 14.67,
+        "y": 17.49
+      },
+      "size": 0.68,
+      "risk_level": "medium"
+    },
+    {
+      "type": "rock",
+      "position": {
+        "x": 26.96,
+        "y": 18.95
+      },
+      "size": 1.8,
+      "risk_level": "high"
+    },
+    {
+      "type": "rock",
+      "position": {
+        "x": 21.04,
+        "y": 4.11
+      },
+      "size": 2.27,
+      "risk_level": "high"
+    },
+    {
+      "type": "sand_trap",
+      "position": {
+        "x": 29.71,
+        "y": 19.08
+      },
+      "radius": 4.95,
+      "risk_level": "high"
+    },
+    {
+      "type": "sand_trap",
+      "position": {
+        "x": 9.01,
+        "y": 31.99
+      },
+      "radius": 2.32,
+      "risk_level": "medium"
+    },
+    {
+      "type": "sand_trap",
+      "position": {
+        "x": 5.85,
+        "y": 28.0
+      },
+      "radius": 2.66,
+      "risk_level": "medium"
+    },
+    {
+      "type": "sand_trap",
+      "position": {
+        "x": 13.85,
+        "y": 21.57
+      },
+      "radius": 2.27,
+      "risk_level": "medium"
+    },
+    {
+      "type": "sand_trap",
+      "position": {
+        "x": 8.6,
+        "y": 9.1
+      },
+      "radius": 3.92,
+      "risk_level": "high"
+    },
+    {
+      "type": "slope",
+      "position": {
+        "x": 29.6,
+        "y": 24.65
+      },
+      "radius": 11.86,
+      "risk_level": "high"
+    },
+    {
+      "type": "slope",
+      "position": {
+        "x": 22.86,
+        "y": 22.68
+      },
+      "radius": 7.9,
+      "risk_level": "high"
+    },
+    {
+      "type": "slope",
+      "position": {
+        "x": 19.52,
+        "y": 3.87
+      },
+      "radius": 10.29,
+      "risk_level": "high"
+    }
+  ]
+}

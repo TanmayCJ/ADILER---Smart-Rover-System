@@ -1,0 +1,25 @@
+{
+  "scenario_id": "dust_storm_escape",
+  "description": "Scenario dust storm escape",
+  "tile_id": "mars_tile_r01_c00",
+  "mission_id": "mission_003",
+  "parameters": {
+    "hazard_density": 0.5,
+    "wind_intensity": 1.0,
+    "duration_sec": 300,
+    "dt_sec": 5.0
+  },
+  "preload": {
+    "wind": {
+      "avg_speed": 10.99,
+      "avg_dust": 0.529
+    },
+    "hazards": {
+      "rock_count": 6,
+      "sand_trap_count": 10,
+      "slope_count": 3,
+      "hazard_density": 0.4
+    },
+    "terrain_type": "sand"
+  }
+}
