@@ -259,12 +259,7 @@ def main() -> None:
             _print_section("3. Planner/Aggregator Agent Output")
             state = _merge_state(state, planner_node(state))
             plan = state.get("plan", {})
-            if risk_score >= 0.7:
-                rationale = "high risk, holding position"
-            elif risk_score >= 0.45:
-                rationale = "moderate risk, proceed cautiously"
-            else:
-                rationale = "low risk, proceed"
+            rationale = plan.get("rationale") or "decision recorded"
             print(f"Selected Action: {plan.get('action')}")
             print(f"Rationale: {rationale}")
 
@@ -289,10 +284,16 @@ def main() -> None:
             _print_section("6. Final Verdict")
             remaining = _distance(after_pos, {"x": goal_pos[0], "y": goal_pos[1]})
             action = plan.get("action")
-            if action == "hold":
+            if action == "hold_position":
                 verdict = "Hold position due to elevated risk."
             elif action == "proceed_cautious":
                 verdict = "Proceed cautiously toward the goal."
+            elif action == "reduce_speed":
+                verdict = "Reduce speed to maintain stability in tough conditions."
+            elif action == "reroute":
+                verdict = "Reroute to avoid hazards and steep terrain."
+            elif action == "conserve_energy":
+                verdict = "Conserve energy and advance only as needed."
             else:
                 verdict = "Proceed toward the goal."
             print(verdict)
@@ -337,6 +338,23 @@ def main() -> None:
             print(f"FAILED: {exc}")
 
         results.append(result)
+
+    print("\n" + ("-" * 72))
+    print("Scenario | Risk | Wind | Dust | Obstacles | Action")
+    print("-" * 72)
+    for result in results:
+        environment = result.get("environment", {})
+        planner = result.get("planner", {})
+        print(
+            "{scenario} | {risk} | {wind} | {dust} | {obs} | {action}".format(
+                scenario=result.get("scenario_id", "-"),
+                risk=environment.get("risk_score", "-"),
+                wind=environment.get("wind_speed", "-"),
+                dust=environment.get("dust_level", "-"),
+                obs=environment.get("obstacle_count", "-"),
+                action=planner.get("action", "-"),
+            )
+        )
 
     report_paths = _write_reports(report_dir, results)
 

@@ -18,7 +18,7 @@ Risk Level: low
 
 3. Planner/Aggregator Agent Output
 Selected Action: proceed
-Rationale: low risk, proceed
+Rationale: low risk conditions, proceed
 
 4. Navigation Agent Output
 Initial Position: (26.93, 25.85)
@@ -50,21 +50,21 @@ Obstacle Count: 4
 Risk Level: low
 
 3. Planner/Aggregator Agent Output
-Selected Action: proceed
-Rationale: low risk, proceed
+Selected Action: reduce_speed
+Rationale: high wind detected, reducing speed
 
 4. Navigation Agent Output
 Initial Position: (26.93, 25.85)
-Final Position: (27.47, 26.69)
-Movement Step: 1.0 meters
+Final Position: (27.14, 26.19)
+Movement Step: 0.4 meters
 Navigation Status: moved
 
 5. Memory Agent Output
 Memory Events Written: 1
-Latest Memory Event: {'risk_score': 0.419, 'action': 'proceed', 'position': {'x': 27.47, 'y': 26.69, 'z': 1561.84}}
+Latest Memory Event: {'risk_score': 0.419, 'action': 'reduce_speed', 'position': {'x': 27.14, 'y': 26.19, 'z': 1561.84}}
 
 6. Final Verdict
-Proceed toward the goal.
+Reduce speed to maintain stability in tough conditions.
 
 ## Scenario: dust_storm_escape
 1. Scenario Loaded
@@ -83,21 +83,21 @@ Obstacle Count: 10
 Risk Level: moderate
 
 3. Planner/Aggregator Agent Output
-Selected Action: proceed_cautious
-Rationale: moderate risk, proceed cautiously
+Selected Action: hold_position
+Rationale: dust storm conditions, holding position
 
 4. Navigation Agent Output
 Initial Position: (23.93, 3.34)
-Final Position: (24.33, 3.34)
-Movement Step: 0.4 meters
-Navigation Status: moved
+Final Position: (23.93, 3.34)
+Movement Step: 0.0 meters
+Navigation Status: held
 
 5. Memory Agent Output
 Memory Events Written: 1
-Latest Memory Event: {'risk_score': 0.585, 'action': 'proceed_cautious', 'position': {'x': 24.33, 'y': 3.34, 'z': 1590.63}}
+Latest Memory Event: {'risk_score': 0.585, 'action': 'hold_position', 'position': {'x': 23.93, 'y': 3.34, 'z': 1590.63}}
 
 6. Final Verdict
-Proceed cautiously toward the goal.
+Hold position due to elevated risk.
 
 ## Scenario: rocky_terrain
 1. Scenario Loaded
@@ -116,21 +116,21 @@ Obstacle Count: 7
 Risk Level: low
 
 3. Planner/Aggregator Agent Output
-Selected Action: proceed
-Rationale: low risk, proceed
+Selected Action: proceed_cautious
+Rationale: moderate risk score, proceed cautiously
 
 4. Navigation Agent Output
 Initial Position: (26.93, 25.85)
-Final Position: (27.47, 26.69)
-Movement Step: 1.0 meters
+Final Position: (27.14, 26.19)
+Movement Step: 0.4 meters
 Navigation Status: moved
 
 5. Memory Agent Output
 Memory Events Written: 1
-Latest Memory Event: {'risk_score': 0.375, 'action': 'proceed', 'position': {'x': 27.47, 'y': 26.69, 'z': 1561.84}}
+Latest Memory Event: {'risk_score': 0.375, 'action': 'proceed_cautious', 'position': {'x': 27.14, 'y': 26.19, 'z': 1561.84}}
 
 6. Final Verdict
-Proceed toward the goal.
+Proceed cautiously toward the goal.
 
 ## Scenario: energy_critical_route
 1. Scenario Loaded
@@ -149,28 +149,28 @@ Obstacle Count: 5
 Risk Level: low
 
 3. Planner/Aggregator Agent Output
-Selected Action: proceed
-Rationale: low risk, proceed
+Selected Action: conserve_energy
+Rationale: energy critical route, conserving power
 
 4. Navigation Agent Output
 Initial Position: (26.93, 25.85)
-Final Position: (27.47, 26.69)
-Movement Step: 1.0 meters
+Final Position: (27.14, 26.19)
+Movement Step: 0.4 meters
 Navigation Status: moved
 
 5. Memory Agent Output
 Memory Events Written: 1
-Latest Memory Event: {'risk_score': 0.378, 'action': 'proceed', 'position': {'x': 27.47, 'y': 26.69, 'z': 1561.84}}
+Latest Memory Event: {'risk_score': 0.378, 'action': 'conserve_energy', 'position': {'x': 27.14, 'y': 26.19, 'z': 1561.84}}
 
 6. Final Verdict
-Proceed toward the goal.
+Conserve energy and advance only as needed.
 
 ## Scenario Comparison
 
 | Scenario | Risk Score | Wind | Dust | Obstacles | Action | Status |
 | --- | --- | --- | --- | --- | --- | --- |
 | easy_navigation | 0.309 | 3.11 | 0.156 | 2 | proceed | passed |
-| high_wind_navigation | 0.419 | 9.33 | 0.468 | 4 | proceed | passed |
-| dust_storm_escape | 0.585 | 10.73 | 0.526 | 10 | proceed_cautious | passed |
-| rocky_terrain | 0.375 | 5.18 | 0.26 | 7 | proceed | passed |
-| energy_critical_route | 0.378 | 6.22 | 0.312 | 5 | proceed | passed |
+| high_wind_navigation | 0.419 | 9.33 | 0.468 | 4 | reduce_speed | passed |
+| dust_storm_escape | 0.585 | 10.73 | 0.526 | 10 | hold_position | passed |
+| rocky_terrain | 0.375 | 5.18 | 0.26 | 7 | proceed_cautious | passed |
+| energy_critical_route | 0.378 | 6.22 | 0.312 | 5 | conserve_energy | passed |

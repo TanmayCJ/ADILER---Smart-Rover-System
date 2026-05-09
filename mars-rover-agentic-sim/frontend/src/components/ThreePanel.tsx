@@ -1,5 +1,6 @@
 import { Canvas } from "@react-three/fiber";
 import { OrbitControls } from "@react-three/drei";
+import { Vector3 } from "three";
 import { useMemo } from "react";
 
 import { ScenarioResult, parsePosition } from "@/lib/demoData";
@@ -31,9 +32,10 @@ const normalizePosition = (pos: { x: number; y: number }, bounds: number) => {
 
 type ThreePanelProps = {
   scenario: ScenarioResult | null;
+  roverProgress?: number;
 };
 
-export default function ThreePanel({ scenario }: ThreePanelProps) {
+export default function ThreePanel({ scenario, roverProgress = 1 }: ThreePanelProps) {
   const environment = scenario?.environment;
   const riskScore = environment?.risk_score ?? 0.0;
   const riskColor = useMemo(() => {
@@ -44,10 +46,11 @@ export default function ThreePanel({ scenario }: ThreePanelProps) {
 
   const startPos = parsePosition(scenario?.scenario_loaded?.start);
   const goalPos = parsePosition(scenario?.scenario_loaded?.goal);
-  const roverPos = parsePosition(scenario?.navigation?.final_position);
+  const roverInitial = parsePosition(scenario?.navigation?.initial_position);
+  const roverFinal = parsePosition(scenario?.navigation?.final_position);
 
   const sceneData = useMemo(() => {
-    if (!scenario || !startPos || !goalPos || !roverPos) {
+    if (!scenario || !startPos || !goalPos || !roverInitial || !roverFinal) {
       return null;
     }
     const bounds = Math.max(
@@ -55,18 +58,32 @@ export default function ThreePanel({ scenario }: ThreePanelProps) {
       Math.abs(startPos.y),
       Math.abs(goalPos.x),
       Math.abs(goalPos.y),
-      Math.abs(roverPos.x),
-      Math.abs(roverPos.y)
+      Math.abs(roverFinal.x),
+      Math.abs(roverFinal.y)
     );
     const seed = seedNumber(scenario.scenario_id);
+    const interpolated = {
+      x: roverInitial.x + (roverFinal.x - roverInitial.x) * roverProgress,
+      y: roverInitial.y + (roverFinal.y - roverInitial.y) * roverProgress,
+    };
     return {
       start: normalizePosition(startPos, bounds),
       goal: normalizePosition(goalPos, bounds),
-      rover: normalizePosition(roverPos, bounds),
+      rover: normalizePosition(interpolated, bounds),
+      roverStart: normalizePosition(roverInitial, bounds),
       obstacles: buildObstacles(environment?.obstacle_count ?? 0, seed),
       windSpeed: environment?.wind_speed ?? 0,
     };
-  }, [scenario, startPos, goalPos, roverPos, environment?.obstacle_count, environment?.wind_speed]);
+  }, [
+    scenario,
+    startPos,
+    goalPos,
+    roverInitial,
+    roverFinal,
+    environment?.obstacle_count,
+    environment?.wind_speed,
+    roverProgress,
+  ]);
 
   if (!sceneData) {
     return (
@@ -105,8 +122,8 @@ export default function ThreePanel({ scenario }: ThreePanelProps) {
         <bufferGeometry
           attach="geometry"
           setFromPoints={[
-            { x: sceneData.start.x, y: 0.12, z: sceneData.start.y },
-            { x: sceneData.rover.x, y: 0.12, z: sceneData.rover.y },
+            new Vector3(sceneData.roverStart.x, 0.12, sceneData.roverStart.y),
+            new Vector3(sceneData.rover.x, 0.12, sceneData.rover.y),
           ]}
         />
         <lineBasicMaterial color="#f87171" linewidth={2} />

@@ -20,7 +20,7 @@ def navigation_node(state: Dict[str, object]) -> Dict[str, object]:
 	"""Update rover position based on the planner action."""
 
 	plan = state.get("plan", {})
-	action = plan.get("action", "hold")
+	action = plan.get("action", "hold_position")
 	rover_state = dict(state.get("rover_state", {}))
 	mission = state.get("mission", {})
 	goal_pos = mission.get("mission", {}).get("goal_position", [0.0, 0.0])
@@ -32,8 +32,10 @@ def navigation_node(state: Dict[str, object]) -> Dict[str, object]:
 	step_m = 0.0
 	if action == "proceed":
 		step_m = 1.0
-	elif action == "proceed_cautious":
+	elif action in {"proceed_cautious", "reduce_speed", "reroute", "conserve_energy"}:
 		step_m = 0.4
+	elif action == "hold_position":
+		step_m = 0.0
 
 	new_x, new_y = _step_toward(current, goal, step_m)
 	rover_state["position"] = {

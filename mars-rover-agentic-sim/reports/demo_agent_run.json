@@ -20,7 +20,7 @@
       },
       "planner": {
         "action": "proceed",
-        "rationale": "low risk, proceed"
+        "rationale": "low risk conditions, proceed"
       },
       "navigation": {
         "initial_position": "(26.93, 25.85)",
@@ -62,29 +62,29 @@
         "risk_level": "low"
       },
       "planner": {
-        "action": "proceed",
-        "rationale": "low risk, proceed"
+        "action": "reduce_speed",
+        "rationale": "high wind detected, reducing speed"
       },
       "navigation": {
         "initial_position": "(26.93, 25.85)",
-        "final_position": "(27.47, 26.69)",
-        "movement_step": "1.0 meters",
+        "final_position": "(27.14, 26.19)",
+        "movement_step": "0.4 meters",
         "status": "moved"
       },
       "memory": {
         "events_written": 1,
         "latest_event": {
           "risk_score": 0.419,
-          "action": "proceed",
+          "action": "reduce_speed",
           "position": {
-            "x": 27.47,
-            "y": 26.69,
+            "x": 27.14,
+            "y": 26.19,
             "z": 1561.84
           }
         }
       },
-      "final_verdict": "Proceed toward the goal.",
-      "distance_to_goal": 2.49
+      "final_verdict": "Reduce speed to maintain stability in tough conditions.",
+      "distance_to_goal": 3.09
     },
     {
       "scenario_id": "dust_storm_escape",
@@ -105,29 +105,29 @@
         "risk_level": "moderate"
       },
       "planner": {
-        "action": "proceed_cautious",
-        "rationale": "moderate risk, proceed cautiously"
+        "action": "hold_position",
+        "rationale": "dust storm conditions, holding position"
       },
       "navigation": {
         "initial_position": "(23.93, 3.34)",
-        "final_position": "(24.33, 3.34)",
-        "movement_step": "0.4 meters",
-        "status": "moved"
+        "final_position": "(23.93, 3.34)",
+        "movement_step": "0.0 meters",
+        "status": "held"
       },
       "memory": {
         "events_written": 1,
         "latest_event": {
           "risk_score": 0.585,
-          "action": "proceed_cautious",
+          "action": "hold_position",
           "position": {
-            "x": 24.33,
+            "x": 23.93,
             "y": 3.34,
             "z": 1590.63
           }
         }
       },
-      "final_verdict": "Proceed cautiously toward the goal.",
-      "distance_to_goal": 4.47
+      "final_verdict": "Hold position due to elevated risk.",
+      "distance_to_goal": 4.87
     },
     {
       "scenario_id": "rocky_terrain",
@@ -148,29 +148,29 @@
         "risk_level": "low"
       },
       "planner": {
-        "action": "proceed",
-        "rationale": "low risk, proceed"
+        "action": "proceed_cautious",
+        "rationale": "moderate risk score, proceed cautiously"
       },
       "navigation": {
         "initial_position": "(26.93, 25.85)",
-        "final_position": "(27.47, 26.69)",
-        "movement_step": "1.0 meters",
+        "final_position": "(27.14, 26.19)",
+        "movement_step": "0.4 meters",
         "status": "moved"
       },
       "memory": {
         "events_written": 1,
         "latest_event": {
           "risk_score": 0.375,
-          "action": "proceed",
+          "action": "proceed_cautious",
           "position": {
-            "x": 27.47,
-            "y": 26.69,
+            "x": 27.14,
+            "y": 26.19,
             "z": 1561.84
           }
         }
       },
-      "final_verdict": "Proceed toward the goal.",
-      "distance_to_goal": 2.49
+      "final_verdict": "Proceed cautiously toward the goal.",
+      "distance_to_goal": 3.09
     },
     {
       "scenario_id": "energy_critical_route",
@@ -191,29 +191,29 @@
         "risk_level": "low"
       },
       "planner": {
-        "action": "proceed",
-        "rationale": "low risk, proceed"
+        "action": "conserve_energy",
+        "rationale": "energy critical route, conserving power"
       },
       "navigation": {
         "initial_position": "(26.93, 25.85)",
-        "final_position": "(27.47, 26.69)",
-        "movement_step": "1.0 meters",
+        "final_position": "(27.14, 26.19)",
+        "movement_step": "0.4 meters",
         "status": "moved"
       },
       "memory": {
         "events_written": 1,
         "latest_event": {
           "risk_score": 0.378,
-          "action": "proceed",
+          "action": "conserve_energy",
           "position": {
-            "x": 27.47,
-            "y": 26.69,
+            "x": 27.14,
+            "y": 26.19,
             "z": 1561.84
           }
         }
       },
-      "final_verdict": "Proceed toward the goal.",
-      "distance_to_goal": 2.49
+      "final_verdict": "Conserve energy and advance only as needed.",
+      "distance_to_goal": 3.09
     }
   ]
 }

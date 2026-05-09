@@ -1,6 +1,6 @@
 "use client";
 
-import { useEffect, useMemo, useState } from "react";
+import { useEffect, useMemo, useRef, useState } from "react";
 
 import AgentCards from "@/components/AgentCards";
 import ComparisonSection from "@/components/ComparisonSection";
@@ -21,11 +21,25 @@ const DEFAULT_SCENARIOS = [
 	"energy_critical_route",
 ];
 
+const REPLAY_PHASES = [
+	"Environment Analysis",
+	"Planning",
+	"Navigation",
+	"Memory Update",
+	"Complete",
+];
+
 export default function HomePage() {
 	const [report, setReport] = useState<DemoReport | null>(null);
 	const [selectedScenario, setSelectedScenario] = useState<string>(
 		DEFAULT_SCENARIOS[0]
 	);
+	const [phaseIndex, setPhaseIndex] = useState<number>(-1);
+	const [replayLog, setReplayLog] = useState<string[]>([]);
+	const [isReplaying, setIsReplaying] = useState<boolean>(false);
+	const [roverProgress, setRoverProgress] = useState<number>(0);
+	const timeoutsRef = useRef<number[]>([]);
+	const animationRef = useRef<number | null>(null);
 
 	useEffect(() => {
 		let cancelled = false;
@@ -48,6 +62,76 @@ export default function HomePage() {
 	const activeScenario = useMemo<ScenarioResult | null>(() => {
 		return scenarios.find((scenario) => scenario.scenario_id === selectedScenario) ?? null;
 	}, [scenarios, selectedScenario]);
+
+	const phaseLabel = phaseIndex >= 0 ? REPLAY_PHASES[phaseIndex] : "Ready";
+
+	const resetReplay = () => {
+		timeoutsRef.current.forEach((timeoutId) => clearTimeout(timeoutId));
+		timeoutsRef.current = [];
+		if (animationRef.current !== null) {
+			cancelAnimationFrame(animationRef.current);
+			animationRef.current = null;
+		}
+		setIsReplaying(false);
+		setPhaseIndex(-1);
+		setRoverProgress(0);
+		setReplayLog(activeScenario ? [
+			`Scenario ready: ${activeScenario.scenario_id.replace(/_/g, " ")}`,
+		] : []);
+	};
+
+	const animateRover = (durationMs: number) => {
+		if (animationRef.current !== null) {
+			cancelAnimationFrame(animationRef.current);
+		}
+		const start = performance.now();
+		const step = (timestamp: number) => {
+			const progress = Math.min((timestamp - start) / durationMs, 1);
+			setRoverProgress(progress);
+			if (progress < 1) {
+				animationRef.current = requestAnimationFrame(step);
+			}
+		};
+		animationRef.current = requestAnimationFrame(step);
+	};
+
+	const startReplay = () => {
+		if (!activeScenario) return;
+		resetReplay();
+		setIsReplaying(true);
+		setPhaseIndex(0);
+		setReplayLog([
+			`Replay started: ${activeScenario.scenario_id.replace(/_/g, " ")}`,
+			"Environment analysis completed.",
+		]);
+
+		const scheduleStep = (index: number, delayMs: number, logMessage: string) => {
+			const timeoutId = window.setTimeout(() => {
+				setPhaseIndex(index);
+				setReplayLog((prev) => [...prev, logMessage]);
+				if (index === 2) {
+					animateRover(1400);
+				}
+				if (index === 4) {
+					setIsReplaying(false);
+				}
+			}, delayMs);
+			timeoutsRef.current.push(timeoutId);
+		};
+
+		scheduleStep(1, 1100, "Planning decision recorded.");
+		scheduleStep(2, 2200, "Navigation executed: rover advancing toward goal.");
+		scheduleStep(3, 3600, "Memory update written.");
+		scheduleStep(4, 4700, "Final verdict issued.");
+	};
+
+	useEffect(() => {
+		resetReplay();
+		return () => {
+			resetReplay();
+		};
+		// eslint-disable-next-line react-hooks/exhaustive-deps
+	}, [selectedScenario]);
 
 	return (
 		<main className="mx-auto flex min-h-screen max-w-7xl flex-col gap-8 px-6 py-10">
@@ -78,11 +162,30 @@ export default function HomePage() {
 							Switch scenarios to inspect environment inputs, planner decisions, and rover movement.
 						</p>
 					</div>
-					<ScenarioSelector
-						scenarios={DEFAULT_SCENARIOS}
-						selected={selectedScenario}
-						onSelect={setSelectedScenario}
-					/>
+					<div className="flex flex-col items-start gap-3 lg:items-end">
+						<ScenarioSelector
+							scenarios={DEFAULT_SCENARIOS}
+							selected={selectedScenario}
+							onSelect={setSelectedScenario}
+						/>
+						<div className="flex flex-wrap gap-2">
+							<button
+								type="button"
+								onClick={startReplay}
+								className="rounded-full border border-orange-400/40 bg-orange-500/20 px-4 py-2 text-xs uppercase tracking-[0.2em] text-orange-200 transition hover:bg-orange-500/30"
+								disabled={isReplaying}
+							>
+								Replay Mission
+							</button>
+							<button
+								type="button"
+								onClick={resetReplay}
+								className="rounded-full border border-slate-600 bg-slate-900/50 px-4 py-2 text-xs uppercase tracking-[0.2em] text-slate-300 transition hover:border-slate-400"
+							>
+								Reset
+							</button>
+						</div>
+					</div>
 				</div>
 			</section>
 
@@ -90,10 +193,12 @@ export default function HomePage() {
 				<div className="panel p-5">
 					<div className="flex items-center justify-between">
 						<h2 className="text-lg font-semibold text-white">3D Simulation Panel</h2>
-						<span className="text-xs text-slate-400">Synthetic terrain view</span>
+						<span className="rounded-full border border-slate-700 px-3 py-1 text-[11px] uppercase tracking-[0.2em] text-slate-300">
+							{phaseLabel}
+						</span>
 					</div>
 					<div className="mt-4 h-[360px]">
-						<ThreePanel scenario={activeScenario} />
+						<ThreePanel scenario={activeScenario} roverProgress={roverProgress} />
 					</div>
 					<p className="mt-3 text-xs text-slate-400">
 						Terrain shading reflects overall risk score. Obstacles are represented by synthetic markers
@@ -106,7 +211,21 @@ export default function HomePage() {
 					<p className="text-xs text-slate-400">
 						Sequential view of the LangGraph agent execution loop.
 					</p>
-					<Timeline />
+					<Timeline activeStep={phaseIndex} />
+					<div className="mt-6 rounded-xl border border-slate-700/60 bg-slate-950/40 p-4">
+						<h3 className="text-xs uppercase tracking-[0.2em] text-slate-400">Execution Log</h3>
+						<ul className="mt-3 space-y-2 text-xs text-slate-300">
+							{replayLog.length === 0 ? (
+								<li>Awaiting replay command.</li>
+							) : (
+								replayLog.map((entry, index) => (
+									<li key={`${entry}-${index}`} className="border-b border-slate-800/60 pb-2 last:border-b-0">
+										{entry}
+									</li>
+								))
+							)}
+						</ul>
+					</div>
 				</div>
 			</section>
 

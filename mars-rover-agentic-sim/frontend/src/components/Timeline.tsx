@@ -5,23 +5,42 @@ const steps = [
   "Memory Agent",
 ];
 
-export default function Timeline() {
+type TimelineProps = {
+  activeStep?: number;
+};
+
+export default function Timeline({ activeStep = -1 }: TimelineProps) {
   return (
     <div className="mt-6 flex flex-col gap-4">
-      {steps.map((step, index) => (
-        <div
-          key={step}
-          className="flex items-center gap-4 rounded-xl border border-slate-700/60 bg-slate-950/50 px-4 py-3"
-        >
-          <span className="flex h-9 w-9 items-center justify-center rounded-full border border-orange-400/40 bg-orange-500/10 text-xs text-orange-200">
-            {index + 1}
-          </span>
-          <div>
-            <p className="text-sm text-slate-100">{step}</p>
-            <p className="text-xs text-slate-500">Executing sequentially in the LangGraph flow.</p>
+      {steps.map((step, index) => {
+        const isActive = index === activeStep;
+        return (
+          <div
+            key={step}
+            className={`flex items-center gap-4 rounded-xl border px-4 py-3 transition ${
+              isActive
+                ? "border-orange-400/60 bg-orange-500/10"
+                : "border-slate-700/60 bg-slate-950/50"
+            }`}
+          >
+            <span
+              className={`flex h-9 w-9 items-center justify-center rounded-full border text-xs ${
+                isActive
+                  ? "border-orange-300 bg-orange-500/20 text-orange-100"
+                  : "border-orange-400/40 bg-orange-500/10 text-orange-200"
+              }`}
+            >
+              {index + 1}
+            </span>
+            <div>
+              <p className="text-sm text-slate-100">{step}</p>
+              <p className="text-xs text-slate-500">
+                {isActive ? "Active phase in replay." : "Queued in the LangGraph flow."}
+              </p>
+            </div>
           </div>
-        </div>
-      ))}
+        );
+      })}
     </div>
   );
 }
