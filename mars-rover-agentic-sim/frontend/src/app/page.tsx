@@ -6,6 +6,7 @@ import AgentCards from "@/components/AgentCards";
 import ComparisonSection from "@/components/ComparisonSection";
 import ScenarioSelector from "@/components/ScenarioSelector";
 import ThreePanel from "@/components/ThreePanel";
+import AgentDecisionTrace from "@/components/AgentDecisionTrace";
 import Timeline from "@/components/Timeline";
 import {
 	DemoReport,
@@ -110,7 +111,7 @@ export default function HomePage() {
 				setPhaseIndex(index);
 				setReplayLog((prev) => [...prev, logMessage]);
 				if (index === 2) {
-					animateRover(1400);
+					animateRover(5200);
 				}
 				if (index === 4) {
 					setIsReplaying(false);
@@ -119,10 +120,10 @@ export default function HomePage() {
 			timeoutsRef.current.push(timeoutId);
 		};
 
-		scheduleStep(1, 1100, "Planning decision recorded.");
-		scheduleStep(2, 2200, "Navigation executed: rover advancing toward goal.");
-		scheduleStep(3, 3600, "Memory update written.");
-		scheduleStep(4, 4700, "Final verdict issued.");
+		scheduleStep(1, 1600, "Planning decision recorded.");
+		scheduleStep(2, 3600, "Navigation executed: rover advancing toward goal.");
+		scheduleStep(3, 9800, "Memory update written.");
+		scheduleStep(4, 12800, "Final verdict issued.");
 	};
 
 	useEffect(() => {
@@ -198,12 +199,17 @@ export default function HomePage() {
 						</span>
 					</div>
 					<div className="mt-4 h-[360px]">
-						<ThreePanel scenario={activeScenario} roverProgress={roverProgress} />
+						<ThreePanel
+							scenario={activeScenario}
+							roverProgress={roverProgress}
+							activePhase={phaseIndex}
+						/>
 					</div>
 					<p className="mt-3 text-xs text-slate-400">
 						Terrain shading reflects overall risk score. Obstacles are represented by synthetic markers
 						derived from the hazard count.
 					</p>
+					<AgentDecisionTrace scenario={activeScenario} activePhase={phaseIndex} />
 				</div>
 
 				<div className="panel p-5">
