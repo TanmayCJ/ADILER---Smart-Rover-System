@@ -1,7 +1,7 @@
 import { Canvas, useFrame, useThree } from "@react-three/fiber";
 import { Html, OrbitControls } from "@react-three/drei";
 import type { Group, Line, LineDashedMaterial, LineSegments, Mesh, Points } from "three";
-import { BufferAttribute, Color, MathUtils, PlaneGeometry, Vector3 } from "three";
+import { BufferAttribute, CatmullRomCurve3, Color, MathUtils, PlaneGeometry, Vector3 } from "three";
 import { useEffect, useMemo, useRef, useState, type MutableRefObject } from "react";
 
 import { ScenarioResult, parsePosition } from "@/lib/demoData";
@@ -71,6 +71,8 @@ const labelStyles = {
   medium: "text-slate-300",
   low: "text-slate-400",
 };
+
+const toggleCaret = (isOpen: boolean) => (isOpen ? "v" : "> ");
 
 const LabelBillboard = ({
   text,
@@ -722,6 +724,8 @@ export default function ThreePanel({
   const isDustStorm = scenarioId.includes("dust");
   const isRocky = scenarioId.includes("rocky");
   const isEnergyCritical = scenarioId.includes("energy_critical");
+  const [telemetryOpen, setTelemetryOpen] = useState(true);
+  const [legendOpen, setLegendOpen] = useState(true);
 
   const startPos = parsePosition(scenario?.scenario_loaded?.start);
   const goalPos = parsePosition(scenario?.scenario_loaded?.goal);
@@ -859,16 +863,38 @@ export default function ThreePanel({
         seed: seed + index * 31,
       };
     });
-    if (action === "reroute" && obstacles.length) {
-      const obstacleVector = {
-        x: plannedMid.x - obstacleAnchor.x,
-        y: plannedMid.y - obstacleAnchor.y,
-      };
-      const obstacleLen = Math.hypot(obstacleVector.x, obstacleVector.y) || 1;
-      plannedMid.x += (obstacleVector.x / obstacleLen) * missionSpan * 0.18;
-      plannedMid.y += (obstacleVector.y / obstacleLen) * missionSpan * 0.18;
-    }
+    const obstacleCentroid = obstacles.length
+      ? obstacles.reduce(
+          (acc, obs) => ({ x: acc.x + obs.x, y: acc.y + obs.y }),
+          { x: 0, y: 0 }
+        )
+      : { x: 0, y: 0 };
+    const obstacleCenter = obstacles.length
+      ? {
+          x: obstacleCentroid.x / obstacles.length,
+          y: obstacleCentroid.y / obstacles.length,
+        }
+      : { x: 0, y: 0 };
     const windDirection = (seed % 360) * (Math.PI / 180);
+    const windVector = {
+      x: Math.cos(windDirection),
+      y: Math.sin(windDirection),
+    };
+    const windCross = missionDir.x * windVector.y - missionDir.y * windVector.x;
+    const windBias = MathUtils.clamp((environment?.wind_speed ?? 0) / 20, 0, 1);
+    const windScale = isEnergyCritical ? 0.22 : isRocky ? 0.2 : 0.18;
+    plannedMid.x += missionPerp.x * missionSpan * windBias * windScale * (windCross >= 0 ? 1 : -1);
+    plannedMid.y += missionPerp.y * missionSpan * windBias * windScale * (windCross >= 0 ? 1 : -1);
+    if (obstacles.length) {
+      const avoidVector = {
+        x: plannedMid.x - obstacleCenter.x,
+        y: plannedMid.y - obstacleCenter.y,
+      };
+      const avoidLen = Math.hypot(avoidVector.x, avoidVector.y) || 1;
+      const avoidScale = action === "reroute" ? 0.24 : isRocky ? 0.2 : isEnergyCritical ? 0.16 : 0.12;
+      plannedMid.x += (avoidVector.x / avoidLen) * missionSpan * avoidScale;
+      plannedMid.y += (avoidVector.y / avoidLen) * missionSpan * avoidScale;
+    }
     const spaced = ensureSeparation(start, goal, Math.max(2.4, missionSpan * 0.3));
     const spacedRover = ensureSeparation(rover, spaced.b, Math.max(1.2, missionSpan * 0.18));
     return {
@@ -881,10 +907,7 @@ export default function ThreePanel({
       windSpeed: environment?.wind_speed ?? 0,
       windDirection,
       obstacleCount,
-      obstacleCenter: obstacles.reduce(
-        (acc, obs) => ({ x: acc.x + obs.x, y: acc.y + obs.y }),
-        { x: 0, y: 0 }
-      ),
+      obstacleCenter: obstacleCentroid,
       missionMid,
       missionSpan,
       missionDir,
@@ -1071,6 +1094,25 @@ export default function ThreePanel({
     0.12,
     (sceneData.roverStart.y + sceneData.rover.y) / 2
   );
+  const plannedRouteCurve = useMemo(() => {
+    if (!sceneData) return null;
+    return new CatmullRomCurve3([
+      new Vector3(sceneData.start.x, 0.18, sceneData.start.y),
+      new Vector3(sceneData.plannedMid.x, 0.18, sceneData.plannedMid.y),
+      new Vector3(sceneData.goal.x, 0.18, sceneData.goal.y),
+    ]);
+  }, [sceneData]);
+  const plannedRouteRadius = isRocky
+    ? 0.075
+    : isHighWind
+      ? 0.07
+      : isDustStorm
+        ? 0.065
+        : isEasy
+          ? 0.06
+          : isEnergyCritical
+            ? 0.058
+            : 0.05;
   const execOffset = new Vector3(
     sceneData.missionPerp.x,
     0,
@@ -1270,6 +1312,30 @@ export default function ThreePanel({
         />
       </line>
 
+      {(isEasy || isHighWind || isDustStorm || isRocky || isEnergyCritical) && plannedRouteCurve ? (
+        <mesh key={`${scenarioId}-planned-solid`}>
+          <tubeGeometry args={[plannedRouteCurve, 48, plannedRouteRadius, 8, false]} />
+          <meshStandardMaterial color="#3b82f6" emissive="#1d4ed8" emissiveIntensity={0.35} />
+        </mesh>
+      ) : (
+        <line key={`${scenarioId}-planned-solid`}>
+          <bufferGeometry
+            attach="geometry"
+            setFromPoints={[
+              new Vector3(sceneData.start.x, 0.11, sceneData.start.y),
+              new Vector3(sceneData.plannedMid.x, 0.11, sceneData.plannedMid.y),
+              new Vector3(sceneData.goal.x, 0.11, sceneData.goal.y),
+            ]}
+          />
+          <lineBasicMaterial
+            color="#3b82f6"
+            linewidth={2}
+            transparent
+            opacity={activePhase >= 1 ? 0.9 : 0.2}
+          />
+        </line>
+      )}
+
       <line key={`${scenarioId}-executed`}>
         <bufferGeometry
           attach="geometry"
@@ -1374,18 +1440,6 @@ export default function ThreePanel({
         <div className="pointer-events-none absolute left-4 top-4 rounded-xl border border-slate-700/70 bg-slate-950/70 px-3 py-2 text-[11px] uppercase tracking-[0.2em] text-slate-300">
           {phaseHighlight}
         </div>
-        <div className="pointer-events-none absolute bottom-4 right-4 w-36 rounded-xl border border-slate-700/70 bg-slate-950/80 px-3 py-2 text-[9px] text-slate-300">
-          <p className="mb-2 text-[9px] uppercase tracking-[0.18em] text-slate-500">Legend</p>
-          <ul className="space-y-1">
-            <li><span className="text-emerald-300">Green</span> = Start</li>
-            <li><span className="text-blue-300">Blue</span> = Rover</li>
-            <li><span className="text-yellow-300">Yellow</span> = Goal</li>
-            <li><span className="text-red-300">Red</span> = Obstacle</li>
-            <li><span className="text-sky-300">Cyan Arrow</span> = Wind</li>
-            <li><span className="text-slate-300">Dotted</span> = Planned Path</li>
-            <li><span className="text-rose-300">Solid</span> = Executed Path</li>
-          </ul>
-        </div>
       </Html>
 
       <OrbitControls
@@ -1438,9 +1492,21 @@ export default function ThreePanel({
           </div>
         </div>
       </div>
-      <div className="pointer-events-none absolute left-4 top-4 w-[180px] rounded-xl border border-slate-700/70 bg-slate-950/80 px-3 py-2 text-[10px] text-slate-200 shadow-[0_10px_30px_rgba(0,0,0,0.45)]">
-        <p className="text-[10px] uppercase tracking-[0.18em] text-slate-400">Scenario Telemetry</p>
-        <div className="mt-2 space-y-1 text-[10px]">
+      <div className="absolute left-4 top-4 w-[190px] rounded-xl border border-slate-700/70 bg-slate-950/85 px-3 py-2 text-[10px] text-slate-200 shadow-[0_10px_30px_rgba(0,0,0,0.45)] z-20">
+        <button
+          type="button"
+          className="flex w-full items-center justify-between text-left text-[10px] uppercase tracking-[0.18em] text-slate-300"
+          onClick={() => setTelemetryOpen((prev) => !prev)}
+          aria-expanded={telemetryOpen}
+        >
+          <span>Scenario Telemetry</span>
+          <span className="text-slate-500">{toggleCaret(telemetryOpen)}</span>
+        </button>
+        <div
+          className={`mt-2 space-y-1 text-[10px] transition-all duration-300 ${
+            telemetryOpen ? "max-h-[340px] opacity-100" : "max-h-0 opacity-0"
+          } overflow-hidden`}
+        >
           <div className="flex items-center justify-between gap-2">
             <span className="text-slate-400">Scenario</span>
             <span className="max-w-[90px] truncate text-slate-100">{scenarioName}</span>
@@ -1490,6 +1556,30 @@ export default function ThreePanel({
             <span className="max-w-[100px] truncate text-slate-100">{telemetryPhase}</span>
           </div>
         </div>
+      </div>
+      <div className="absolute bottom-4 left-4 w-40 rounded-xl border border-slate-700/70 bg-slate-950/85 px-3 py-2 text-[9px] text-slate-300 shadow-[0_10px_30px_rgba(0,0,0,0.45)] z-20">
+        <button
+          type="button"
+          className="flex w-full items-center justify-between text-left text-[9px] uppercase tracking-[0.18em] text-slate-400"
+          onClick={() => setLegendOpen((prev) => !prev)}
+          aria-expanded={legendOpen}
+        >
+          <span>Legend</span>
+          <span className="text-slate-500">{toggleCaret(legendOpen)}</span>
+        </button>
+        <ul
+          className={`mt-2 space-y-1 transition-all duration-300 ${
+            legendOpen ? "max-h-[220px] opacity-100" : "max-h-0 opacity-0"
+          } overflow-hidden`}
+        >
+          <li><span className="text-emerald-300">Green</span> = Start</li>
+          <li><span className="text-blue-300">Blue</span> = Rover</li>
+          <li><span className="text-yellow-300">Yellow</span> = Goal</li>
+          <li><span className="text-red-300">Red</span> = Obstacle</li>
+          <li><span className="text-sky-300">Cyan Arrow</span> = Wind</li>
+          <li><span className="text-slate-300">Dotted</span> = Planned Path</li>
+          <li><span className="text-rose-300">Solid</span> = Executed Path</li>
+        </ul>
       </div>
     </div>
   );
