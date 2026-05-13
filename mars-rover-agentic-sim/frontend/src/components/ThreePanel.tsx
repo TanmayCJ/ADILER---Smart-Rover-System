@@ -52,6 +52,7 @@ type ThreePanelProps = {
   scenario: ScenarioResult | null;
   roverProgress?: number;
   activePhase?: number;
+  cinematicMode?: boolean;
 };
 
 const phaseLabels = [
@@ -137,6 +138,18 @@ const createTerrainGeometry = (
   const dustTint = new Color("#c27b3b");
   const heightScale = rocky ? 0.26 : dustStorm ? 0.2 : easy ? 0.12 : 0.16;
   const variationScale = rocky ? 0.14 : dustStorm ? 0.1 : 0.08;
+  const craterCount = rocky ? 4 : dustStorm ? 5 : 3;
+  const craterScale = size * (rocky ? 0.18 : 0.22);
+  const craterSeeds = Array.from({ length: craterCount }, (_, index) => {
+    const offset = seed + index * 37;
+    return {
+      x: (randomBetween(offset) - 0.5) * craterScale,
+      z: (randomBetween(offset + 11) - 0.5) * craterScale,
+      radius: (randomBetween(offset + 23) * 0.4 + 0.45) * (rocky ? 0.55 : 0.7),
+      depth: (randomBetween(offset + 31) * 0.2 + 0.18) * (rocky ? 0.55 : 0.75),
+    };
+  });
+
   for (let i = 0; i < positions.count; i += 1) {
     const x = positions.getX(i);
     const z = positions.getZ(i);
@@ -145,7 +158,18 @@ const createTerrainGeometry = (
       Math.cos(z * 0.48 - seed * 0.03) * 0.5 +
       Math.sin((x + z) * 0.22 + seed * 0.06) * 0.45 +
       Math.sin((x - z) * 0.18 + seed * 0.08) * variationScale;
-    const height = noise * heightScale * (0.7 + risk * 0.8);
+    let craterDepth = 0;
+    craterSeeds.forEach((crater) => {
+      const dx = (x / size) * 2 - crater.x / craterScale;
+      const dz = (z / size) * 2 - crater.z / craterScale;
+      const dist = Math.sqrt(dx * dx + dz * dz);
+      if (dist < crater.radius) {
+        const falloff = 1 - dist / crater.radius;
+        craterDepth -= crater.depth * falloff * falloff;
+      }
+    });
+    const patch = Math.sin((x + seed) * 0.15) * Math.cos((z - seed) * 0.17) * (rocky ? 0.06 : 0.04);
+    const height = (noise * heightScale + craterDepth + patch) * (0.7 + risk * 0.8);
     positions.setY(i, height);
     const heightT = MathUtils.clamp((height + heightScale) / (heightScale * 2), 0, 1);
     const riskT = MathUtils.clamp(risk * 1.1, 0, 1);
@@ -170,14 +194,20 @@ const DustField = ({
   height,
   color,
   speed,
+  drift,
 }: {
   count: number;
   spread: number;
   height: number;
   color: string;
   speed: number;
+  drift?: Vector3;
 }) => {
   const ref = useRef<Points>(null);
+  const driftRef = useRef(drift ?? new Vector3(1, 0, 0));
+  useEffect(() => {
+    driftRef.current = drift ?? new Vector3(1, 0, 0);
+  }, [drift]);
   const positions = useMemo(() => {
     const data = new Float32Array(count * 3);
     for (let i = 0; i < count; i += 1) {
@@ -191,11 +221,14 @@ const DustField = ({
   useFrame((_, delta) => {
     if (!ref.current) return;
     const attribute = ref.current.geometry.attributes.position as BufferAttribute;
+    const driftVec = driftRef.current;
     for (let i = 0; i < attribute.count; i += 1) {
-      const x = attribute.getX(i) + delta * speed;
-      const z = attribute.getZ(i) + delta * speed * 0.6;
-      attribute.setX(i, x > spread / 2 ? -spread / 2 : x);
-      attribute.setZ(i, z > spread / 2 ? -spread / 2 : z);
+      const x = attribute.getX(i) + delta * speed * driftVec.x;
+      const z = attribute.getZ(i) + delta * speed * driftVec.z;
+      const wrappedX = x > spread / 2 ? -spread / 2 : x < -spread / 2 ? spread / 2 : x;
+      const wrappedZ = z > spread / 2 ? -spread / 2 : z < -spread / 2 ? spread / 2 : z;
+      attribute.setX(i, wrappedX);
+      attribute.setZ(i, wrappedZ);
     }
     attribute.needsUpdate = true;
   });
@@ -347,6 +380,8 @@ function RoverRig({
   movementDamping,
   tiltScale,
   visibility,
+  visibilityPulse,
+  headlight,
 }: {
   target: Vector3;
   activePhase: number;
@@ -355,10 +390,13 @@ function RoverRig({
   movementDamping: number;
   tiltScale: number;
   visibility: number;
+  visibilityPulse: number;
+  headlight: boolean;
 }) {
   const velocity = useRef(new Vector3(0, 0, 0));
   const movingRef = useRef(false);
   const yawRef = useRef(0);
+  const dustRef = useRef<Mesh>(null);
 
   useFrame((state, delta) => {
     if (!roverRef.current) return;
@@ -383,16 +421,34 @@ function RoverRig({
     } else {
       roverRef.current.position.y = MathUtils.lerp(roverRef.current.position.y, 0.22, 0.2);
     }
+    if (dustRef.current) {
+      const dustPulse = movingRef.current ? 0.12 : 0;
+      const dustScale = movingRef.current ? 1 + Math.sin(state.clock.getElapsedTime() * 5) * 0.12 : 1;
+      dustRef.current.scale.set(dustScale, dustScale, dustScale);
+      (dustRef.current.material as any).opacity = dustPulse;
+    }
   });
 
   return (
     <group ref={roverRef} position={[target.x, 0.22, target.z]}>
+      {headlight && (
+        <pointLight position={[0.1, 0.18, 0.2]} intensity={0.35} color="#f8fafc" distance={2.4} />
+      )}
+      <mesh rotation={[-Math.PI / 2, 0, 0]} position={[0, -0.17, 0]}>
+        <circleGeometry args={[0.22, 18]} />
+        <meshBasicMaterial color="#0f172a" transparent opacity={0.28} />
+      </mesh>
       <PulsingRover
         active={activePhase === 2}
         moving={movingRef}
         lowEnergy={lowEnergy}
         visibility={visibility}
+        visibilityPulse={visibilityPulse}
       />
+      <mesh ref={dustRef} rotation={[-Math.PI / 2, 0, 0]} position={[0, -0.16, -0.08]}>
+        <circleGeometry args={[0.28, 16]} />
+        <meshBasicMaterial color="#fbbf24" transparent opacity={0} />
+      </mesh>
       {activePhase === 2 && (
         <mesh rotation={[-Math.PI / 2, 0, 0]} position={[0, -0.12, 0]}>
           <ringGeometry args={[0.12, 0.32, 24]} />
@@ -501,12 +557,24 @@ function ControlsRig({
   activePhase,
   shakeIntensity,
   shakeSpeed,
+  cinematicMode,
+  start,
+  goal,
+  plannedMid,
+  hazard,
+  missionDir,
 }: {
   controls: MutableRefObject<any>;
   focus: Vector3;
   activePhase: number;
   shakeIntensity: number;
   shakeSpeed: number;
+  cinematicMode: boolean;
+  start: Vector3;
+  goal: Vector3;
+  plannedMid: Vector3;
+  hazard: Vector3;
+  missionDir: Vector3;
 }) {
   const { camera } = useThree();
   const focusRef = useRef(focus);
@@ -515,12 +583,45 @@ function ControlsRig({
   }, [focus]);
   useFrame((state, delta) => {
     if (!controls.current) return;
+    controls.current.enabled = !cinematicMode;
     if (controls.current.__isUserInteracting) return;
     const target = controls.current.target;
-    const desiredTarget = new Vector3(focusRef.current.x, 0.2, focusRef.current.z);
+    const focusTarget = new Vector3(focusRef.current.x, 0.2, focusRef.current.z);
+    let desiredTarget = focusTarget;
+    let desiredPos: Vector3 | null = null;
+    if (cinematicMode) {
+      const mid = start.clone().lerp(goal, 0.5);
+      const hazardTarget = hazard.length() > 0 ? hazard.clone().lerp(mid, 0.5) : mid;
+      const perp = new Vector3(-missionDir.z, 0, missionDir.x);
+      const along = new Vector3(missionDir.x, 0, missionDir.z);
+      if (activePhase <= 0) {
+        desiredTarget = hazardTarget;
+        desiredPos = hazardTarget.clone().add(new Vector3(0, 7.2, 11.2));
+      } else if (activePhase === 1) {
+        desiredTarget = plannedMid;
+        desiredPos = plannedMid
+          .clone()
+          .add(perp.clone().multiplyScalar(5.4))
+          .add(along.clone().multiplyScalar(1.2))
+          .add(new Vector3(0, 5.6, 0));
+      } else if (activePhase === 2) {
+        desiredTarget = focusTarget;
+        desiredPos = focusTarget
+          .clone()
+          .add(along.clone().multiplyScalar(-3.4))
+          .add(perp.clone().multiplyScalar(2.4))
+          .add(new Vector3(0, 3.9, 0));
+      } else if (activePhase === 3) {
+        desiredTarget = focusTarget;
+        desiredPos = focusTarget.clone().add(new Vector3(0, 7.4, 10.2));
+      } else {
+        desiredTarget = goal.clone();
+        desiredPos = goal.clone().add(new Vector3(0, 6.4, 9.2));
+      }
+    }
     target.lerp(desiredTarget, 1 - Math.pow(0.08, delta));
-    if (activePhase === 2) {
-      const basePos = desiredTarget.clone().add(new Vector3(2.2, 4.0, 4.6));
+    if (activePhase === 2 || cinematicMode) {
+      const basePos = desiredPos ?? desiredTarget.clone().add(new Vector3(2.2, 4.0, 4.6));
       const t = state.clock.getElapsedTime();
       const shake =
         shakeIntensity > 0
@@ -530,8 +631,8 @@ function ControlsRig({
               Math.sin(t * shakeSpeed * 1.2) * shakeIntensity * 0.6
             )
           : new Vector3(0, 0, 0);
-      const desiredPos = basePos.add(shake);
-      camera.position.lerp(desiredPos, 1 - Math.pow(0.05, delta));
+      const finalPos = basePos.add(shake);
+      camera.position.lerp(finalPos, 1 - Math.pow(0.05, delta));
     }
     controls.current.update();
   });
@@ -570,11 +671,13 @@ function PulsingRover({
   moving,
   lowEnergy,
   visibility,
+  visibilityPulse,
 }: {
   active: boolean;
   moving: { current: boolean };
   lowEnergy: boolean;
   visibility: number;
+  visibilityPulse: number;
 }) {
   const ref = useRef<Mesh>(null);
   useFrame(({ clock }) => {
@@ -585,7 +688,8 @@ function PulsingRover({
     const glow = lowEnergy ? 0.08 : moving.current ? 0.45 : active ? 0.35 : 0.2;
     const material = ref.current.material as any;
     material.emissiveIntensity = glow;
-    material.opacity = visibility;
+    const visibilityWave = 1 + Math.sin(clock.getElapsedTime() * 2.2) * visibilityPulse;
+    material.opacity = MathUtils.clamp(visibility * visibilityWave, 0.35, 1);
     ref.current.scale.multiplyScalar(motionPulse);
   });
   return (
@@ -608,6 +712,7 @@ export default function ThreePanel({
   scenario,
   roverProgress = 1,
   activePhase = -1,
+  cinematicMode = false,
 }: ThreePanelProps) {
   const environment = scenario?.environment;
   const riskScore = environment?.risk_score ?? 0.0;
@@ -741,12 +846,28 @@ export default function ThreePanel({
     const obstacles = buildObstacles(markerCount, seed).map((obs, index) => {
       const scaleX = (obs.x / 3) * obstacleSpread * 0.45;
       const scaleY = (obs.y / 3) * obstacleSpread * 0.45;
+      const clusterSeed = seed + index * 17;
+      const clusterOffset = {
+        x: (randomBetween(clusterSeed) - 0.5) * obstacleSpread * 0.08,
+        y: (randomBetween(clusterSeed + 9) - 0.5) * obstacleSpread * 0.08,
+      };
+      const size = 0.85 + randomBetween(clusterSeed + 21) * 0.6;
       return {
-        x: obstacleAnchor.x + scaleX,
-        y: obstacleAnchor.y + scaleY,
+        x: obstacleAnchor.x + scaleX + clusterOffset.x,
+        y: obstacleAnchor.y + scaleY + clusterOffset.y,
+        size,
         seed: seed + index * 31,
       };
     });
+    if (action === "reroute" && obstacles.length) {
+      const obstacleVector = {
+        x: plannedMid.x - obstacleAnchor.x,
+        y: plannedMid.y - obstacleAnchor.y,
+      };
+      const obstacleLen = Math.hypot(obstacleVector.x, obstacleVector.y) || 1;
+      plannedMid.x += (obstacleVector.x / obstacleLen) * missionSpan * 0.18;
+      plannedMid.y += (obstacleVector.y / obstacleLen) * missionSpan * 0.18;
+    }
     const windDirection = (seed % 360) * (Math.PI / 180);
     const spaced = ensureSeparation(start, goal, Math.max(2.4, missionSpan * 0.3));
     const spacedRover = ensureSeparation(rover, spaced.b, Math.max(1.2, missionSpan * 0.18));
@@ -851,6 +972,25 @@ export default function ThreePanel({
   const telemetryObstacles = environment?.obstacle_count ?? 0;
   const progressPercent = Math.round(MathUtils.clamp(roverProgress, 0, 1) * 100);
   const telemetryPhase = activePhase >= 4 ? "MISSION COMPLETE" : phaseHighlight;
+  const scenarioLabel = scenarioName.replace(/_/g, " ");
+  const terrainClass = isRocky
+    ? "Rocky Fields"
+    : isDustStorm
+      ? "Dust Basin"
+      : isHighWind
+        ? "Wind Flats"
+        : isEnergyCritical
+          ? "Low-Power Basin"
+          : "Smooth Plains";
+  const hazardLevel = telemetryRisk >= 0.65 ? "High" : telemetryRisk >= 0.4 ? "Moderate" : "Low";
+  const traversalEfficiency =
+    action === "hold_position"
+      ? "Low"
+      : action === "reduce_speed" || action === "proceed_cautious"
+        ? "Moderate"
+        : "High";
+  const stabilityScore = MathUtils.clamp(1 - telemetryDust * 0.6 - telemetryWind * 0.04, 0, 1);
+  const missionStability = stabilityScore >= 0.7 ? "Stable" : stabilityScore >= 0.45 ? "Watch" : "Unstable";
   const fogColor = isDustStorm ? "#6a3a1f" : isEnergyCritical ? "#0b0d12" : isEasy ? "#2a1b14" : "#1f1410";
   const fogNear = isEasy
     ? terrainSize * 0.62
@@ -911,10 +1051,44 @@ export default function ThreePanel({
   const windFieldCount = isHighWind ? 140 : 0;
   const windFieldSpeed = isHighWind ? 1.4 : 0.0;
   const dustSpread = terrainSize * (isDustStorm ? 1.15 : 0.95);
-  const roverVisibility = isDustStorm ? 0.7 : 1;
-  const roverDamping = isEnergyCritical ? 0.012 : 0.02;
+  const dustDrift = new Vector3(
+    Math.cos(sceneData.windDirection),
+    0,
+    Math.sin(sceneData.windDirection)
+  );
+  const roverVisibility = isDustStorm ? 0.68 : 1;
+  const roverVisibilityPulse = isDustStorm ? 0.12 : 0;
+  const roverDamping = isEnergyCritical ? 0.012 : isRocky ? 0.015 : isEasy ? 0.03 : 0.02;
   const roverTilt = isEnergyCritical ? 4.5 : 6;
   const cameraShake = isHighWind ? 0.07 : 0;
+  const headlightOn = isEnergyCritical || isDustStorm;
+  const missionComplete = activePhase >= 4;
+  const plannedMidPos = new Vector3(sceneData.plannedMid.x, 0.1, sceneData.plannedMid.y);
+  const missionDirVec = new Vector3(sceneData.missionDir.x, 0, sceneData.missionDir.y);
+  const finalPosition = scenario?.navigation?.final_position ?? "Unknown";
+  const executedMidPos = new Vector3(
+    (sceneData.roverStart.x + sceneData.rover.x) / 2,
+    0.12,
+    (sceneData.roverStart.y + sceneData.rover.y) / 2
+  );
+  const execOffset = new Vector3(
+    sceneData.missionPerp.x,
+    0,
+    sceneData.missionPerp.y
+  ).multiplyScalar(sceneData.missionSpan * 0.08);
+  const obstaclePush = obstacleCentroid.length() > 0
+    ? executedMidPos.clone().sub(obstacleCentroid).normalize().multiplyScalar(sceneData.missionSpan * 0.05)
+    : new Vector3(0, 0, 0);
+  executedMidPos.add(execOffset).add(obstaclePush);
+  const missionOutcome = missionComplete
+    ? isEnergyCritical
+      ? "Mission Energy Constrained"
+      : action === "hold_position"
+        ? "Mission Paused"
+        : action === "reduce_speed"
+          ? "Mission Delayed"
+          : "Mission Successful"
+    : "Mission In Progress";
 
   return (
     <div className="relative h-full w-full">
@@ -978,6 +1152,7 @@ export default function ThreePanel({
         height={isDustStorm ? 3.2 : 2.4}
         color={isDustStorm ? "#f59e0b" : isHighWind ? "#f0c08a" : "#e2b089"}
         speed={dustSpeed}
+        drift={dustDrift}
       />
       {isHighWind && windFieldCount > 0 && (
         <group rotation={[0, sceneData.windDirection, 0]} position={[0, 0.25, 0]}>
@@ -1052,6 +1227,8 @@ export default function ThreePanel({
         movementDamping={roverDamping}
         tiltScale={roverTilt}
         visibility={roverVisibility}
+        visibilityPulse={roverVisibilityPulse}
+        headlight={headlightOn}
       />
       {!combineStartRover && (
         <>
@@ -1098,6 +1275,7 @@ export default function ThreePanel({
           attach="geometry"
           setFromPoints={[
             new Vector3(sceneData.roverStart.x, 0.12, sceneData.roverStart.y),
+            executedMidPos,
             new Vector3(sceneData.rover.x, 0.12, sceneData.rover.y),
           ]}
         />
@@ -1111,7 +1289,14 @@ export default function ThreePanel({
 
       {sceneData.obstacles.map((obstacle, index) => (
         <mesh key={`obs-${index}`} position={[obstacle.x, 0.1, obstacle.y]}>
-          <cylinderGeometry args={[isRocky ? 0.08 : 0.06, isRocky ? 0.08 : 0.06, isRocky ? 0.18 : 0.12, 12]} />
+          <cylinderGeometry
+            args={[
+              (isRocky ? 0.08 : 0.06) * obstacle.size,
+              (isRocky ? 0.08 : 0.06) * obstacle.size,
+              (isRocky ? 0.18 : 0.12) * obstacle.size,
+              12,
+            ]}
+          />
           <meshStandardMaterial
             color="#ef4444"
             emissive="#ef4444"
@@ -1177,6 +1362,12 @@ export default function ThreePanel({
         activePhase={activePhase}
         shakeIntensity={cameraShake}
         shakeSpeed={1.6}
+        cinematicMode={cinematicMode}
+        start={startMarkerPos}
+        goal={goalMarkerPos}
+        plannedMid={plannedMidPos}
+        hazard={obstacleCentroid}
+        missionDir={missionDirVec}
       />
 
       <Html fullscreen>
@@ -1201,13 +1392,14 @@ export default function ThreePanel({
         ref={controlsRef}
         makeDefault
         target={[sceneData.missionMid.x, 0.2, sceneData.missionMid.y]}
+        enabled={!cinematicMode}
         enableZoom
         minDistance={4.6}
         maxDistance={10.5}
         enablePan={false}
         enableDamping
         dampingFactor={0.08}
-        autoRotate={activePhase < 4}
+        autoRotate={activePhase < 4 && !cinematicMode}
         autoRotateSpeed={activePhase === 2 ? 0.18 : 0.3}
         onStart={() => {
           if (controlsRef.current) controlsRef.current.__isUserInteracting = true;
@@ -1217,6 +1409,35 @@ export default function ThreePanel({
         }}
       />
       </Canvas>
+      <div
+        className={`pointer-events-none absolute inset-0 flex items-center justify-center transition-opacity duration-700 ${
+          missionComplete ? "opacity-100" : "opacity-0"
+        }`}
+      >
+        <div className="w-[280px] rounded-2xl border border-amber-300/30 bg-slate-950/85 px-6 py-5 text-center shadow-[0_18px_45px_rgba(0,0,0,0.45)]">
+          <p className="text-[11px] uppercase tracking-[0.35em] text-amber-200">
+            Mission Complete
+          </p>
+          <p className="mt-2 text-lg font-semibold text-white">{scenarioLabel}</p>
+          <p className="mt-2 text-xs uppercase tracking-[0.22em] text-slate-400">
+            Outcome: {missionOutcome}
+          </p>
+          <div className="mt-3 grid gap-2 text-xs text-slate-300">
+            <div className="flex items-center justify-between">
+              <span className="text-slate-400">Final Action</span>
+              <span className="max-w-[140px] truncate text-slate-100">{action}</span>
+            </div>
+            <div className="flex items-center justify-between">
+              <span className="text-slate-400">Risk Score</span>
+              <span className="text-slate-100">{telemetryRisk.toFixed(2)}</span>
+            </div>
+            <div className="flex items-center justify-between">
+              <span className="text-slate-400">Final Position</span>
+              <span className="max-w-[140px] truncate text-slate-100">{finalPosition}</span>
+            </div>
+          </div>
+        </div>
+      </div>
       <div className="pointer-events-none absolute left-4 top-4 w-[180px] rounded-xl border border-slate-700/70 bg-slate-950/80 px-3 py-2 text-[10px] text-slate-200 shadow-[0_10px_30px_rgba(0,0,0,0.45)]">
         <p className="text-[10px] uppercase tracking-[0.18em] text-slate-400">Scenario Telemetry</p>
         <div className="mt-2 space-y-1 text-[10px]">
@@ -1243,6 +1464,22 @@ export default function ThreePanel({
           <div className="flex items-center justify-between gap-2">
             <span className="text-slate-400">Obstacles</span>
             <span className="text-slate-100">{telemetryObstacles}</span>
+          </div>
+          <div className="flex items-center justify-between gap-2">
+            <span className="text-slate-400">Terrain</span>
+            <span className="max-w-[90px] truncate text-slate-100">{terrainClass}</span>
+          </div>
+          <div className="flex items-center justify-between gap-2">
+            <span className="text-slate-400">Hazard</span>
+            <span className="text-slate-100">{hazardLevel}</span>
+          </div>
+          <div className="flex items-center justify-between gap-2">
+            <span className="text-slate-400">Efficiency</span>
+            <span className="text-slate-100">{traversalEfficiency}</span>
+          </div>
+          <div className="flex items-center justify-between gap-2">
+            <span className="text-slate-400">Stability</span>
+            <span className="text-slate-100">{missionStability}</span>
           </div>
           <div className="flex items-center justify-between gap-2">
             <span className="text-slate-400">Progress</span>
